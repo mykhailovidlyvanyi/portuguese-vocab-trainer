@@ -1,15 +1,24 @@
 // screens/study_screen.dart
+
 import 'package:flutter/material.dart';
 import '../models/word_entry.dart';
+import '../models/word_category.dart';
 import '../data/words_data.dart';
 import '../utils/word_selector.dart';
 import 'category_selection_screen.dart';
 import 'dart:math';
 
 class StudyScreen extends StatefulWidget {
-  final String category;
+  final WordCategory? category;
+  final bool isAll;
   final String mode;
-  const StudyScreen({super.key, required this.category, required this.mode});
+
+  const StudyScreen({
+    super.key,
+    this.category,
+    this.isAll = false,
+    required this.mode,
+  });
 
   @override
   State<StudyScreen> createState() => _StudyScreenState();
@@ -28,12 +37,11 @@ class _StudyScreenState extends State<StudyScreen> {
 
   bool get isInputEmpty => controller.text.trim().isEmpty;
 
-
   @override
   void initState() {
     super.initState();
 
-    if (widget.category == 'Усе') {
+    if (widget.isAll) {
       pool = categories.expand((c) {
         if (c.subcategories.isNotEmpty) {
           return c.subcategories.expand((sub) => sub.words);
@@ -41,18 +49,7 @@ class _StudyScreenState extends State<StudyScreen> {
         return c.words;
       }).toList();
     } else {
-      final selectedCategory = categories.firstWhere(
-            (c) => c.name == widget.category ||
-            c.subcategories.any((sub) => sub.name == widget.category),
-      );
-
-      if (selectedCategory.name == widget.category) {
-        pool = selectedCategory.words;
-      } else {
-        pool = selectedCategory.subcategories
-            .firstWhere((sub) => sub.name == widget.category)
-            .words;
-      }
+      pool = widget.category!.words;
     }
 
     current = pool.first;
@@ -66,6 +63,7 @@ class _StudyScreenState extends State<StudyScreen> {
     final expected = widget.mode == 'ptToEn'
         ? current.english.toLowerCase()
         : current.portuguese.toLowerCase();
+
     final normalized = answer.trim().toLowerCase();
 
     final isCorrect = normalized == expected;
@@ -90,18 +88,29 @@ class _StudyScreenState extends State<StudyScreen> {
   }
 
   @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final showEnglish = widget.mode == 'enToPt' || (widget.mode == 'mixed' && uiRandom.nextBool());
+    final showEnglish = widget.mode == 'enToPt' ||
+        (widget.mode == 'mixed' && uiRandom.nextBool());
+
+    final categoryName = widget.isAll ? 'Усе' : widget.category!.name;
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('${widget.category} — Навчання'),
+        title: Text('$categoryName — Навчання'),
         actions: [
           IconButton(
             icon: const Icon(Icons.stop),
             onPressed: () => Navigator.pushAndRemoveUntil(
               context,
-              MaterialPageRoute(builder: (_) => const CategorySelectionScreen()),
+              MaterialPageRoute(
+                builder: (_) => const CategorySelectionScreen(),
+              ),
                   (route) => false,
             ),
           )
@@ -129,7 +138,10 @@ class _StudyScreenState extends State<StudyScreen> {
                   children: [
                     Text(
                       showEnglish ? current.english : current.portuguese,
-                      style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                      style: const TextStyle(
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     if (showEnglish && current.englishHint != null)
                       Text('Hint: ${current.englishHint}'),
@@ -143,12 +155,15 @@ class _StudyScreenState extends State<StudyScreen> {
             if (feedback == null) ...[
               TextField(
                 controller: controller,
-                decoration: const InputDecoration(labelText: 'Введіть переклад'),
+                decoration: const InputDecoration(
+                  labelText: 'Введіть переклад',
+                ),
                 onSubmitted: isInputEmpty ? null : checkAnswer,
               ),
               const SizedBox(height: 12),
               ElevatedButton(
-                onPressed: isInputEmpty ? null : () => checkAnswer(controller.text),
+                onPressed:
+                isInputEmpty ? null : () => checkAnswer(controller.text),
                 child: const Text('Перевірити'),
               ),
               TextButton(
@@ -158,7 +173,10 @@ class _StudyScreenState extends State<StudyScreen> {
             ] else ...[
               Text(feedback!, style: const TextStyle(fontSize: 20)),
               const SizedBox(height: 12),
-              ElevatedButton(onPressed: nextWord, child: const Text('Продовжити')),
+              ElevatedButton(
+                onPressed: nextWord,
+                child: const Text('Продовжити'),
+              ),
             ]
           ],
         ),

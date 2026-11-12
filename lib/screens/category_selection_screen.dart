@@ -1,6 +1,5 @@
 // screens/category_selection_screen.dart
 
-
 import 'package:flutter/material.dart';
 import '../data/words_data.dart';
 import 'mode_selection_screen.dart';
@@ -28,8 +27,8 @@ class CategorySelectionScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (_) => ModeSelectionScreen(
-                      category: categoryName,
+                    builder: (_) => const ModeSelectionScreen(
+                      isAll: true,
                     ),
                   ),
                 );
@@ -54,7 +53,7 @@ class CategorySelectionScreen extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (_) => ModeSelectionScreen(
-                      category: categoryName,
+                      category: selectedCategory,
                     ),
                   ),
                 );

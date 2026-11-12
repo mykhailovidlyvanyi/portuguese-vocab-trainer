@@ -1,15 +1,25 @@
 // screens/mode_selection_screen.dart
+
 import 'package:flutter/material.dart';
+import '../models/word_category.dart';
 import 'study_screen.dart';
 
 class ModeSelectionScreen extends StatelessWidget {
-  final String category;
-  const ModeSelectionScreen({super.key, required this.category});
+  final WordCategory? category;
+  final bool isAll;
+
+  const ModeSelectionScreen({
+    super.key,
+    this.category,
+    this.isAll = false,
+  });
 
   @override
   Widget build(BuildContext context) {
+    final categoryName = isAll ? 'Усе' : category!.name;
+
     return Scaffold(
-      appBar: AppBar(title: Text('Режим (${category})')),
+      appBar: AppBar(title: Text('Режим ($categoryName)')),
       body: Column(
         children: [
           ListTile(
@@ -17,7 +27,11 @@ class ModeSelectionScreen extends StatelessWidget {
             onTap: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (_) => StudyScreen(category: category, mode: 'enToPt'),
+                builder: (_) => StudyScreen(
+                  category: category,
+                  isAll: isAll,
+                  mode: 'enToPt',
+                ),
               ),
             ),
           ),
@@ -26,7 +40,11 @@ class ModeSelectionScreen extends StatelessWidget {
             onTap: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (_) => StudyScreen(category: category, mode: 'ptToEn'),
+                builder: (_) => StudyScreen(
+                  category: category,
+                  isAll: isAll,
+                  mode: 'ptToEn',
+                ),
               ),
             ),
           ),
@@ -35,7 +53,11 @@ class ModeSelectionScreen extends StatelessWidget {
             onTap: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (_) => StudyScreen(category: category, mode: 'mixed'),
+                builder: (_) => StudyScreen(
+                  category: category,
+                  isAll: isAll,
+                  mode: 'mixed',
+                ),
               ),
             ),
           ),

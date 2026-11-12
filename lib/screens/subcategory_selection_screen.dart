@@ -30,7 +30,7 @@ class SubcategorySelectionScreen extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (_) => ModeSelectionScreen(
-                  category: subcategory.name,
+                  category: subcategory,
                 ),
               ),
             ),
