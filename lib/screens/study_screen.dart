@@ -28,13 +28,35 @@ class _StudyScreenState extends State<StudyScreen> {
 
   bool get isInputEmpty => controller.text.trim().isEmpty;
 
+
   @override
   void initState() {
     super.initState();
-    pool = widget.category == 'Усе'
-        ? categories.expand((c) => c.words).toList()
-        : categories.firstWhere((c) => c.name == widget.category).words;
+
+    if (widget.category == 'Усе') {
+      pool = categories.expand((c) {
+        if (c.subcategories.isNotEmpty) {
+          return c.subcategories.expand((sub) => sub.words);
+        }
+        return c.words;
+      }).toList();
+    } else {
+      final selectedCategory = categories.firstWhere(
+            (c) => c.name == widget.category ||
+            c.subcategories.any((sub) => sub.name == widget.category),
+      );
+
+      if (selectedCategory.name == widget.category) {
+        pool = selectedCategory.words;
+      } else {
+        pool = selectedCategory.subcategories
+            .firstWhere((sub) => sub.name == widget.category)
+            .words;
+      }
+    }
+
     current = pool.first;
+
     controller.addListener(() {
       setState(() {});
     });

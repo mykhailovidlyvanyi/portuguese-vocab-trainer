@@ -118,22 +118,28 @@ final categories = [
       WordEntry(english: "you know", portuguese: "vocês sabem", englishHint: "plural", portugueseHint: "plural", weight: 0.33),
     ],
   ),
+
   WordCategory(
     name: 'Числівники',
-    words: [
-      WordEntry(english: "zero", portuguese: "zero", numericValue: 0, weight: 1.0),
-      WordEntry(english: "one", portuguese: "um", numericValue: 1, englishHint: "masculine", portugueseHint: "masculino", weight: 0.5),
-      WordEntry(english: "one", portuguese: "uma", numericValue: 1, englishHint: "feminine", portugueseHint: "feminino", weight: 0.5),
-      WordEntry(english: "two", portuguese: "dois", numericValue: 2, englishHint: "masculine", portugueseHint: "masculino", weight: 0.5),
-      WordEntry(english: "two", portuguese: "duas", numericValue: 2, englishHint: "feminine", portugueseHint: "feminino", weight: 0.5),
-      WordEntry(english: "three", portuguese: "três", numericValue: 3, weight: 1.0),
-      WordEntry(english: "four", portuguese: "quatro", numericValue: 4, weight: 1.0),
-      WordEntry(english: "five", portuguese: "cinco", numericValue: 5, weight: 1.0),
-      WordEntry(english: "six", portuguese: "seis", numericValue: 6, weight: 1.0),
-      WordEntry(english: "seven", portuguese: "sete", numericValue: 7, weight: 1.0),
-      WordEntry(english: "eight", portuguese: "oito", numericValue: 8, weight: 1.0),
-      WordEntry(english: "nine", portuguese: "nove", numericValue: 9, weight: 1.0),
-      WordEntry(english: "ten", portuguese: "dez", numericValue: 10, weight: 1.0),
+    subcategories: [
+      WordCategory(
+        name: '0–10',
+        words: [
+          WordEntry(english: "zero", portuguese: "zero", numericValue: 0, weight: 1.0),
+          WordEntry(english: "one", portuguese: "um", numericValue: 1, englishHint: "masculine", portugueseHint: "masculino", weight: 0.5),
+          WordEntry(english: "one", portuguese: "uma", numericValue: 1, englishHint: "feminine", portugueseHint: "feminino", weight: 0.5),
+          WordEntry(english: "two", portuguese: "dois", numericValue: 2, englishHint: "masculine", portugueseHint: "masculino", weight: 0.5),
+          WordEntry(english: "two", portuguese: "duas", numericValue: 2, englishHint: "feminine", portugueseHint: "feminino", weight: 0.5),
+          WordEntry(english: "three", portuguese: "três", numericValue: 3, weight: 1.0),
+          WordEntry(english: "four", portuguese: "quatro", numericValue: 4, weight: 1.0),
+          WordEntry(english: "five", portuguese: "cinco", numericValue: 5, weight: 1.0),
+          WordEntry(english: "six", portuguese: "seis", numericValue: 6, weight: 1.0),
+          WordEntry(english: "seven", portuguese: "sete", numericValue: 7, weight: 1.0),
+          WordEntry(english: "eight", portuguese: "oito", numericValue: 8, weight: 1.0),
+          WordEntry(english: "nine", portuguese: "nove", numericValue: 9, weight: 1.0),
+          WordEntry(english: "ten", portuguese: "dez", numericValue: 10, weight: 1.0),
+        ],
+      ),
     ],
   ),
 ];
