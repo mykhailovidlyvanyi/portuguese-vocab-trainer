@@ -27,6 +27,7 @@ class StudyScreen extends StatefulWidget {
 class _StudyScreenState extends State<StudyScreen> {
   late List<WordEntry> pool;
   late WordEntry current;
+  late bool showEnglish;
   int correct = 0;
   int total = 0;
   int incorrect = 0;
@@ -36,6 +37,13 @@ class _StudyScreenState extends State<StudyScreen> {
   final Random uiRandom = Random();
 
   bool get isInputEmpty => controller.text.trim().isEmpty;
+
+  bool getNextDirection() {
+    if (widget.mode == 'enToPt') return true;
+    if (widget.mode == 'ptToEn') return false;
+
+    return uiRandom.nextBool();
+  }
 
   @override
   void initState() {
@@ -53,6 +61,7 @@ class _StudyScreenState extends State<StudyScreen> {
     }
 
     current = pool.first;
+    showEnglish = getNextDirection();
 
     controller.addListener(() {
       setState(() {});
@@ -60,9 +69,9 @@ class _StudyScreenState extends State<StudyScreen> {
   }
 
   void checkAnswer(String answer) {
-    final expected = widget.mode == 'ptToEn'
-        ? current.english.toLowerCase()
-        : current.portuguese.toLowerCase();
+    final expected = showEnglish
+        ? current.portuguese.toLowerCase()
+        : current.english.toLowerCase();
 
     final normalized = answer.trim().toLowerCase();
 
@@ -83,6 +92,7 @@ class _StudyScreenState extends State<StudyScreen> {
     setState(() {
       feedback = null;
       current = selector.nextWord(pool);
+      showEnglish = getNextDirection();
       controller.clear();
     });
   }
@@ -95,8 +105,6 @@ class _StudyScreenState extends State<StudyScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final showEnglish = widget.mode == 'enToPt' ||
-        (widget.mode == 'mixed' && uiRandom.nextBool());
 
     final categoryName = widget.isAll ? 'Усе' : widget.category!.name;
 
