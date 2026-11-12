@@ -1,21 +1,24 @@
 // screens/subcategory_selection_screen.dart
 
+
 import 'package:flutter/material.dart';
+
 import '../models/word_category.dart';
 import '../models/word_entry.dart';
 import 'mode_selection_screen.dart';
 
 class SubcategorySelectionScreen extends StatelessWidget {
   final WordCategory category;
+  final List<WordCategory> allCategories;
 
   const SubcategorySelectionScreen({
     super.key,
     required this.category,
+    required this.allCategories,
   });
 
   @override
   Widget build(BuildContext context) {
-    // Збираємо слова з усіх рівнів вкладеності
     final allWords = _getAllWords(category);
 
     final allWordsCategory = WordCategory(
@@ -29,7 +32,6 @@ class SubcategorySelectionScreen extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          // Навчання всіх слів поточної категорії
           if (category.subcategories.isNotEmpty && allWords.isNotEmpty)
             ListTile(
               title: Text('Усі ${category.name.toLowerCase()}'),
@@ -39,12 +41,12 @@ class SubcategorySelectionScreen extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (_) => ModeSelectionScreen(
                     category: allWordsCategory,
+                    allCategories: allCategories,
                   ),
                 ),
               ),
             ),
 
-          // Підкатегорії
           ...category.subcategories.map((subcategory) {
             return ListTile(
               title: Text(subcategory.name),
@@ -53,8 +55,14 @@ class SubcategorySelectionScreen extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (_) => subcategory.subcategories.isNotEmpty
-                      ? SubcategorySelectionScreen(category: subcategory)
-                      : ModeSelectionScreen(category: subcategory),
+                      ? SubcategorySelectionScreen(
+                    category: subcategory,
+                    allCategories: allCategories,
+                  )
+                      : ModeSelectionScreen(
+                    category: subcategory,
+                    allCategories: allCategories,
+                  ),
                 ),
               ),
             );
@@ -64,7 +72,6 @@ class SubcategorySelectionScreen extends StatelessWidget {
     );
   }
 
-  // Рекурсивно збираємо слова з усіх підкатегорій
   List<WordEntry> _getAllWords(WordCategory category) {
     return [
       ...category.words,

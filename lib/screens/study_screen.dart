@@ -1,23 +1,26 @@
 // screens/study_screen.dart
 
+
 import 'package:flutter/material.dart';
+import 'dart:math';
+
 import '../models/word_entry.dart';
 import '../models/word_category.dart';
-import '../data/words_data.dart';
 import '../utils/word_selector.dart';
 import 'category_selection_screen.dart';
-import 'dart:math';
 
 class StudyScreen extends StatefulWidget {
   final WordCategory? category;
   final bool isAll;
   final String mode;
+  final List<WordCategory> allCategories;
 
   const StudyScreen({
     super.key,
     this.category,
     this.isAll = false,
     required this.mode,
+    required this.allCategories,
   });
 
   @override
@@ -28,10 +31,13 @@ class _StudyScreenState extends State<StudyScreen> {
   late List<WordEntry> pool;
   late WordEntry current;
   late bool showEnglish;
+
   int correct = 0;
   int total = 0;
   int incorrect = 0;
+
   String? feedback;
+
   final controller = TextEditingController();
   final WordSelector selector = WordSelector();
   final Random uiRandom = Random();
@@ -45,19 +51,23 @@ class _StudyScreenState extends State<StudyScreen> {
     return uiRandom.nextBool();
   }
 
+  List<WordEntry> _getAllWords(WordCategory category) {
+    return [
+      ...category.words,
+      ...category.subcategories.expand(_getAllWords),
+    ];
+  }
+
   @override
   void initState() {
     super.initState();
 
     if (widget.isAll) {
-      pool = categories.expand((c) {
-        if (c.subcategories.isNotEmpty) {
-          return c.subcategories.expand((sub) => sub.words);
-        }
-        return c.words;
-      }).toList();
+      pool = widget.allCategories
+          .expand(_getAllWords)
+          .toList();
     } else {
-      pool = widget.category!.words;
+      pool = _getAllWords(widget.category!);
     }
 
     current = pool.first;
@@ -76,8 +86,10 @@ class _StudyScreenState extends State<StudyScreen> {
     final normalized = answer.trim().toLowerCase();
 
     final isCorrect = normalized == expected;
+
     setState(() {
       total++;
+
       if (isCorrect) {
         correct++;
         feedback = '✅ Правильно!';
@@ -105,7 +117,6 @@ class _StudyScreenState extends State<StudyScreen> {
 
   @override
   Widget build(BuildContext context) {
-
     final categoryName = widget.isAll ? 'Усе' : widget.category!.name;
 
     return Scaffold(
@@ -117,7 +128,9 @@ class _StudyScreenState extends State<StudyScreen> {
             onPressed: () => Navigator.pushAndRemoveUntil(
               context,
               MaterialPageRoute(
-                builder: (_) => const CategorySelectionScreen(),
+                builder: (_) => CategorySelectionScreen(
+                  categories: widget.allCategories,
+                ),
               ),
                   (route) => false,
             ),

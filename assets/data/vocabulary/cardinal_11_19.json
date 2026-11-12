@@ -1,0 +1,12 @@
+
+[
+  {"english": "eleven", "portuguese": "onze", "numericValue": 11, "weight": 1.0},
+  {"english": "twelve", "portuguese": "doze", "numericValue": 12, "weight": 1.0},
+  {"english": "thirteen", "portuguese": "treze", "numericValue": 13, "weight": 1.0},
+  {"english": "fourteen", "portuguese": "catorze", "numericValue": 14, "weight": 1.0},
+  {"english": "fifteen", "portuguese": "quinze", "numericValue": 15, "weight": 1.0},
+  {"english": "sixteen", "portuguese": "dezasseis", "numericValue": 16, "weight": 1.0},
+  {"english": "seventeen", "portuguese": "dezassete", "numericValue": 17, "weight": 1.0},
+  {"english": "eighteen", "portuguese": "dezoito", "numericValue": 18, "weight": 1.0},
+  {"english": "nineteen", "portuguese": "dezanove", "numericValue": 19, "weight": 1.0}
+]

@@ -1,0 +1,147 @@
+
+[
+  {
+    "english": "eleventh",
+    "portuguese": "décimo primeiro",
+    "numericValue": 11,
+    "englishHint": "masculine",
+    "portugueseHint": "masculino",
+    "weight": 0.5
+  },
+  {
+    "english": "eleventh",
+    "portuguese": "décima primeira",
+    "numericValue": 11,
+    "englishHint": "feminine",
+    "portugueseHint": "feminino",
+    "weight": 0.5
+  },
+  {
+    "english": "twelfth",
+    "portuguese": "décimo segundo",
+    "numericValue": 12,
+    "englishHint": "masculine",
+    "portugueseHint": "masculino",
+    "weight": 0.5
+  },
+  {
+    "english": "twelfth",
+    "portuguese": "décima segunda",
+    "numericValue": 12,
+    "englishHint": "feminine",
+    "portugueseHint": "feminino",
+    "weight": 0.5
+  },
+  {
+    "english": "thirteenth",
+    "portuguese": "décimo terceiro",
+    "numericValue": 13,
+    "englishHint": "masculine",
+    "portugueseHint": "masculino",
+    "weight": 0.5
+  },
+  {
+    "english": "thirteenth",
+    "portuguese": "décima terceira",
+    "numericValue": 13,
+    "englishHint": "feminine",
+    "portugueseHint": "feminino",
+    "weight": 0.5
+  },
+  {
+    "english": "fourteenth",
+    "portuguese": "décimo quarto",
+    "numericValue": 14,
+    "englishHint": "masculine",
+    "portugueseHint": "masculino",
+    "weight": 0.5
+  },
+  {
+    "english": "fourteenth",
+    "portuguese": "décima quarta",
+    "numericValue": 14,
+    "englishHint": "feminine",
+    "portugueseHint": "feminino",
+    "weight": 0.5
+  },
+  {
+    "english": "fifteenth",
+    "portuguese": "décimo quinto",
+    "numericValue": 15,
+    "englishHint": "masculine",
+    "portugueseHint": "masculino",
+    "weight": 0.5
+  },
+  {
+    "english": "fifteenth",
+    "portuguese": "décima quinta",
+    "numericValue": 15,
+    "englishHint": "feminine",
+    "portugueseHint": "feminino",
+    "weight": 0.5
+  },
+  {
+    "english": "sixteenth",
+    "portuguese": "décimo sexto",
+    "numericValue": 16,
+    "englishHint": "masculine",
+    "portugueseHint": "masculino",
+    "weight": 0.5
+  },
+  {
+    "english": "sixteenth",
+    "portuguese": "décima sexta",
+    "numericValue": 16,
+    "englishHint": "feminine",
+    "portugueseHint": "feminino",
+    "weight": 0.5
+  },
+  {
+    "english": "seventeenth",
+    "portuguese": "décimo sétimo",
+    "numericValue": 17,
+    "englishHint": "masculine",
+    "portugueseHint": "masculino",
+    "weight": 0.5
+  },
+  {
+    "english": "seventeenth",
+    "portuguese": "décima sétima",
+    "numericValue": 17,
+    "englishHint": "feminine",
+    "portugueseHint": "feminino",
+    "weight": 0.5
+  },
+  {
+    "english": "eighteenth",
+    "portuguese": "décimo oitavo",
+    "numericValue": 18,
+    "englishHint": "masculine",
+    "portugueseHint": "masculino",
+    "weight": 0.5
+  },
+  {
+    "english": "eighteenth",
+    "portuguese": "décima oitava",
+    "numericValue": 18,
+    "englishHint": "feminine",
+    "portugueseHint": "feminino",
+    "weight": 0.5
+  },
+  {
+    "english": "nineteenth",
+    "portuguese": "décimo nono",
+    "numericValue": 19,
+    "englishHint": "masculine",
+    "portugueseHint": "masculino",
+    "weight": 0.5
+  },
+  {
+    "english": "nineteenth",
+    "portuguese": "décima nona",
+    "numericValue": 19,
+    "englishHint": "feminine",
+    "portugueseHint": "feminino",
+    "weight": 0.5
+  }
+]

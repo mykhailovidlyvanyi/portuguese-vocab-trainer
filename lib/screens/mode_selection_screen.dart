@@ -1,17 +1,21 @@
 // screens/mode_selection_screen.dart
 
+
 import 'package:flutter/material.dart';
+
 import '../models/word_category.dart';
 import 'study_screen.dart';
 
 class ModeSelectionScreen extends StatelessWidget {
   final WordCategory? category;
   final bool isAll;
+  final List<WordCategory> allCategories;
 
   const ModeSelectionScreen({
     super.key,
     this.category,
     this.isAll = false,
+    required this.allCategories,
   });
 
   @override
@@ -30,6 +34,7 @@ class ModeSelectionScreen extends StatelessWidget {
                 builder: (_) => StudyScreen(
                   category: category,
                   isAll: isAll,
+                  allCategories: allCategories,
                   mode: 'enToPt',
                 ),
               ),
@@ -43,6 +48,7 @@ class ModeSelectionScreen extends StatelessWidget {
                 builder: (_) => StudyScreen(
                   category: category,
                   isAll: isAll,
+                  allCategories: allCategories,
                   mode: 'ptToEn',
                 ),
               ),
@@ -56,6 +62,7 @@ class ModeSelectionScreen extends StatelessWidget {
                 builder: (_) => StudyScreen(
                   category: category,
                   isAll: isAll,
+                  allCategories: allCategories,
                   mode: 'mixed',
                 ),
               ),

@@ -1,4 +1,3 @@
-// models/word_entry.dart
 class WordEntry {
   final String english;
   final String portuguese;
@@ -15,4 +14,15 @@ class WordEntry {
     this.portugueseHint,
     this.numericValue,
   });
+
+  factory WordEntry.fromJson(Map<String, dynamic> json) {
+    return WordEntry(
+      english: json['english'] as String,
+      portuguese: json['portuguese'] as String,
+      weight: (json['weight'] as num).toDouble(),
+      englishHint: json['englishHint'] as String?,
+      portugueseHint: json['portugueseHint'] as String?,
+      numericValue: json['numericValue'] as int?,
+    );
+  }
 }

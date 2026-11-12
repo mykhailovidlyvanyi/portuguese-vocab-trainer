@@ -1,12 +1,19 @@
 // screens/category_selection_screen.dart
 
+
 import 'package:flutter/material.dart';
-import '../data/words_data.dart';
+
+import '../models/word_category.dart';
 import 'mode_selection_screen.dart';
 import 'subcategory_selection_screen.dart';
 
 class CategorySelectionScreen extends StatelessWidget {
-  const CategorySelectionScreen({super.key});
+  final List<WordCategory> categories;
+
+  const CategorySelectionScreen({
+    super.key,
+    required this.categories,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +34,9 @@ class CategorySelectionScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (_) => const ModeSelectionScreen(
+                    builder: (_) => ModeSelectionScreen(
                       isAll: true,
+                      allCategories: categories,
                     ),
                   ),
                 );
@@ -45,6 +53,7 @@ class CategorySelectionScreen extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (_) => SubcategorySelectionScreen(
                       category: selectedCategory,
+                      allCategories: categories,
                     ),
                   ),
                 );
@@ -54,6 +63,7 @@ class CategorySelectionScreen extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (_) => ModeSelectionScreen(
                       category: selectedCategory,
+                      allCategories: categories,
                     ),
                   ),
                 );

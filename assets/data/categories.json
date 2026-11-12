@@ -1,0 +1,46 @@
+
+[
+  {
+    "name": "Неправильні Дієслова",
+    "wordsFile": "vocabulary/irregular_verbs.json"
+  },
+  {
+    "name": "Числівники",
+    "subcategories": [
+      {
+        "name": "Кількісні",
+        "subcategories": [
+          {
+            "name": "0–10",
+            "wordsFile": "vocabulary/cardinal_0_10.json"
+          },
+          {
+            "name": "11–19",
+            "wordsFile": "vocabulary/cardinal_11_19.json"
+          },
+          {
+            "name": "Десятки",
+            "wordsFile": "vocabulary/cardinal_tens.json"
+          },
+          {
+            "name": "Сотні",
+            "wordsFile": "vocabulary/cardinal_hundreds.json"
+          }
+        ]
+      },
+      {
+        "name": "Порядкові",
+        "subcategories": [
+          {
+            "name": "1–10",
+            "wordsFile": "vocabulary/ordinal_1_10.json"
+          },
+          {
+            "name": "11–19",
+            "wordsFile": "vocabulary/ordinal_11_19.json"
+          }
+        ]
+      }
+    ]
+  }
+]
