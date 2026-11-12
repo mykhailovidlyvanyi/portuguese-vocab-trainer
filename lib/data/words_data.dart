@@ -123,6 +123,9 @@ final categories = [
     name: 'Числівники',
     subcategories: [
       WordCategory(
+        name: 'Кількісні',
+        subcategories: [
+          WordCategory(
         name: '0–10',
         words: [
           WordEntry(english: "zero", portuguese: "zero", numericValue: 0, weight: 1.0),
@@ -140,7 +143,7 @@ final categories = [
           WordEntry(english: "ten", portuguese: "dez", numericValue: 10, weight: 1.0),
         ],
       ),
-      WordCategory(
+          WordCategory(
         name: '11–20',
         words: [
           WordEntry(english: "eleven", portuguese: "onze", numericValue: 11, weight: 1.0),
@@ -154,7 +157,7 @@ final categories = [
           WordEntry(english: "nineteen", portuguese: "dezanove", numericValue: 19, weight: 1.0),
         ],
       ),
-      WordCategory(
+          WordCategory(
         name: 'Десятки',
         words: [
           WordEntry(english: "twenty", portuguese: "vinte", numericValue: 20, weight: 1.0),
@@ -167,7 +170,7 @@ final categories = [
           WordEntry(english: "ninety", portuguese: "noventa", numericValue: 90, weight: 1.0),
         ],
       ),
-      WordCategory(
+          WordCategory(
         name: 'Сотні',
         words: [
           WordEntry(english: "one hundred", portuguese: "cem", numericValue: 100, weight: 1.0),
@@ -179,6 +182,78 @@ final categories = [
           WordEntry(english: "seven hundred", portuguese: "setecentos", numericValue: 700, weight: 1.0),
           WordEntry(english: "eight hundred", portuguese: "oitocentos", numericValue: 800, weight: 1.0),
           WordEntry(english: "nine hundred", portuguese: "novecentos", numericValue: 900, weight: 1.0),
+        ],
+      ),
+        ],
+      ),
+      WordCategory(
+        name: 'Порядкові',
+        subcategories: [
+          WordCategory(
+            name: '1–10',
+            words: [
+              WordEntry(english: "first", portuguese: "primeiro", numericValue: 1, englishHint: "masculine", portugueseHint: "masculino", weight: 0.5),
+              WordEntry(english: "first", portuguese: "primeira", numericValue: 1, englishHint: "feminine", portugueseHint: "feminino", weight: 0.5),
+
+              WordEntry(english: "second", portuguese: "segundo", numericValue: 2, englishHint: "masculine", portugueseHint: "masculino", weight: 0.5),
+              WordEntry(english: "second", portuguese: "segunda", numericValue: 2, englishHint: "feminine", portugueseHint: "feminino", weight: 0.5),
+
+              WordEntry(english: "third", portuguese: "terceiro", numericValue: 3, englishHint: "masculine", portugueseHint: "masculino", weight: 0.5),
+              WordEntry(english: "third", portuguese: "terceira", numericValue: 3, englishHint: "feminine", portugueseHint: "feminino", weight: 0.5),
+
+              WordEntry(english: "fourth", portuguese: "quarto", numericValue: 4, englishHint: "masculine", portugueseHint: "masculino", weight: 0.5),
+              WordEntry(english: "fourth", portuguese: "quarta", numericValue: 4, englishHint: "feminine", portugueseHint: "feminino", weight: 0.5),
+
+              WordEntry(english: "fifth", portuguese: "quinto", numericValue: 5, englishHint: "masculine", portugueseHint: "masculino", weight: 0.5),
+              WordEntry(english: "fifth", portuguese: "quinta", numericValue: 5, englishHint: "feminine", portugueseHint: "feminino", weight: 0.5),
+
+              WordEntry(english: "sixth", portuguese: "sexto", numericValue: 6, englishHint: "masculine", portugueseHint: "masculino", weight: 0.5),
+              WordEntry(english: "sixth", portuguese: "sexta", numericValue: 6, englishHint: "feminine", portugueseHint: "feminino", weight: 0.5),
+
+              WordEntry(english: "seventh", portuguese: "sétimo", numericValue: 7, englishHint: "masculine", portugueseHint: "masculino", weight: 0.5),
+              WordEntry(english: "seventh", portuguese: "sétima", numericValue: 7, englishHint: "feminine", portugueseHint: "feminino", weight: 0.5),
+
+              WordEntry(english: "eighth", portuguese: "oitavo", numericValue: 8, englishHint: "masculine", portugueseHint: "masculino", weight: 0.5),
+              WordEntry(english: "eighth", portuguese: "oitava", numericValue: 8, englishHint: "feminine", portugueseHint: "feminino", weight: 0.5),
+
+              WordEntry(english: "ninth", portuguese: "nono", numericValue: 9, englishHint: "masculine", portugueseHint: "masculino", weight: 0.5),
+              WordEntry(english: "ninth", portuguese: "nona", numericValue: 9, englishHint: "feminine", portugueseHint: "feminino", weight: 0.5),
+
+              WordEntry(english: "tenth", portuguese: "décimo", numericValue: 10, englishHint: "masculine", portugueseHint: "masculino", weight: 0.5),
+              WordEntry(english: "tenth", portuguese: "décima", numericValue: 10, englishHint: "feminine", portugueseHint: "feminino", weight: 0.5),
+            ],
+          ),
+          WordCategory(
+            name: '11–19',
+            words: [
+              WordEntry(english: "eleventh", portuguese: "décimo primeiro", numericValue: 11, englishHint: "masculine", portugueseHint: "masculino", weight: 0.5),
+              WordEntry(english: "eleventh", portuguese: "décima primeira", numericValue: 11, englishHint: "feminine", portugueseHint: "feminino", weight: 0.5),
+
+              WordEntry(english: "twelfth", portuguese: "décimo segundo", numericValue: 12, englishHint: "masculine", portugueseHint: "masculino", weight: 0.5),
+              WordEntry(english: "twelfth", portuguese: "décima segunda", numericValue: 12, englishHint: "feminine", portugueseHint: "feminino", weight: 0.5),
+
+              WordEntry(english: "thirteenth", portuguese: "décimo terceiro", numericValue: 13, englishHint: "masculine", portugueseHint: "masculino", weight: 0.5),
+              WordEntry(english: "thirteenth", portuguese: "décima terceira", numericValue: 13, englishHint: "feminine", portugueseHint: "feminino", weight: 0.5),
+
+              WordEntry(english: "fourteenth", portuguese: "décimo quarto", numericValue: 14, englishHint: "masculine", portugueseHint: "masculino", weight: 0.5),
+              WordEntry(english: "fourteenth", portuguese: "décima quarta", numericValue: 14, englishHint: "feminine", portugueseHint: "feminino", weight: 0.5),
+
+              WordEntry(english: "fifteenth", portuguese: "décimo quinto", numericValue: 15, englishHint: "masculine", portugueseHint: "masculino", weight: 0.5),
+              WordEntry(english: "fifteenth", portuguese: "décima quinta", numericValue: 15, englishHint: "feminine", portugueseHint: "feminino", weight: 0.5),
+
+              WordEntry(english: "sixteenth", portuguese: "décimo sexto", numericValue: 16, englishHint: "masculine", portugueseHint: "masculino", weight: 0.5),
+              WordEntry(english: "sixteenth", portuguese: "décima sexta", numericValue: 16, englishHint: "feminine", portugueseHint: "feminino", weight: 0.5),
+
+              WordEntry(english: "seventeenth", portuguese: "décimo sétimo", numericValue: 17, englishHint: "masculine", portugueseHint: "masculino", weight: 0.5),
+              WordEntry(english: "seventeenth", portuguese: "décima sétima", numericValue: 17, englishHint: "feminine", portugueseHint: "feminino", weight: 0.5),
+
+              WordEntry(english: "eighteenth", portuguese: "décimo oitavo", numericValue: 18, englishHint: "masculine", portugueseHint: "masculino", weight: 0.5),
+              WordEntry(english: "eighteenth", portuguese: "décima oitava", numericValue: 18, englishHint: "feminine", portugueseHint: "feminino", weight: 0.5),
+
+              WordEntry(english: "nineteenth", portuguese: "décimo nono", numericValue: 19, englishHint: "masculine", portugueseHint: "masculino", weight: 0.5),
+              WordEntry(english: "nineteenth", portuguese: "décima nona", numericValue: 19, englishHint: "feminine", portugueseHint: "feminino", weight: 0.5),
+            ],
+          ),
         ],
       ),
     ],

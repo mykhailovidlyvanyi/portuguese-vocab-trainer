@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import '../models/word_category.dart';
+import '../models/word_entry.dart';
 import 'mode_selection_screen.dart';
 
 class SubcategorySelectionScreen extends StatelessWidget {
@@ -14,14 +15,11 @@ class SubcategorySelectionScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Збираємо слова з усіх підкатегорій
-    final allWords = category.subcategories
-        .expand((subcategory) => subcategory.words)
-        .toList();
+    // Збираємо слова з усіх рівнів вкладеності
+    final allWords = _getAllWords(category);
 
-    // Створюємо категорію для всіх числівників
-    final allNumbersCategory = WordCategory(
-      name: 'Усі числівники',
+    final allWordsCategory = WordCategory(
+      name: 'Усі ${category.name.toLowerCase()}',
       words: allWords,
     );
 
@@ -31,21 +29,22 @@ class SubcategorySelectionScreen extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          // Навчання всіх числівників
-          ListTile(
-            title: const Text('Усі числівники'),
-            trailing: const Icon(Icons.chevron_right),
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (_) => ModeSelectionScreen(
-                  category: allNumbersCategory,
+          // Навчання всіх слів поточної категорії
+          if (category.subcategories.isNotEmpty && allWords.isNotEmpty)
+            ListTile(
+              title: Text('Усі ${category.name.toLowerCase()}'),
+              trailing: const Icon(Icons.chevron_right),
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => ModeSelectionScreen(
+                    category: allWordsCategory,
+                  ),
                 ),
               ),
             ),
-          ),
 
-          // Окремі підкатегорії
+          // Підкатегорії
           ...category.subcategories.map((subcategory) {
             return ListTile(
               title: Text(subcategory.name),
@@ -53,9 +52,9 @@ class SubcategorySelectionScreen extends StatelessWidget {
               onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (_) => ModeSelectionScreen(
-                    category: subcategory,
-                  ),
+                  builder: (_) => subcategory.subcategories.isNotEmpty
+                      ? SubcategorySelectionScreen(category: subcategory)
+                      : ModeSelectionScreen(category: subcategory),
                 ),
               ),
             );
@@ -63,5 +62,13 @@ class SubcategorySelectionScreen extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  // Рекурсивно збираємо слова з усіх підкатегорій
+  List<WordEntry> _getAllWords(WordCategory category) {
+    return [
+      ...category.words,
+      ...category.subcategories.expand(_getAllWords),
+    ];
   }
 }
