@@ -58,6 +58,7 @@ class VocabularyService {
         .map(
           (item) => WordEntry.fromJson(item as Map<String, dynamic>),
     )
+        .expand((word) => word.toStudyEntries())
         .toList();
   }
 }

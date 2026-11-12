@@ -1,520 +1,716 @@
 [
   {
     "english": "to be",
+    "portuguese": "ser",
+    "type": "verb",
+    "weight": 1.0,
+    "englishHint": "permanent, identity",
+    "portugueseHint": "permanente, identidade",
+    "tenses": {
+      "present": [
+        {
+          "person": "eu",
+          "english": "I am",
+          "portuguese": "eu sou",
+          "weight": 1.0
+        },
+        {
+          "person": "tu",
+          "english": "you are",
+          "portuguese": "tu és",
+          "englishHint": "singular, informal",
+          "portugueseHint": "singular, informal",
+          "weight": 0.25
+        },
+        {
+          "person": "você",
+          "english": "you are",
+          "portuguese": "você é",
+          "englishHint": "singular, formal",
+          "portugueseHint": "singular, formal",
+          "weight": 0.25
+        },
+        {
+          "person": "ele",
+          "english": "he is",
+          "portuguese": "ele é",
+          "weight": 0.25
+        },
+        {
+          "person": "ela",
+          "english": "she is",
+          "portuguese": "ela é",
+          "weight": 0.25
+        },
+        {
+          "person": "nós",
+          "english": "we are",
+          "portuguese": "nós somos",
+          "weight": 1.0
+        },
+        {
+          "person": "eles",
+          "english": "they are",
+          "portuguese": "eles são",
+          "weight": 0.33
+        },
+        {
+          "person": "elas",
+          "english": "they are",
+          "portuguese": "elas são",
+          "weight": 0.33
+        },
+        {
+          "person": "vocês",
+          "english": "you are",
+          "portuguese": "vocês são",
+          "englishHint": "plural",
+          "portugueseHint": "plural",
+          "weight": 0.33
+        }
+      ]
+    }
+  },
+  {
+    "english": "to be",
     "portuguese": "estar",
+    "type": "verb",
+    "weight": 1.0,
     "englishHint": "temporary",
     "portugueseHint": "temporário",
-    "weight": 1.0
-  },
-  {
-    "english": "I am",
-    "portuguese": "eu estou",
-    "englishHint": "temporary",
-    "portugueseHint": "temporário",
-    "weight": 1.0
-  },
-  {
-    "english": "you are",
-    "portuguese": "você está",
-    "englishHint": "temporary, formal",
-    "portugueseHint": "temporário, formal",
-    "weight": 0.25
-  },
-  {
-    "english": "he is",
-    "portuguese": "ele está",
-    "englishHint": "temporary",
-    "portugueseHint": "temporário",
-    "weight": 0.25
-  },
-  {
-    "english": "she is",
-    "portuguese": "ela está",
-    "englishHint": "temporary",
-    "portugueseHint": "temporário",
-    "weight": 0.25
-  },
-  {
-    "english": "you are",
-    "portuguese": "tu estás",
-    "englishHint": "temporary, informal",
-    "portugueseHint": "temporário, informal",
-    "weight": 0.25
-  },
-  {
-    "english": "we are",
-    "portuguese": "nós estamos",
-    "englishHint": "temporary",
-    "portugueseHint": "temporário",
-    "weight": 1.0
-  },
-  {
-    "english": "they are",
-    "portuguese": "eles estão",
-    "englishHint": "temporary",
-    "portugueseHint": "temporário",
-    "weight": 0.33
-  },
-  {
-    "english": "they are",
-    "portuguese": "elas estão",
-    "englishHint": "temporary",
-    "portugueseHint": "temporário",
-    "weight": 0.33
-  },
-  {
-    "english": "you are",
-    "portuguese": "vocês estão",
-    "englishHint": "temporary, plural",
-    "portugueseHint": "temporário, plural",
-    "weight": 0.33
+    "tenses": {
+      "present": [
+        {
+          "person": "eu",
+          "english": "I am",
+          "portuguese": "eu estou",
+          "weight": 1.0
+        },
+        {
+          "person": "tu",
+          "english": "you are",
+          "portuguese": "tu estás",
+          "englishHint": "temporary, informal",
+          "portugueseHint": "temporário, informal",
+          "weight": 0.25
+        },
+        {
+          "person": "você",
+          "english": "you are",
+          "portuguese": "você está",
+          "englishHint": "temporary, formal",
+          "portugueseHint": "temporário, formal",
+          "weight": 0.25
+        },
+        {
+          "person": "ele",
+          "english": "he is",
+          "portuguese": "ele está",
+          "englishHint": "temporary",
+          "portugueseHint": "temporário",
+          "weight": 0.25
+        },
+        {
+          "person": "ela",
+          "english": "she is",
+          "portuguese": "ela está",
+          "englishHint": "temporary",
+          "portugueseHint": "temporário",
+          "weight": 0.25
+        },
+        {
+          "person": "nós",
+          "english": "we are",
+          "portuguese": "nós estamos",
+          "englishHint": "temporary",
+          "portugueseHint": "temporário",
+          "weight": 1.0
+        },
+        {
+          "person": "eles",
+          "english": "they are",
+          "portuguese": "eles estão",
+          "englishHint": "temporary",
+          "portugueseHint": "temporário",
+          "weight": 0.33
+        },
+        {
+          "person": "elas",
+          "english": "they are",
+          "portuguese": "elas estão",
+          "englishHint": "temporary",
+          "portugueseHint": "temporário",
+          "weight": 0.33
+        },
+        {
+          "person": "vocês",
+          "english": "you are",
+          "portuguese": "vocês estão",
+          "englishHint": "temporary, plural",
+          "portugueseHint": "temporário, plural",
+          "weight": 0.33
+        }
+      ]
+    }
   },
   {
     "english": "to have",
     "portuguese": "ter",
-    "weight": 1.0
-  },
-  {
-    "english": "I have",
-    "portuguese": "eu tenho",
-    "weight": 1.0
-  },
-  {
-    "english": "you have",
-    "portuguese": "você tem",
-    "englishHint": "singular, formal",
-    "portugueseHint": "singular, formal",
-    "weight": 0.25
-  },
-  {
-    "english": "he has",
-    "portuguese": "ele tem",
-    "weight": 0.25
-  },
-  {
-    "english": "she has",
-    "portuguese": "ela tem",
-    "weight": 0.25
-  },
-  {
-    "english": "you have",
-    "portuguese": "tu tens",
-    "englishHint": "singular, informal",
-    "portugueseHint": "singular, informal",
-    "weight": 0.25
-  },
-  {
-    "english": "we have",
-    "portuguese": "nós temos",
-    "weight": 1.0
-  },
-  {
-    "english": "they have",
-    "portuguese": "eles têm",
-    "weight": 0.33
-  },
-  {
-    "english": "they have",
-    "portuguese": "elas têm",
-    "weight": 0.33
-  },
-  {
-    "english": "you have",
-    "portuguese": "vocês têm",
-    "englishHint": "plural",
-    "portugueseHint": "plural",
-    "weight": 0.33
+    "type": "verb",
+    "weight": 1.0,
+    "tenses": {
+      "present": [
+        {
+          "person": "eu",
+          "english": "I have",
+          "portuguese": "eu tenho",
+          "weight": 1.0
+        },
+        {
+          "person": "tu",
+          "english": "you have",
+          "portuguese": "tu tens",
+          "englishHint": "singular, informal",
+          "portugueseHint": "singular, informal",
+          "weight": 0.25
+        },
+        {
+          "person": "você",
+          "english": "you have",
+          "portuguese": "você tem",
+          "englishHint": "singular, formal",
+          "portugueseHint": "singular, formal",
+          "weight": 0.25
+        },
+        {
+          "person": "ele",
+          "english": "he has",
+          "portuguese": "ele tem",
+          "weight": 0.25
+        },
+        {
+          "person": "ela",
+          "english": "she has",
+          "portuguese": "ela tem",
+          "weight": 0.25
+        },
+        {
+          "person": "nós",
+          "english": "we have",
+          "portuguese": "nós temos",
+          "weight": 1.0
+        },
+        {
+          "person": "eles",
+          "english": "they have",
+          "portuguese": "eles têm",
+          "weight": 0.33
+        },
+        {
+          "person": "elas",
+          "english": "they have",
+          "portuguese": "elas têm",
+          "weight": 0.33
+        },
+        {
+          "person": "vocês",
+          "english": "you have",
+          "portuguese": "vocês têm",
+          "englishHint": "plural",
+          "portugueseHint": "plural",
+          "weight": 0.33
+        }
+      ]
+    }
   },
   {
     "english": "to go",
     "portuguese": "ir",
-    "weight": 1.0
-  },
-  {
-    "english": "I go",
-    "portuguese": "eu vou",
-    "weight": 1.0
-  },
-  {
-    "english": "you go",
-    "portuguese": "você vai",
-    "englishHint": "singular, formal",
-    "portugueseHint": "singular, formal",
-    "weight": 0.25
-  },
-  {
-    "english": "he goes",
-    "portuguese": "ele vai",
-    "weight": 0.25
-  },
-  {
-    "english": "she goes",
-    "portuguese": "ela vai",
-    "weight": 0.25
-  },
-  {
-    "english": "you go",
-    "portuguese": "tu vais",
-    "englishHint": "singular, informal",
-    "portugueseHint": "singular, informal",
-    "weight": 0.25
-  },
-  {
-    "english": "we go",
-    "portuguese": "nós vamos",
-    "weight": 1.0
-  },
-  {
-    "english": "they go",
-    "portuguese": "eles vão",
-    "weight": 0.33
-  },
-  {
-    "english": "they go",
-    "portuguese": "elas vão",
-    "weight": 0.33
-  },
-  {
-    "english": "you go",
-    "portuguese": "vocês vão",
-    "englishHint": "plural",
-    "portugueseHint": "plural",
-    "weight": 0.33
+    "type": "verb",
+    "weight": 1.0,
+    "tenses": {
+      "present": [
+        {
+          "person": "eu",
+          "english": "I go",
+          "portuguese": "eu vou",
+          "weight": 1.0
+        },
+        {
+          "person": "tu",
+          "english": "you go",
+          "portuguese": "tu vais",
+          "englishHint": "singular, informal",
+          "portugueseHint": "singular, informal",
+          "weight": 0.25
+        },
+        {
+          "person": "você",
+          "english": "you go",
+          "portuguese": "você vai",
+          "englishHint": "singular, formal",
+          "portugueseHint": "singular, formal",
+          "weight": 0.25
+        },
+        {
+          "person": "ele",
+          "english": "he goes",
+          "portuguese": "ele vai",
+          "weight": 0.25
+        },
+        {
+          "person": "ela",
+          "english": "she goes",
+          "portuguese": "ela vai",
+          "weight": 0.25
+        },
+        {
+          "person": "nós",
+          "english": "we go",
+          "portuguese": "nós vamos",
+          "weight": 1.0
+        },
+        {
+          "person": "eles",
+          "english": "they go",
+          "portuguese": "eles vão",
+          "weight": 0.33
+        },
+        {
+          "person": "elas",
+          "english": "they go",
+          "portuguese": "elas vão",
+          "weight": 0.33
+        },
+        {
+          "person": "vocês",
+          "english": "you go",
+          "portuguese": "vocês vão",
+          "englishHint": "plural",
+          "portugueseHint": "plural",
+          "weight": 0.33
+        }
+      ]
+    }
   },
   {
     "english": "to do",
     "portuguese": "fazer",
-    "weight": 1.0
-  },
-  {
-    "english": "I do",
-    "portuguese": "eu faço",
-    "weight": 1.0
-  },
-  {
-    "english": "you do",
-    "portuguese": "você faz",
-    "englishHint": "singular, formal",
-    "portugueseHint": "singular, formal",
-    "weight": 0.25
-  },
-  {
-    "english": "he does",
-    "portuguese": "ele faz",
-    "weight": 0.25
-  },
-  {
-    "english": "she does",
-    "portuguese": "ela faz",
-    "weight": 0.25
-  },
-  {
-    "english": "you do",
-    "portuguese": "tu fazes",
-    "englishHint": "singular, informal",
-    "portugueseHint": "singular, informal",
-    "weight": 0.25
-  },
-  {
-    "english": "we do",
-    "portuguese": "nós fazemos",
-    "weight": 1.0
-  },
-  {
-    "english": "they do",
-    "portuguese": "eles fazem",
-    "weight": 0.33
-  },
-  {
-    "english": "they do",
-    "portuguese": "elas fazem",
-    "weight": 0.33
-  },
-  {
-    "english": "you do",
-    "portuguese": "vocês fazem",
-    "englishHint": "plural",
-    "portugueseHint": "plural",
-    "weight": 0.33
+    "type": "verb",
+    "weight": 1.0,
+    "tenses": {
+      "present": [
+        {
+          "person": "eu",
+          "english": "I do",
+          "portuguese": "eu faço",
+          "weight": 1.0
+        },
+        {
+          "person": "tu",
+          "english": "you do",
+          "portuguese": "tu fazes",
+          "englishHint": "singular, informal",
+          "portugueseHint": "singular, informal",
+          "weight": 0.25
+        },
+        {
+          "person": "você",
+          "english": "you do",
+          "portuguese": "você faz",
+          "englishHint": "singular, formal",
+          "portugueseHint": "singular, formal",
+          "weight": 0.25
+        },
+        {
+          "person": "ele",
+          "english": "he does",
+          "portuguese": "ele faz",
+          "weight": 0.25
+        },
+        {
+          "person": "ela",
+          "english": "she does",
+          "portuguese": "ela faz",
+          "weight": 0.25
+        },
+        {
+          "person": "nós",
+          "english": "we do",
+          "portuguese": "nós fazemos",
+          "weight": 1.0
+        },
+        {
+          "person": "eles",
+          "english": "they do",
+          "portuguese": "eles fazem",
+          "weight": 0.33
+        },
+        {
+          "person": "elas",
+          "english": "they do",
+          "portuguese": "elas fazem",
+          "weight": 0.33
+        },
+        {
+          "person": "vocês",
+          "english": "you do",
+          "portuguese": "vocês fazem",
+          "englishHint": "plural",
+          "portugueseHint": "plural",
+          "weight": 0.33
+        }
+      ]
+    }
   },
   {
     "english": "to say",
     "portuguese": "dizer",
-    "weight": 1.0
-  },
-  {
-    "english": "I say",
-    "portuguese": "eu digo",
-    "weight": 1.0
-  },
-  {
-    "english": "you say",
-    "portuguese": "você diz",
-    "englishHint": "singular, formal",
-    "portugueseHint": "singular, formal",
-    "weight": 0.25
-  },
-  {
-    "english": "he says",
-    "portuguese": "ele diz",
-    "weight": 0.25
-  },
-  {
-    "english": "she says",
-    "portuguese": "ela diz",
-    "weight": 0.25
-  },
-  {
-    "english": "you say",
-    "portuguese": "tu dizes",
-    "englishHint": "singular, informal",
-    "portugueseHint": "singular, informal",
-    "weight": 0.25
-  },
-  {
-    "english": "we say",
-    "portuguese": "nós dizemos",
-    "weight": 1.0
-  },
-  {
-    "english": "they say",
-    "portuguese": "eles dizem",
-    "weight": 0.33
-  },
-  {
-    "english": "they say",
-    "portuguese": "elas dizem",
-    "weight": 0.33
-  },
-  {
-    "english": "you say",
-    "portuguese": "vocês dizem",
-    "englishHint": "plural",
-    "portugueseHint": "plural",
-    "weight": 0.33
+    "type": "verb",
+    "weight": 1.0,
+    "tenses": {
+      "present": [
+        {
+          "person": "eu",
+          "english": "I say",
+          "portuguese": "eu digo",
+          "weight": 1.0
+        },
+        {
+          "person": "tu",
+          "english": "you say",
+          "portuguese": "tu dizes",
+          "englishHint": "singular, informal",
+          "portugueseHint": "singular, informal",
+          "weight": 0.25
+        },
+        {
+          "person": "você",
+          "english": "you say",
+          "portuguese": "você diz",
+          "englishHint": "singular, formal",
+          "portugueseHint": "singular, formal",
+          "weight": 0.25
+        },
+        {
+          "person": "ele",
+          "english": "he says",
+          "portuguese": "ele diz",
+          "weight": 0.25
+        },
+        {
+          "person": "ela",
+          "english": "she says",
+          "portuguese": "ela diz",
+          "weight": 0.25
+        },
+        {
+          "person": "nós",
+          "english": "we say",
+          "portuguese": "nós dizemos",
+          "weight": 1.0
+        },
+        {
+          "person": "eles",
+          "english": "they say",
+          "portuguese": "eles dizem",
+          "weight": 0.33
+        },
+        {
+          "person": "elas",
+          "english": "they say",
+          "portuguese": "elas dizem",
+          "weight": 0.33
+        },
+        {
+          "person": "vocês",
+          "english": "you say",
+          "portuguese": "vocês dizem",
+          "englishHint": "plural",
+          "portugueseHint": "plural",
+          "weight": 0.33
+        }
+      ]
+    }
   },
   {
     "english": "to come",
     "portuguese": "vir",
-    "weight": 1.0
-  },
-  {
-    "english": "I come",
-    "portuguese": "eu venho",
-    "weight": 1.0
-  },
-  {
-    "english": "you come",
-    "portuguese": "você vem",
-    "englishHint": "singular, formal",
-    "portugueseHint": "singular, formal",
-    "weight": 0.33
-  },
-  {
-    "english": "he comes",
-    "portuguese": "ele vem",
-    "weight": 0.33
-  },
-  {
-    "english": "she comes",
-    "portuguese": "ela vem",
-    "weight": 0.33
-  },
-  {
-    "english": "you come",
-    "portuguese": "tu vens",
-    "englishHint": "singular, informal",
-    "portugueseHint": "singular, informal",
-    "weight": 1.0
-  },
-  {
-    "english": "we come",
-    "portuguese": "nós vimos",
-    "weight": 1.0
-  },
-  {
-    "english": "they come",
-    "portuguese": "eles vêm",
-    "weight": 0.33
-  },
-  {
-    "english": "they come",
-    "portuguese": "elas vêm",
-    "weight": 0.33
-  },
-  {
-    "english": "you come",
-    "portuguese": "vocês vêm",
-    "englishHint": "plural",
-    "portugueseHint": "plural",
-    "weight": 0.33
+    "type": "verb",
+    "weight": 1.0,
+    "tenses": {
+      "present": [
+        {
+          "person": "eu",
+          "english": "I come",
+          "portuguese": "eu venho",
+          "weight": 1.0
+        },
+        {
+          "person": "tu",
+          "english": "you come",
+          "portuguese": "tu vens",
+          "englishHint": "singular, informal",
+          "portugueseHint": "singular, informal",
+          "weight": 1.0
+        },
+        {
+          "person": "você",
+          "english": "you come",
+          "portuguese": "você vem",
+          "englishHint": "singular, formal",
+          "portugueseHint": "singular, formal",
+          "weight": 0.33
+        },
+        {
+          "person": "ele",
+          "english": "he comes",
+          "portuguese": "ele vem",
+          "weight": 0.33
+        },
+        {
+          "person": "ela",
+          "english": "she comes",
+          "portuguese": "ela vem",
+          "weight": 0.33
+        },
+        {
+          "person": "nós",
+          "english": "we come",
+          "portuguese": "nós vimos",
+          "weight": 1.0
+        },
+        {
+          "person": "eles",
+          "english": "they come",
+          "portuguese": "eles vêm",
+          "weight": 0.33
+        },
+        {
+          "person": "elas",
+          "english": "they come",
+          "portuguese": "elas vêm",
+          "weight": 0.33
+        },
+        {
+          "person": "vocês",
+          "english": "you come",
+          "portuguese": "vocês vêm",
+          "englishHint": "plural",
+          "portugueseHint": "plural",
+          "weight": 0.33
+        }
+      ]
+    }
   },
   {
     "english": "can",
     "portuguese": "poder",
-    "weight": 1.0
-  },
-  {
-    "english": "I can",
-    "portuguese": "eu posso",
-    "weight": 1.0
-  },
-  {
-    "english": "you can",
-    "portuguese": "você pode",
-    "englishHint": "singular, formal",
-    "portugueseHint": "singular, formal",
-    "weight": 0.33
-  },
-  {
-    "english": "he can",
-    "portuguese": "ele pode",
-    "weight": 0.33
-  },
-  {
-    "english": "she can",
-    "portuguese": "ela pode",
-    "weight": 0.33
-  },
-  {
-    "english": "you can",
-    "portuguese": "tu podes",
-    "englishHint": "singular, informal",
-    "portugueseHint": "singular, informal",
-    "weight": 1.0
-  },
-  {
-    "english": "we can",
-    "portuguese": "nós podemos",
-    "weight": 1.0
-  },
-  {
-    "english": "they can",
-    "portuguese": "eles podem",
-    "weight": 0.33
-  },
-  {
-    "english": "they can",
-    "portuguese": "elas podem",
-    "weight": 0.33
-  },
-  {
-    "english": "you can",
-    "portuguese": "vocês podem",
-    "englishHint": "plural",
-    "portugueseHint": "plural",
-    "weight": 0.33
+    "type": "verb",
+    "weight": 1.0,
+    "tenses": {
+      "present": [
+        {
+          "person": "eu",
+          "english": "I can",
+          "portuguese": "eu posso",
+          "weight": 1.0
+        },
+        {
+          "person": "tu",
+          "english": "you can",
+          "portuguese": "tu podes",
+          "englishHint": "singular, informal",
+          "portugueseHint": "singular, informal",
+          "weight": 1.0
+        },
+        {
+          "person": "você",
+          "english": "you can",
+          "portuguese": "você pode",
+          "englishHint": "singular, formal",
+          "portugueseHint": "singular, formal",
+          "weight": 0.33
+        },
+        {
+          "person": "ele",
+          "english": "he can",
+          "portuguese": "ele pode",
+          "weight": 0.33
+        },
+        {
+          "person": "ela",
+          "english": "she can",
+          "portuguese": "ela pode",
+          "weight": 0.33
+        },
+        {
+          "person": "nós",
+          "english": "we can",
+          "portuguese": "nós podemos",
+          "weight": 1.0
+        },
+        {
+          "person": "eles",
+          "english": "they can",
+          "portuguese": "eles podem",
+          "weight": 0.33
+        },
+        {
+          "person": "elas",
+          "english": "they can",
+          "portuguese": "elas podem",
+          "weight": 0.33
+        },
+        {
+          "person": "vocês",
+          "english": "you can",
+          "portuguese": "vocês podem",
+          "englishHint": "plural",
+          "portugueseHint": "plural",
+          "weight": 0.33
+        }
+      ]
+    }
   },
   {
     "english": "to want",
     "portuguese": "querer",
-    "weight": 1.0
-  },
-  {
-    "english": "I want",
-    "portuguese": "eu quero",
-    "weight": 1.0
-  },
-  {
-    "english": "you want",
-    "portuguese": "você quer",
-    "englishHint": "singular, formal",
-    "portugueseHint": "singular, formal",
-    "weight": 0.33
-  },
-  {
-    "english": "he wants",
-    "portuguese": "ele quer",
-    "weight": 0.33
-  },
-  {
-    "english": "she wants",
-    "portuguese": "ela quer",
-    "weight": 0.33
-  },
-  {
-    "english": "you want",
-    "portuguese": "tu queres",
-    "englishHint": "singular, informal",
-    "portugueseHint": "singular, informal",
-    "weight": 1.0
-  },
-  {
-    "english": "we want",
-    "portuguese": "nós queremos",
-    "weight": 1.0
-  },
-  {
-    "english": "they want",
-    "portuguese": "eles querem",
-    "weight": 0.33
-  },
-  {
-    "english": "they want",
-    "portuguese": "elas querem",
-    "weight": 0.33
-  },
-  {
-    "english": "you want",
-    "portuguese": "vocês querem",
-    "englishHint": "plural",
-    "portugueseHint": "plural",
-    "weight": 0.33
+    "type": "verb",
+    "weight": 1.0,
+    "tenses": {
+      "present": [
+        {
+          "person": "eu",
+          "english": "I want",
+          "portuguese": "eu quero",
+          "weight": 1.0
+        },
+        {
+          "person": "tu",
+          "english": "you want",
+          "portuguese": "tu queres",
+          "englishHint": "singular, informal",
+          "portugueseHint": "singular, informal",
+          "weight": 1.0
+        },
+        {
+          "person": "você",
+          "english": "you want",
+          "portuguese": "você quer",
+          "englishHint": "singular, formal",
+          "portugueseHint": "singular, formal",
+          "weight": 0.33
+        },
+        {
+          "person": "ele",
+          "english": "he wants",
+          "portuguese": "ele quer",
+          "weight": 0.33
+        },
+        {
+          "person": "ela",
+          "english": "she wants",
+          "portuguese": "ela quer",
+          "weight": 0.33
+        },
+        {
+          "person": "nós",
+          "english": "we want",
+          "portuguese": "nós queremos",
+          "weight": 1.0
+        },
+        {
+          "person": "eles",
+          "english": "they want",
+          "portuguese": "eles querem",
+          "weight": 0.33
+        },
+        {
+          "person": "elas",
+          "english": "they want",
+          "portuguese": "elas querem",
+          "weight": 0.33
+        },
+        {
+          "person": "vocês",
+          "english": "you want",
+          "portuguese": "vocês querem",
+          "englishHint": "plural",
+          "portugueseHint": "plural",
+          "weight": 0.33
+        }
+      ]
+    }
   },
   {
     "english": "to know",
     "portuguese": "saber",
-    "weight": 1.0
-  },
-  {
-    "english": "I know",
-    "portuguese": "eu sei",
-    "weight": 1.0
-  },
-  {
-    "english": "you know",
-    "portuguese": "você sabe",
-    "englishHint": "singular, formal",
-    "portugueseHint": "singular, formal",
-    "weight": 0.33
-  },
-  {
-    "english": "he knows",
-    "portuguese": "ele sabe",
-    "weight": 0.33
-  },
-  {
-    "english": "she knows",
-    "portuguese": "ela sabe",
-    "weight": 0.33
-  },
-  {
-    "english": "you know",
-    "portuguese": "tu sabes",
-    "englishHint": "singular, informal",
-    "portugueseHint": "singular, informal",
-    "weight": 1.0
-  },
-  {
-    "english": "we know",
-    "portuguese": "nós sabemos",
-    "weight": 1.0
-  },
-  {
-    "english": "they know",
-    "portuguese": "eles sabem",
-    "weight": 0.33
-  },
-  {
-    "english": "they know",
-    "portuguese": "elas sabem",
-    "weight": 0.33
-  },
-  {
-    "english": "you know",
-    "portuguese": "vocês sabem",
-    "englishHint": "plural",
-    "portugueseHint": "plural",
-    "weight": 0.33
+    "type": "verb",
+    "weight": 1.0,
+    "tenses": {
+      "present": [
+        {
+          "person": "eu",
+          "english": "I know",
+          "portuguese": "eu sei",
+          "weight": 1.0
+        },
+        {
+          "person": "tu",
+          "english": "you know",
+          "portuguese": "tu sabes",
+          "englishHint": "singular, informal",
+          "portugueseHint": "singular, informal",
+          "weight": 1.0
+        },
+        {
+          "person": "você",
+          "english": "you know",
+          "portuguese": "você sabe",
+          "englishHint": "singular, formal",
+          "portugueseHint": "singular, formal",
+          "weight": 0.33
+        },
+        {
+          "person": "ele",
+          "english": "he knows",
+          "portuguese": "ele sabe",
+          "weight": 0.33
+        },
+        {
+          "person": "ela",
+          "english": "she knows",
+          "portuguese": "ela sabe",
+          "weight": 0.33
+        },
+        {
+          "person": "nós",
+          "english": "we know",
+          "portuguese": "nós sabemos",
+          "weight": 1.0
+        },
+        {
+          "person": "eles",
+          "english": "they know",
+          "portuguese": "eles sabem",
+          "weight": 0.33
+        },
+        {
+          "person": "elas",
+          "english": "they know",
+          "portuguese": "elas sabem",
+          "weight": 0.33
+        },
+        {
+          "person": "vocês",
+          "english": "you know",
+          "portuguese": "vocês sabem",
+          "englishHint": "plural",
+          "portugueseHint": "plural",
+          "weight": 0.33
+        }
+      ]
+    }
   }
 ]
