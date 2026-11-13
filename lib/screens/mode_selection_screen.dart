@@ -4,7 +4,7 @@
 import 'package:material_ui/material_ui.dart';
 
 import '../models/word_category.dart';
-import 'study_screen.dart';
+import 'typing_study_screen.dart';
 
 class ModeSelectionScreen extends StatelessWidget {
   final WordCategory? category;
@@ -31,7 +31,7 @@ class ModeSelectionScreen extends StatelessWidget {
             onTap: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (_) => StudyScreen(
+                builder: (_) => TypingStudyScreen(
                   category: category,
                   isAll: isAll,
                   allCategories: allCategories,
@@ -45,7 +45,7 @@ class ModeSelectionScreen extends StatelessWidget {
             onTap: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (_) => StudyScreen(
+                builder: (_) => TypingStudyScreen(
                   category: category,
                   isAll: isAll,
                   allCategories: allCategories,
@@ -59,7 +59,7 @@ class ModeSelectionScreen extends StatelessWidget {
             onTap: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (_) => StudyScreen(
+                builder: (_) => TypingStudyScreen(
                   category: category,
                   isAll: isAll,
                   allCategories: allCategories,

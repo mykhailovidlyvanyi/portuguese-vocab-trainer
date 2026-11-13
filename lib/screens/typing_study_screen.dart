@@ -1,4 +1,4 @@
-// screens/study_screen.dart
+// screens/typing_study_screen.dart
 
 import 'package:material_ui/material_ui.dart';
 
@@ -11,13 +11,13 @@ import '../widgets/session_statistics.dart';
 
 import 'category_selection_screen.dart';
 
-class StudyScreen extends StatefulWidget {
+class TypingStudyScreen extends StatefulWidget {
   final WordCategory? category;
   final bool isAll;
   final String mode;
   final List<WordCategory> allCategories;
 
-  const StudyScreen({
+  const TypingStudyScreen({
     super.key,
     this.category,
     this.isAll = false,
@@ -26,10 +26,10 @@ class StudyScreen extends StatefulWidget {
   });
 
   @override
-  State<StudyScreen> createState() => _StudyScreenState();
+  State<TypingStudyScreen> createState() => _TypingStudyScreenState();
 }
 
-class _StudyScreenState extends State<StudyScreen> {
+class _TypingStudyScreenState extends State<TypingStudyScreen> {
   late StudySession session;
 
   String? feedback;
