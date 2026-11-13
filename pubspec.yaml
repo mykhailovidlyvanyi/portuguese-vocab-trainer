@@ -60,7 +60,9 @@ flutter:
   assets:
     - assets/data/categories.json
     - assets/data/person_hints.json
-    - assets/data/vocabulary/
+    - assets/data/vocabulary/numbers/cardinal/
+    - assets/data/vocabulary/numbers/ordinal/
+    - assets/data/vocabulary/verbs/
     - assets/data/weights/
 
   # To add assets to your application, add an assets section, like this:
