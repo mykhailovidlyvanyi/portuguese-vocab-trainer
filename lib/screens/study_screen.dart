@@ -1,12 +1,16 @@
 // screens/study_screen.dart
 
-
 import 'package:material_ui/material_ui.dart';
 import 'dart:math';
 
 import '../models/word_entry.dart';
 import '../models/word_category.dart';
+
 import '../utils/word_selector.dart';
+import '../utils/session_stats.dart';
+
+import '../widgets/session_statistics.dart';
+
 import 'category_selection_screen.dart';
 
 class StudyScreen extends StatefulWidget {
@@ -32,9 +36,7 @@ class _StudyScreenState extends State<StudyScreen> {
   late WordEntry current;
   late bool showEnglish;
 
-  int correct = 0;
-  int total = 0;
-  int incorrect = 0;
+  final SessionStats stats = SessionStats();
 
   String? feedback;
 
@@ -88,13 +90,11 @@ class _StudyScreenState extends State<StudyScreen> {
     final isCorrect = normalized == expected;
 
     setState(() {
-      total++;
+      stats.answerSubmitted(isCorrect: isCorrect);
 
       if (isCorrect) {
-        correct++;
         feedback = '✅ Правильно!';
       } else {
-        incorrect++;
         feedback = '❌ Неправильно. Правильна відповідь: $expected';
       }
     });
@@ -142,13 +142,10 @@ class _StudyScreenState extends State<StudyScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('✅ $correct'),
-                Text('📖 $total'),
-                Text('❌ $incorrect'),
-              ],
+            SessionStatistics(
+              correct: stats.correct,
+              total: stats.total,
+              incorrect: stats.incorrect,
             ),
             const SizedBox(height: 24),
             Card(
