@@ -1,13 +1,11 @@
 // screens/study_screen.dart
 
 import 'package:material_ui/material_ui.dart';
-import 'dart:math';
 
 import '../models/word_entry.dart';
 import '../models/word_category.dart';
 
-import '../utils/word_selector.dart';
-import '../utils/session_stats.dart';
+import '../utils/study_session.dart';
 
 import '../widgets/session_statistics.dart';
 
@@ -32,26 +30,13 @@ class StudyScreen extends StatefulWidget {
 }
 
 class _StudyScreenState extends State<StudyScreen> {
-  late List<WordEntry> pool;
-  late WordEntry current;
-  late bool showEnglish;
-
-  final SessionStats stats = SessionStats();
+  late StudySession session;
 
   String? feedback;
 
   final controller = TextEditingController();
-  final WordSelector selector = WordSelector();
-  final Random uiRandom = Random();
 
   bool get isInputEmpty => controller.text.trim().isEmpty;
-
-  bool getNextDirection() {
-    if (widget.mode == 'enToPt') return true;
-    if (widget.mode == 'ptToEn') return false;
-
-    return uiRandom.nextBool();
-  }
 
   List<WordEntry> _getAllWords(WordCategory category) {
     return [
@@ -64,6 +49,8 @@ class _StudyScreenState extends State<StudyScreen> {
   void initState() {
     super.initState();
 
+    final List<WordEntry> pool;
+
     if (widget.isAll) {
       pool = widget.allCategories
           .expand(_getAllWords)
@@ -72,8 +59,10 @@ class _StudyScreenState extends State<StudyScreen> {
       pool = _getAllWords(widget.category!);
     }
 
-    current = pool.first;
-    showEnglish = getNextDirection();
+    session = StudySession(
+      pool: pool,
+      mode: widget.mode,
+    );
 
     controller.addListener(() {
       setState(() {});
@@ -81,21 +70,14 @@ class _StudyScreenState extends State<StudyScreen> {
   }
 
   void checkAnswer(String answer) {
-    final expected = showEnglish
-        ? current.portuguese.toLowerCase()
-        : current.english.toLowerCase();
-
-    final normalized = answer.trim().toLowerCase();
-
-    final isCorrect = normalized == expected;
+    final isCorrect = session.checkAnswer(answer);
 
     setState(() {
-      stats.answerSubmitted(isCorrect: isCorrect);
-
       if (isCorrect) {
         feedback = '✅ Правильно!';
       } else {
-        feedback = '❌ Неправильно. Правильна відповідь: $expected';
+        feedback =
+          '❌ Неправильно. Правильна відповідь: ${session.expectedAnswer}';
       }
     });
   }
@@ -103,8 +85,7 @@ class _StudyScreenState extends State<StudyScreen> {
   void nextWord() {
     setState(() {
       feedback = null;
-      current = selector.nextWord(pool);
-      showEnglish = getNextDirection();
+      session.nextWord();
       controller.clear();
     });
   }
@@ -143,9 +124,9 @@ class _StudyScreenState extends State<StudyScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             SessionStatistics(
-              correct: stats.correct,
-              total: stats.total,
-              incorrect: stats.incorrect,
+              correct: session.stats.correct,
+              total: session.stats.total,
+              incorrect: session.stats.incorrect,
             ),
             const SizedBox(height: 24),
             Card(
@@ -155,16 +136,21 @@ class _StudyScreenState extends State<StudyScreen> {
                 child: Column(
                   children: [
                     Text(
-                      showEnglish ? current.english : current.portuguese,
+                      session.showEnglish
+                          ? session.current.english
+                          : session.current.portuguese,
                       style: const TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    if (showEnglish && current.englishHint != null)
-                      Text('Hint: ${current.englishHint}'),
-                    if (!showEnglish && current.portugueseHint != null)
-                      Text('Dica: ${current.portugueseHint}'),
+                    if (session.showEnglish &&
+                        session.current.englishHint != null)
+                      Text('Hint: ${session.current.englishHint}'),
+
+                    if (!session.showEnglish &&
+                        session.current.portugueseHint != null)
+                      Text('Dica: ${session.current.portugueseHint}'),
                   ],
                 ),
               ),
