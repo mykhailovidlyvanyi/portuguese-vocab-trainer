@@ -51,8 +51,6 @@ class StudySession {
   }
 
   String get expectedAnswer {
-    return showEnglish
-        ? current.portuguese
-        : current.english;
+    return showEnglish ? current.portuguese : current.english;
   }
 }

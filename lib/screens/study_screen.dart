@@ -52,9 +52,7 @@ class _StudyScreenState extends State<StudyScreen> {
     final List<WordEntry> pool;
 
     if (widget.isAll) {
-      pool = widget.allCategories
-          .expand(_getAllWords)
-          .toList();
+      pool = widget.allCategories.expand(_getAllWords).toList();
     } else {
       pool = _getAllWords(widget.category!);
     }
@@ -77,7 +75,7 @@ class _StudyScreenState extends State<StudyScreen> {
         feedback = '✅ Правильно!';
       } else {
         feedback =
-          '❌ Неправильно. Правильна відповідь: ${session.expectedAnswer}';
+            '❌ Неправильно. Правильна відповідь: ${session.expectedAnswer}';
       }
     });
   }
@@ -113,7 +111,7 @@ class _StudyScreenState extends State<StudyScreen> {
                   categories: widget.allCategories,
                 ),
               ),
-                  (route) => false,
+              (route) => false,
             ),
           )
         ],
@@ -147,7 +145,6 @@ class _StudyScreenState extends State<StudyScreen> {
                     if (session.showEnglish &&
                         session.current.englishHint != null)
                       Text('Hint: ${session.current.englishHint}'),
-
                     if (!session.showEnglish &&
                         session.current.portugueseHint != null)
                       Text('Dica: ${session.current.portugueseHint}'),
@@ -167,7 +164,7 @@ class _StudyScreenState extends State<StudyScreen> {
               const SizedBox(height: 12),
               ElevatedButton(
                 onPressed:
-                isInputEmpty ? null : () => checkAnswer(controller.text),
+                    isInputEmpty ? null : () => checkAnswer(controller.text),
                 child: const Text('Перевірити'),
               ),
               TextButton(
