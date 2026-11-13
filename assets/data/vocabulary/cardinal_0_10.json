@@ -1,10 +1,8 @@
-
 [
   {
     "english": "zero",
     "portuguese": "zero",
-    "numericValue": 0,
-    "weight": 1.0
+    "numericValue": 0
   },
   {
     "english": "one",
@@ -13,8 +11,7 @@
     "hints": {
       "english": "masculine",
       "portuguese": "masculino"
-    },
-    "weight": 0.5
+    }
   },
   {
     "english": "one",
@@ -23,8 +20,7 @@
     "hints": {
       "english": "feminine",
       "portuguese": "feminino"
-    },
-    "weight": 0.5
+    }
   },
   {
     "english": "two",
@@ -33,8 +29,7 @@
     "hints": {
       "english": "masculine",
       "portuguese": "masculino"
-    },
-    "weight": 0.5
+    }
   },
   {
     "english": "two",
@@ -43,55 +38,46 @@
     "hints": {
       "english": "feminine",
       "portuguese": "feminino"
-    },
-    "weight": 0.5
+    }
   },
   {
     "english": "three",
     "portuguese": "três",
-    "numericValue": 3,
-    "weight": 1.0
+    "numericValue": 3
   },
   {
     "english": "four",
     "portuguese": "quatro",
-    "numericValue": 4,
-    "weight": 1.0
+    "numericValue": 4
   },
   {
     "english": "five",
     "portuguese": "cinco",
-    "numericValue": 5,
-    "weight": 1.0
+    "numericValue": 5
   },
   {
     "english": "six",
     "portuguese": "seis",
-    "numericValue": 6,
-    "weight": 1.0
+    "numericValue": 6
   },
   {
     "english": "seven",
     "portuguese": "sete",
-    "numericValue": 7,
-    "weight": 1.0
+    "numericValue": 7
   },
   {
     "english": "eight",
     "portuguese": "oito",
-    "numericValue": 8,
-    "weight": 1.0
+    "numericValue": 8
   },
   {
     "english": "nine",
     "portuguese": "nove",
-    "numericValue": 9,
-    "weight": 1.0
+    "numericValue": 9
   },
   {
     "english": "ten",
     "portuguese": "dez",
-    "numericValue": 10,
-    "weight": 1.0
+    "numericValue": 10
   }
 ]

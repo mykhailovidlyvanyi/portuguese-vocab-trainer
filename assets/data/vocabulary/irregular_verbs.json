@@ -4,7 +4,6 @@
     "english": "to be",
     "portuguese": "ser",
     "type": "verb",
-    "weight": 1.0,
     "hints": {
       "english": "permanent",
       "portuguese": "permanente"
@@ -14,56 +13,47 @@
         {
           "person": "eu",
           "english": "I am",
-          "portuguese": "eu sou",
-          "weight": 1.0
+          "portuguese": "eu sou"
         },
         {
           "person": "tu",
           "english": "you are",
-          "portuguese": "tu és",
-          "weight": 0.25
+          "portuguese": "tu és"
         },
         {
           "person": "você",
           "english": "you are",
-          "portuguese": "você é",
-          "weight": 0.25
+          "portuguese": "você é"
         },
         {
           "person": "ele",
           "english": "he is",
-          "portuguese": "ele é",
-          "weight": 0.25
+          "portuguese": "ele é"
         },
         {
           "person": "ela",
           "english": "she is",
-          "portuguese": "ela é",
-          "weight": 0.25
+          "portuguese": "ela é"
         },
         {
           "person": "nós",
           "english": "we are",
-          "portuguese": "nós somos",
-          "weight": 1.0
+          "portuguese": "nós somos"
         },
         {
           "person": "eles",
           "english": "they are",
-          "portuguese": "eles são",
-          "weight": 0.33
+          "portuguese": "eles são"
         },
         {
           "person": "elas",
           "english": "they are",
-          "portuguese": "elas são",
-          "weight": 0.33
+          "portuguese": "elas são"
         },
         {
           "person": "vocês",
           "english": "you are",
-          "portuguese": "vocês são",
-          "weight": 0.33
+          "portuguese": "vocês são"
         }
       ]
     }
@@ -73,7 +63,6 @@
     "english": "to be",
     "portuguese": "estar",
     "type": "verb",
-    "weight": 1.0,
     "hints": {
       "english": "temporary",
       "portuguese": "temporário"
@@ -83,56 +72,47 @@
         {
           "person": "eu",
           "english": "I am",
-          "portuguese": "eu estou",
-          "weight": 1.0
+          "portuguese": "eu estou"
         },
         {
           "person": "tu",
           "english": "you are",
-          "portuguese": "tu estás",
-          "weight": 0.25
+          "portuguese": "tu estás"
         },
         {
           "person": "você",
           "english": "you are",
-          "portuguese": "você está",
-          "weight": 0.25
+          "portuguese": "você está"
         },
         {
           "person": "ele",
           "english": "he is",
-          "portuguese": "ele está",
-          "weight": 0.25
+          "portuguese": "ele está"
         },
         {
           "person": "ela",
           "english": "she is",
-          "portuguese": "ela está",
-          "weight": 0.25
+          "portuguese": "ela está"
         },
         {
           "person": "nós",
           "english": "we are",
-          "portuguese": "nós estamos",
-          "weight": 1.0
+          "portuguese": "nós estamos"
         },
         {
           "person": "eles",
           "english": "they are",
-          "portuguese": "eles estão",
-          "weight": 0.33
+          "portuguese": "eles estão"
         },
         {
           "person": "elas",
           "english": "they are",
-          "portuguese": "elas estão",
-          "weight": 0.33
+          "portuguese": "elas estão"
         },
         {
           "person": "vocês",
           "english": "you are",
-          "portuguese": "vocês estão",
-          "weight": 0.33
+          "portuguese": "vocês estão"
         }
       ]
     }
@@ -142,62 +122,52 @@
     "english": "to have",
     "portuguese": "ter",
     "type": "verb",
-    "weight": 1.0,
     "tenses": {
       "present": [
         {
           "person": "eu",
           "english": "I have",
-          "portuguese": "eu tenho",
-          "weight": 1.0
+          "portuguese": "eu tenho"
         },
         {
           "person": "tu",
           "english": "you have",
-          "portuguese": "tu tens",
-          "weight": 0.25
+          "portuguese": "tu tens"
         },
         {
           "person": "você",
           "english": "you have",
-          "portuguese": "você tem",
-          "weight": 0.25
+          "portuguese": "você tem"
         },
         {
           "person": "ele",
           "english": "he has",
-          "portuguese": "ele tem",
-          "weight": 0.25
+          "portuguese": "ele tem"
         },
         {
           "person": "ela",
           "english": "she has",
-          "portuguese": "ela tem",
-          "weight": 0.25
+          "portuguese": "ela tem"
         },
         {
           "person": "nós",
           "english": "we have",
-          "portuguese": "nós temos",
-          "weight": 1.0
+          "portuguese": "nós temos"
         },
         {
           "person": "eles",
           "english": "they have",
-          "portuguese": "eles têm",
-          "weight": 0.33
+          "portuguese": "eles têm"
         },
         {
           "person": "elas",
           "english": "they have",
-          "portuguese": "elas têm",
-          "weight": 0.33
+          "portuguese": "elas têm"
         },
         {
           "person": "vocês",
           "english": "you have",
-          "portuguese": "vocês têm",
-          "weight": 0.33
+          "portuguese": "vocês têm"
         }
       ]
     }
@@ -207,62 +177,52 @@
     "english": "to go",
     "portuguese": "ir",
     "type": "verb",
-    "weight": 1.0,
     "tenses": {
       "present": [
         {
           "person": "eu",
           "english": "I go",
-          "portuguese": "eu vou",
-          "weight": 1.0
+          "portuguese": "eu vou"
         },
         {
           "person": "tu",
           "english": "you go",
-          "portuguese": "tu vais",
-          "weight": 0.25
+          "portuguese": "tu vais"
         },
         {
           "person": "você",
           "english": "you go",
-          "portuguese": "você vai",
-          "weight": 0.25
+          "portuguese": "você vai"
         },
         {
           "person": "ele",
           "english": "he goes",
-          "portuguese": "ele vai",
-          "weight": 0.25
+          "portuguese": "ele vai"
         },
         {
           "person": "ela",
           "english": "she goes",
-          "portuguese": "ela vai",
-          "weight": 0.25
+          "portuguese": "ela vai"
         },
         {
           "person": "nós",
           "english": "we go",
-          "portuguese": "nós vamos",
-          "weight": 1.0
+          "portuguese": "nós vamos"
         },
         {
           "person": "eles",
           "english": "they go",
-          "portuguese": "eles vão",
-          "weight": 0.33
+          "portuguese": "eles vão"
         },
         {
           "person": "elas",
           "english": "they go",
-          "portuguese": "elas vão",
-          "weight": 0.33
+          "portuguese": "elas vão"
         },
         {
           "person": "vocês",
           "english": "you go",
-          "portuguese": "vocês vão",
-          "weight": 0.33
+          "portuguese": "vocês vão"
         }
       ]
     }
@@ -272,62 +232,52 @@
     "english": "to do",
     "portuguese": "fazer",
     "type": "verb",
-    "weight": 1.0,
     "tenses": {
       "present": [
         {
           "person": "eu",
           "english": "I do",
-          "portuguese": "eu faço",
-          "weight": 1.0
+          "portuguese": "eu faço"
         },
         {
           "person": "tu",
           "english": "you do",
-          "portuguese": "tu fazes",
-          "weight": 0.25
+          "portuguese": "tu fazes"
         },
         {
           "person": "você",
           "english": "you do",
-          "portuguese": "você faz",
-          "weight": 0.25
+          "portuguese": "você faz"
         },
         {
           "person": "ele",
           "english": "he does",
-          "portuguese": "ele faz",
-          "weight": 0.25
+          "portuguese": "ele faz"
         },
         {
           "person": "ela",
           "english": "she does",
-          "portuguese": "ela faz",
-          "weight": 0.25
+          "portuguese": "ela faz"
         },
         {
           "person": "nós",
           "english": "we do",
-          "portuguese": "nós fazemos",
-          "weight": 1.0
+          "portuguese": "nós fazemos"
         },
         {
           "person": "eles",
           "english": "they do",
-          "portuguese": "eles fazem",
-          "weight": 0.33
+          "portuguese": "eles fazem"
         },
         {
           "person": "elas",
           "english": "they do",
-          "portuguese": "elas fazem",
-          "weight": 0.33
+          "portuguese": "elas fazem"
         },
         {
           "person": "vocês",
           "english": "you do",
-          "portuguese": "vocês fazem",
-          "weight": 0.33
+          "portuguese": "vocês fazem"
         }
       ]
     }
@@ -337,62 +287,52 @@
     "english": "to say",
     "portuguese": "dizer",
     "type": "verb",
-    "weight": 1.0,
     "tenses": {
       "present": [
         {
           "person": "eu",
           "english": "I say",
-          "portuguese": "eu digo",
-          "weight": 1.0
+          "portuguese": "eu digo"
         },
         {
           "person": "tu",
           "english": "you say",
-          "portuguese": "tu dizes",
-          "weight": 0.25
+          "portuguese": "tu dizes"
         },
         {
           "person": "você",
           "english": "you say",
-          "portuguese": "você diz",
-          "weight": 0.25
+          "portuguese": "você diz"
         },
         {
           "person": "ele",
           "english": "he says",
-          "portuguese": "ele diz",
-          "weight": 0.25
+          "portuguese": "ele diz"
         },
         {
           "person": "ela",
           "english": "she says",
-          "portuguese": "ela diz",
-          "weight": 0.25
+          "portuguese": "ela diz"
         },
         {
           "person": "nós",
           "english": "we say",
-          "portuguese": "nós dizemos",
-          "weight": 1.0
+          "portuguese": "nós dizemos"
         },
         {
           "person": "eles",
           "english": "they say",
-          "portuguese": "eles dizem",
-          "weight": 0.33
+          "portuguese": "eles dizem"
         },
         {
           "person": "elas",
           "english": "they say",
-          "portuguese": "elas dizem",
-          "weight": 0.33
+          "portuguese": "elas dizem"
         },
         {
           "person": "vocês",
           "english": "you say",
-          "portuguese": "vocês dizem",
-          "weight": 0.33
+          "portuguese": "vocês dizem"
         }
       ]
     }
@@ -402,62 +342,52 @@
     "english": "to come",
     "portuguese": "vir",
     "type": "verb",
-    "weight": 1.0,
     "tenses": {
       "present": [
         {
           "person": "eu",
           "english": "I come",
-          "portuguese": "eu venho",
-          "weight": 1.0
+          "portuguese": "eu venho"
         },
         {
           "person": "tu",
           "english": "you come",
-          "portuguese": "tu vens",
-          "weight": 1.0
+          "portuguese": "tu vens"
         },
         {
           "person": "você",
           "english": "you come",
-          "portuguese": "você vem",
-          "weight": 0.33
+          "portuguese": "você vem"
         },
         {
           "person": "ele",
           "english": "he comes",
-          "portuguese": "ele vem",
-          "weight": 0.33
+          "portuguese": "ele vem"
         },
         {
           "person": "ela",
           "english": "she comes",
-          "portuguese": "ela vem",
-          "weight": 0.33
+          "portuguese": "ela vem"
         },
         {
           "person": "nós",
           "english": "we come",
-          "portuguese": "nós vimos",
-          "weight": 1.0
+          "portuguese": "nós vimos"
         },
         {
           "person": "eles",
           "english": "they come",
-          "portuguese": "eles vêm",
-          "weight": 0.33
+          "portuguese": "eles vêm"
         },
         {
           "person": "elas",
           "english": "they come",
-          "portuguese": "elas vêm",
-          "weight": 0.33
+          "portuguese": "elas vêm"
         },
         {
           "person": "vocês",
           "english": "you come",
-          "portuguese": "vocês vêm",
-          "weight": 0.33
+          "portuguese": "vocês vêm"
         }
       ]
     }
@@ -467,62 +397,52 @@
     "english": "can",
     "portuguese": "poder",
     "type": "verb",
-    "weight": 1.0,
     "tenses": {
       "present": [
         {
           "person": "eu",
           "english": "I can",
-          "portuguese": "eu posso",
-          "weight": 1.0
+          "portuguese": "eu posso"
         },
         {
           "person": "tu",
           "english": "you can",
-          "portuguese": "tu podes",
-          "weight": 1.0
+          "portuguese": "tu podes"
         },
         {
           "person": "você",
           "english": "you can",
-          "portuguese": "você pode",
-          "weight": 0.33
+          "portuguese": "você pode"
         },
         {
           "person": "ele",
           "english": "he can",
-          "portuguese": "ele pode",
-          "weight": 0.33
+          "portuguese": "ele pode"
         },
         {
           "person": "ela",
           "english": "she can",
-          "portuguese": "ela pode",
-          "weight": 0.33
+          "portuguese": "ela pode"
         },
         {
           "person": "nós",
           "english": "we can",
-          "portuguese": "nós podemos",
-          "weight": 1.0
+          "portuguese": "nós podemos"
         },
         {
           "person": "eles",
           "english": "they can",
-          "portuguese": "eles podem",
-          "weight": 0.33
+          "portuguese": "eles podem"
         },
         {
           "person": "elas",
           "english": "they can",
-          "portuguese": "elas podem",
-          "weight": 0.33
+          "portuguese": "elas podem"
         },
         {
           "person": "vocês",
           "english": "you can",
-          "portuguese": "vocês podem",
-          "weight": 0.33
+          "portuguese": "vocês podem"
         }
       ]
     }
@@ -532,62 +452,52 @@
     "english": "to want",
     "portuguese": "querer",
     "type": "verb",
-    "weight": 1.0,
     "tenses": {
       "present": [
         {
           "person": "eu",
           "english": "I want",
-          "portuguese": "eu quero",
-          "weight": 1.0
+          "portuguese": "eu quero"
         },
         {
           "person": "tu",
           "english": "you want",
-          "portuguese": "tu queres",
-          "weight": 1.0
+          "portuguese": "tu queres"
         },
         {
           "person": "você",
           "english": "you want",
-          "portuguese": "você quer",
-          "weight": 0.33
+          "portuguese": "você quer"
         },
         {
           "person": "ele",
           "english": "he wants",
-          "portuguese": "ele quer",
-          "weight": 0.33
+          "portuguese": "ele quer"
         },
         {
           "person": "ela",
           "english": "she wants",
-          "portuguese": "ela quer",
-          "weight": 0.33
+          "portuguese": "ela quer"
         },
         {
           "person": "nós",
           "english": "we want",
-          "portuguese": "nós queremos",
-          "weight": 1.0
+          "portuguese": "nós queremos"
         },
         {
           "person": "eles",
           "english": "they want",
-          "portuguese": "eles querem",
-          "weight": 0.33
+          "portuguese": "eles querem"
         },
         {
           "person": "elas",
           "english": "they want",
-          "portuguese": "elas querem",
-          "weight": 0.33
+          "portuguese": "elas querem"
         },
         {
           "person": "vocês",
           "english": "you want",
-          "portuguese": "vocês querem",
-          "weight": 0.33
+          "portuguese": "vocês querem"
         }
       ]
     }
@@ -597,62 +507,52 @@
     "english": "to know",
     "portuguese": "saber",
     "type": "verb",
-    "weight": 1.0,
     "tenses": {
       "present": [
         {
           "person": "eu",
           "english": "I know",
-          "portuguese": "eu sei",
-          "weight": 1.0
+          "portuguese": "eu sei"
         },
         {
           "person": "tu",
           "english": "you know",
-          "portuguese": "tu sabes",
-          "weight": 1.0
+          "portuguese": "tu sabes"
         },
         {
           "person": "você",
           "english": "you know",
-          "portuguese": "você sabe",
-          "weight": 0.33
+          "portuguese": "você sabe"
         },
         {
           "person": "ele",
           "english": "he knows",
-          "portuguese": "ele sabe",
-          "weight": 0.33
+          "portuguese": "ele sabe"
         },
         {
           "person": "ela",
           "english": "she knows",
-          "portuguese": "ela sabe",
-          "weight": 0.33
+          "portuguese": "ela sabe"
         },
         {
           "person": "nós",
           "english": "we know",
-          "portuguese": "nós sabemos",
-          "weight": 1.0
+          "portuguese": "nós sabemos"
         },
         {
           "person": "eles",
           "english": "they know",
-          "portuguese": "eles sabem",
-          "weight": 0.33
+          "portuguese": "eles sabem"
         },
         {
           "person": "elas",
           "english": "they know",
-          "portuguese": "elas sabem",
-          "weight": 0.33
+          "portuguese": "elas sabem"
         },
         {
           "person": "vocês",
           "english": "you know",
-          "portuguese": "vocês sabem",
-          "weight": 0.33
+          "portuguese": "vocês sabem"
         }
       ]
     }

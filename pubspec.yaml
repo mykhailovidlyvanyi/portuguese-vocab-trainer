@@ -61,6 +61,7 @@ flutter:
     - assets/data/categories.json
     - assets/data/person_hints.json
     - assets/data/vocabulary/
+    - assets/data/weights/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

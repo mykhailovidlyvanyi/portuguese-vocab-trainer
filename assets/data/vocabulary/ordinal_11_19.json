@@ -6,8 +6,7 @@
     "hints": {
       "english": "masculine",
       "portuguese": "masculino"
-    },
-    "weight": 0.5
+    }
   },
   {
     "english": "eleventh",
@@ -16,8 +15,7 @@
     "hints": {
       "english": "feminine",
       "portuguese": "feminino"
-    },
-    "weight": 0.5
+    }
   },
   {
     "english": "twelfth",
@@ -26,8 +24,7 @@
     "hints": {
       "english": "masculine",
       "portuguese": "masculino"
-    },
-    "weight": 0.5
+    }
   },
   {
     "english": "twelfth",
@@ -36,8 +33,7 @@
     "hints": {
       "english": "feminine",
       "portuguese": "feminino"
-    },
-    "weight": 0.5
+    }
   },
   {
     "english": "thirteenth",
@@ -46,8 +42,7 @@
     "hints": {
       "english": "masculine",
       "portuguese": "masculino"
-    },
-    "weight": 0.5
+    }
   },
   {
     "english": "thirteenth",
@@ -56,8 +51,7 @@
     "hints": {
       "english": "feminine",
       "portuguese": "feminino"
-    },
-    "weight": 0.5
+    }
   },
   {
     "english": "fourteenth",
@@ -66,8 +60,7 @@
     "hints": {
       "english": "masculine",
       "portuguese": "masculino"
-    },
-    "weight": 0.5
+    }
   },
   {
     "english": "fourteenth",
@@ -76,8 +69,7 @@
     "hints": {
       "english": "feminine",
       "portuguese": "feminino"
-    },
-    "weight": 0.5
+    }
   },
   {
     "english": "fifteenth",
@@ -86,8 +78,7 @@
     "hints": {
       "english": "masculine",
       "portuguese": "masculino"
-    },
-    "weight": 0.5
+    }
   },
   {
     "english": "fifteenth",
@@ -96,8 +87,7 @@
     "hints": {
       "english": "feminine",
       "portuguese": "feminino"
-    },
-    "weight": 0.5
+    }
   },
   {
     "english": "sixteenth",
@@ -106,8 +96,7 @@
     "hints": {
       "english": "masculine",
       "portuguese": "masculino"
-    },
-    "weight": 0.5
+    }
   },
   {
     "english": "sixteenth",
@@ -116,8 +105,7 @@
     "hints": {
       "english": "feminine",
       "portuguese": "feminino"
-    },
-    "weight": 0.5
+    }
   },
   {
     "english": "seventeenth",
@@ -126,8 +114,7 @@
     "hints": {
       "english": "masculine",
       "portuguese": "masculino"
-    },
-    "weight": 0.5
+    }
   },
   {
     "english": "seventeenth",
@@ -136,8 +123,7 @@
     "hints": {
       "english": "feminine",
       "portuguese": "feminino"
-    },
-    "weight": 0.5
+    }
   },
   {
     "english": "eighteenth",
@@ -146,8 +132,7 @@
     "hints": {
       "english": "masculine",
       "portuguese": "masculino"
-    },
-    "weight": 0.5
+    }
   },
   {
     "english": "eighteenth",
@@ -156,8 +141,7 @@
     "hints": {
       "english": "feminine",
       "portuguese": "feminino"
-    },
-    "weight": 0.5
+    }
   },
   {
     "english": "nineteenth",
@@ -166,8 +150,7 @@
     "hints": {
       "english": "masculine",
       "portuguese": "masculino"
-    },
-    "weight": 0.5
+    }
   },
   {
     "english": "nineteenth",
@@ -176,7 +159,6 @@
     "hints": {
       "english": "feminine",
       "portuguese": "feminino"
-    },
-    "weight": 0.5
+    }
   }
 ]

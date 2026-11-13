@@ -1,11 +1,10 @@
-
 [
-  {"english": "twenty", "portuguese": "vinte", "numericValue": 20, "weight": 1.0},
-  {"english": "thirty", "portuguese": "trinta", "numericValue": 30, "weight": 1.0},
-  {"english": "forty", "portuguese": "quarenta", "numericValue": 40, "weight": 1.0},
-  {"english": "fifty", "portuguese": "cinquenta", "numericValue": 50, "weight": 1.0},
-  {"english": "sixty", "portuguese": "sessenta", "numericValue": 60, "weight": 1.0},
-  {"english": "seventy", "portuguese": "setenta", "numericValue": 70, "weight": 1.0},
-  {"english": "eighty", "portuguese": "oitenta", "numericValue": 80, "weight": 1.0},
-  {"english": "ninety", "portuguese": "noventa", "numericValue": 90, "weight": 1.0}
+  {"english": "twenty", "portuguese": "vinte", "numericValue": 20},
+  {"english": "thirty", "portuguese": "trinta", "numericValue": 30},
+  {"english": "forty", "portuguese": "quarenta", "numericValue": 40},
+  {"english": "fifty", "portuguese": "cinquenta", "numericValue": 50},
+  {"english": "sixty", "portuguese": "sessenta", "numericValue": 60},
+  {"english": "seventy", "portuguese": "setenta", "numericValue": 70},
+  {"english": "eighty", "portuguese": "oitenta", "numericValue": 80},
+  {"english": "ninety", "portuguese": "noventa", "numericValue": 90}
 ]

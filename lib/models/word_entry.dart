@@ -15,7 +15,7 @@ class WordEntry {
     required this.english,
     required this.portuguese,
     this.type = 'word',
-    required this.weight,
+    this.weight = 1.0,
     this.englishHint,
     this.portugueseHint,
     this.numericValue,
@@ -32,7 +32,6 @@ class WordEntry {
       english: json['english'] as String,
       portuguese: json['portuguese'] as String,
       type: json['type'] as String? ?? 'word',
-      weight: (json['weight'] as num).toDouble(),
       englishHint: hints['english'] as String?,
       portugueseHint: hints['portuguese'] as String?,
       numericValue: (json['numericValue'] as num?)?.toInt(),
@@ -51,7 +50,21 @@ class WordEntry {
     );
   }
 
-  // Converts hints from different levels into one string.
+  WordEntry copyWith({
+    double? weight,
+  }) {
+    return WordEntry(
+      english: english,
+      portuguese: portuguese,
+      type: type,
+      weight: weight ?? this.weight,
+      englishHint: englishHint,
+      portugueseHint: portugueseHint,
+      numericValue: numericValue,
+      tenses: tenses,
+    );
+  }
+
   static String? _combineHints(List<String?> hints) {
     final result = <String>[];
 
@@ -75,16 +88,17 @@ class WordEntry {
     return result.isEmpty ? null : result.join(', ');
   }
 
-  // Converts the word and all its forms into individual study entries.
   List<WordEntry> toStudyEntries({
     Map<String, Map<String, String>> personHints = const {},
+    double infinitiveWeight = 1.0,
+    Map<String, double> personWeights = const {},
   }) {
     final entries = <WordEntry>[
       WordEntry(
         english: english,
         portuguese: portuguese,
         type: type,
-        weight: weight,
+        weight: type == 'verb' ? infinitiveWeight : weight,
         englishHint: englishHint,
         portugueseHint: portugueseHint,
         numericValue: numericValue,
@@ -100,7 +114,9 @@ class WordEntry {
             english: form.english,
             portuguese: form.portuguese,
             type: type,
-            weight: form.weight,
+            weight: type == 'verb'
+                ? (personWeights[form.person] ?? 1.0)
+                : 1.0,
             englishHint: _combineHints([
               englishHint,
               personHint?['english'],
@@ -124,7 +140,6 @@ class WordForm {
   final String person;
   final String english;
   final String portuguese;
-  final double weight;
   final String? englishHint;
   final String? portugueseHint;
 
@@ -132,7 +147,6 @@ class WordForm {
     required this.person,
     required this.english,
     required this.portuguese,
-    required this.weight,
     this.englishHint,
     this.portugueseHint,
   });
@@ -144,7 +158,6 @@ class WordForm {
       person: json['person'] as String,
       english: json['english'] as String,
       portuguese: json['portuguese'] as String,
-      weight: (json['weight'] as num).toDouble(),
       englishHint: hints['english'] as String?,
       portugueseHint: hints['portuguese'] as String?,
     );
