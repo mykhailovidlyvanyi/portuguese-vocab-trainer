@@ -1,7 +1,7 @@
 // screens/study_screen.dart
 
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'dart:math';
 
 import '../models/word_entry.dart';
