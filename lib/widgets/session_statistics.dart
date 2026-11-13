@@ -1,4 +1,4 @@
-// widgets/session_statistics.dart
+// lib/widgets/session_statistics.dart
 
 import 'package:material_ui/material_ui.dart';
 

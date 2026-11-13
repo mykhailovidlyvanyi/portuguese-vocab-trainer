@@ -14,4 +14,22 @@ class WordPoolBuilder {
   List<WordEntry> fromCategories(List<WordCategory> categories) {
     return categories.expand(fromCategory).toList();
   }
+
+  List<WordEntry> fromCategoryInfinitives(WordCategory category) {
+    return fromCategory(category)
+        .where(
+          (word) => word.type == 'verb' && !word.isConjugatedForm,
+        )
+        .toList();
+  }
+
+  List<WordEntry> fromCategoriesInfinitives(
+    List<WordCategory> categories,
+  ) {
+    return fromCategories(categories)
+        .where(
+          (word) => word.type == 'verb' && !word.isConjugatedForm,
+        )
+        .toList();
+  }
 }

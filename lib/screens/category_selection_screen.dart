@@ -1,23 +1,40 @@
-// screens/category_selection_screen.dart
-
+// lib/screens/category_selection_screen.dart
 
 import 'package:material_ui/material_ui.dart';
 
 import '../models/word_category.dart';
+
 import 'mode_selection_screen.dart';
 import 'subcategory_selection_screen.dart';
 
+import '../utils/word_pool_builder.dart';
+
 class CategorySelectionScreen extends StatelessWidget {
   final List<WordCategory> categories;
+  final String studyMethod;
 
   const CategorySelectionScreen({
     super.key,
     required this.categories,
+    required this.studyMethod,
   });
 
   @override
   Widget build(BuildContext context) {
-    final categoriesList = ["Усе", ...categories.map((c) => c.name)];
+    final availableCategories = studyMethod == 'multipleChoice'
+        ? categories
+            .where(
+              (category) => WordPoolBuilder()
+                  .fromCategoryInfinitives(category)
+                  .isNotEmpty,
+            )
+            .toList()
+        : categories;
+
+    final categoriesList = [
+      if (availableCategories.length > 1) "Усе",
+      ...availableCategories.map((c) => c.name),
+    ];
 
     return Scaffold(
       appBar: AppBar(title: const Text('Вибір категорії')),
@@ -34,17 +51,17 @@ class CategorySelectionScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (_) => ModeSelectionScreen(
-                      isAll: true,
-                      allCategories: categories,
-                    ),
-                  ),
+                      builder: (_) => ModeSelectionScreen(
+                            isAll: true,
+                            allCategories: categories,
+                            studyMethod: studyMethod,
+                          )),
                 );
                 return;
               }
 
-              final selectedCategory = categories.firstWhere(
-                    (c) => c.name == categoryName,
+              final selectedCategory = availableCategories.firstWhere(
+                (c) => c.name == categoryName,
               );
 
               if (selectedCategory.subcategories.isNotEmpty) {
@@ -54,6 +71,7 @@ class CategorySelectionScreen extends StatelessWidget {
                     builder: (_) => SubcategorySelectionScreen(
                       category: selectedCategory,
                       allCategories: categories,
+                      studyMethod: studyMethod,
                     ),
                   ),
                 );
@@ -64,6 +82,7 @@ class CategorySelectionScreen extends StatelessWidget {
                     builder: (_) => ModeSelectionScreen(
                       category: selectedCategory,
                       allCategories: categories,
+                      studyMethod: studyMethod,
                     ),
                   ),
                 );

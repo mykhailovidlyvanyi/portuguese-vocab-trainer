@@ -1,4 +1,4 @@
-// screens/typing_study_screen.dart
+// lib/screens/typing_study_screen.dart
 
 import 'package:material_ui/material_ui.dart';
 
@@ -9,7 +9,7 @@ import '../utils/word_pool_builder.dart';
 
 import '../widgets/session_statistics.dart';
 
-import 'category_selection_screen.dart';
+import 'exercise_type_selection_screen.dart';
 
 class TypingStudyScreen extends StatefulWidget {
   final WordCategory? category;
@@ -98,7 +98,7 @@ class _TypingStudyScreenState extends State<TypingStudyScreen> {
             onPressed: () => Navigator.pushAndRemoveUntil(
               context,
               MaterialPageRoute(
-                builder: (_) => CategorySelectionScreen(
+                builder: (_) => ExerciseTypeSelectionScreen(
                   categories: widget.allCategories,
                 ),
               ),

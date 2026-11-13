@@ -1,9 +1,10 @@
-// models/word_entry.dart
+// lib/models/word_entry.dart
 
 class WordEntry {
   final String english;
   final String portuguese;
   final String type;
+  final bool isConjugatedForm;
   final double weight;
   final String? englishHint;
   final String? portugueseHint;
@@ -15,6 +16,7 @@ class WordEntry {
     required this.english,
     required this.portuguese,
     this.type = 'word',
+    this.isConjugatedForm = false,
     this.weight = 1.0,
     this.englishHint,
     this.portugueseHint,
@@ -36,14 +38,14 @@ class WordEntry {
       portugueseHint: hints['portuguese'] as String?,
       numericValue: (json['numericValue'] as num?)?.toInt(),
       tenses: rawTenses.map(
-            (tense, forms) => MapEntry(
+        (tense, forms) => MapEntry(
           tense,
           (forms as List)
               .map(
                 (form) => WordForm.fromJson(
-              form as Map<String, dynamic>,
-            ),
-          )
+                  form as Map<String, dynamic>,
+                ),
+              )
               .toList(),
         ),
       ),
@@ -57,6 +59,7 @@ class WordEntry {
       english: english,
       portuguese: portuguese,
       type: type,
+      isConjugatedForm: isConjugatedForm,
       weight: weight ?? this.weight,
       englishHint: englishHint,
       portugueseHint: portugueseHint,
@@ -78,7 +81,7 @@ class WordEntry {
 
       for (final part in parts) {
         if (!result.any(
-              (existing) => existing.toLowerCase() == part.toLowerCase(),
+          (existing) => existing.toLowerCase() == part.toLowerCase(),
         )) {
           result.add(part);
         }
@@ -98,6 +101,7 @@ class WordEntry {
         english: english,
         portuguese: portuguese,
         type: type,
+        isConjugatedForm: false,
         weight: type == 'verb' ? infinitiveWeight : weight,
         englishHint: englishHint,
         portugueseHint: portugueseHint,
@@ -114,9 +118,8 @@ class WordEntry {
             english: form.english,
             portuguese: form.portuguese,
             type: type,
-            weight: type == 'verb'
-                ? (personWeights[form.person] ?? 1.0)
-                : 1.0,
+            isConjugatedForm: true,
+            weight: type == 'verb' ? (personWeights[form.person] ?? 1.0) : 1.0,
             englishHint: _combineHints([
               englishHint,
               personHint?['english'],

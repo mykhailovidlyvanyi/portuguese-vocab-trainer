@@ -1,9 +1,10 @@
-// main.dart
+// lib/main.dart
 
 import 'package:material_ui/material_ui.dart';
 
 import 'models/word_category.dart';
-import 'screens/category_selection_screen.dart';
+
+import 'screens/exercise_type_selection_screen.dart';
 import 'services/vocabulary_service.dart';
 
 void main() {
@@ -54,7 +55,7 @@ class _PortugueseVocabAppState extends State<PortugueseVocabApp> {
             );
           }
 
-          return CategorySelectionScreen(
+          return ExerciseTypeSelectionScreen(
             categories: snapshot.data!,
           );
         },
