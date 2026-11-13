@@ -10,32 +10,40 @@
     "english": "one",
     "portuguese": "um",
     "numericValue": 1,
-    "englishHint": "masculine",
-    "portugueseHint": "masculino",
+    "hints": {
+      "english": "masculine",
+      "portuguese": "masculino"
+    },
     "weight": 0.5
   },
   {
     "english": "one",
     "portuguese": "uma",
     "numericValue": 1,
-    "englishHint": "feminine",
-    "portugueseHint": "feminino",
+    "hints": {
+      "english": "feminine",
+      "portuguese": "feminino"
+    },
     "weight": 0.5
   },
   {
     "english": "two",
     "portuguese": "dois",
     "numericValue": 2,
-    "englishHint": "masculine",
-    "portugueseHint": "masculino",
+    "hints": {
+      "english": "masculine",
+      "portuguese": "masculino"
+    },
     "weight": 0.5
   },
   {
     "english": "two",
     "portuguese": "duas",
     "numericValue": 2,
-    "englishHint": "feminine",
-    "portugueseHint": "feminino",
+    "hints": {
+      "english": "feminine",
+      "portuguese": "feminino"
+    },
     "weight": 0.5
   },
   {

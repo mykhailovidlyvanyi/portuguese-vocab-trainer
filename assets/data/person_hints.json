@@ -1,0 +1,26 @@
+{
+  "eu": {},
+  "tu": {
+    "english": "informal",
+    "portuguese": "informal"
+  },
+  "você": {
+    "english": "singular, formal",
+    "portuguese": "singular, formal"
+  },
+  "ele": {},
+  "ela": {},
+  "nós": {},
+  "eles": {
+    "english": "plural masculine",
+    "portuguese": "plural masculino"
+  },
+  "elas": {
+    "english": "plural feminine",
+    "portuguese": "plural feminino"
+  },
+  "vocês": {
+    "english": "plural",
+    "portuguese": "plural"
+  }
+}

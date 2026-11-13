@@ -4,160 +4,200 @@
     "english": "first",
     "portuguese": "primeiro",
     "numericValue": 1,
-    "englishHint": "masculine",
-    "portugueseHint": "masculino",
+    "hints": {
+      "english": "masculine",
+      "portuguese": "masculino"
+    },
     "weight": 0.5
   },
   {
     "english": "first",
     "portuguese": "primeira",
     "numericValue": 1,
-    "englishHint": "feminine",
-    "portugueseHint": "feminino",
+    "hints": {
+      "english": "feminine",
+      "portuguese": "feminino"
+    },
     "weight": 0.5
   },
   {
     "english": "second",
     "portuguese": "segundo",
     "numericValue": 2,
-    "englishHint": "masculine",
-    "portugueseHint": "masculino",
+    "hints": {
+      "english": "masculine",
+      "portuguese": "masculino"
+    },
     "weight": 0.5
   },
   {
     "english": "second",
     "portuguese": "segunda",
     "numericValue": 2,
-    "englishHint": "feminine",
-    "portugueseHint": "feminino",
+    "hints": {
+      "english": "feminine",
+      "portuguese": "feminino"
+    },
     "weight": 0.5
   },
   {
     "english": "third",
     "portuguese": "terceiro",
     "numericValue": 3,
-    "englishHint": "masculine",
-    "portugueseHint": "masculino",
+    "hints": {
+      "english": "masculine",
+      "portuguese": "masculino"
+    },
     "weight": 0.5
   },
   {
     "english": "third",
     "portuguese": "terceira",
     "numericValue": 3,
-    "englishHint": "feminine",
-    "portugueseHint": "feminino",
+    "hints": {
+      "english": "feminine",
+      "portuguese": "feminino"
+    },
     "weight": 0.5
   },
   {
     "english": "fourth",
     "portuguese": "quarto",
     "numericValue": 4,
-    "englishHint": "masculine",
-    "portugueseHint": "masculino",
+    "hints": {
+      "english": "masculine",
+      "portuguese": "masculino"
+    },
     "weight": 0.5
   },
   {
     "english": "fourth",
     "portuguese": "quarta",
     "numericValue": 4,
-    "englishHint": "feminine",
-    "portugueseHint": "feminino",
+    "hints": {
+      "english": "feminine",
+      "portuguese": "feminino"
+    },
     "weight": 0.5
   },
   {
     "english": "fifth",
     "portuguese": "quinto",
     "numericValue": 5,
-    "englishHint": "masculine",
-    "portugueseHint": "masculino",
+    "hints": {
+      "english": "masculine",
+      "portuguese": "masculino"
+    },
     "weight": 0.5
   },
   {
     "english": "fifth",
     "portuguese": "quinta",
     "numericValue": 5,
-    "englishHint": "feminine",
-    "portugueseHint": "feminino",
+    "hints": {
+      "english": "feminine",
+      "portuguese": "feminino"
+    },
     "weight": 0.5
   },
   {
     "english": "sixth",
     "portuguese": "sexto",
     "numericValue": 6,
-    "englishHint": "masculine",
-    "portugueseHint": "masculino",
+    "hints": {
+      "english": "masculine",
+      "portuguese": "masculino"
+    },
     "weight": 0.5
   },
   {
     "english": "sixth",
     "portuguese": "sexta",
     "numericValue": 6,
-    "englishHint": "feminine",
-    "portugueseHint": "feminino",
+    "hints": {
+      "english": "feminine",
+      "portuguese": "feminino"
+    },
     "weight": 0.5
   },
   {
     "english": "seventh",
     "portuguese": "sétimo",
     "numericValue": 7,
-    "englishHint": "masculine",
-    "portugueseHint": "masculino",
+    "hints": {
+      "english": "masculine",
+      "portuguese": "masculino"
+    },
     "weight": 0.5
   },
   {
     "english": "seventh",
     "portuguese": "sétima",
     "numericValue": 7,
-    "englishHint": "feminine",
-    "portugueseHint": "feminino",
+    "hints": {
+      "english": "feminine",
+      "portuguese": "feminino"
+    },
     "weight": 0.5
   },
   {
     "english": "eighth",
     "portuguese": "oitavo",
     "numericValue": 8,
-    "englishHint": "masculine",
-    "portugueseHint": "masculino",
+    "hints": {
+      "english": "masculine",
+      "portuguese": "masculino"
+    },
     "weight": 0.5
   },
   {
     "english": "eighth",
     "portuguese": "oitava",
     "numericValue": 8,
-    "englishHint": "feminine",
-    "portugueseHint": "feminino",
+    "hints": {
+      "english": "feminine",
+      "portuguese": "feminino"
+    },
     "weight": 0.5
   },
   {
     "english": "ninth",
     "portuguese": "nono",
     "numericValue": 9,
-    "englishHint": "masculine",
-    "portugueseHint": "masculino",
+    "hints": {
+      "english": "masculine",
+      "portuguese": "masculino"
+    },
     "weight": 0.5
   },
   {
     "english": "ninth",
     "portuguese": "nona",
     "numericValue": 9,
-    "englishHint": "feminine",
-    "portugueseHint": "feminino",
+    "hints": {
+      "english": "feminine",
+      "portuguese": "feminino"
+    },
     "weight": 0.5
   },
   {
     "english": "tenth",
     "portuguese": "décimo",
     "numericValue": 10,
-    "englishHint": "masculine",
-    "portugueseHint": "masculino",
+    "hints": {
+      "english": "masculine",
+      "portuguese": "masculino"
+    },
     "weight": 0.5
   },
   {
     "english": "tenth",
     "portuguese": "décima",
     "numericValue": 10,
-    "englishHint": "feminine",
-    "portugueseHint": "feminino",
+    "hints": {
+      "english": "feminine",
+      "portuguese": "feminino"
+    },
     "weight": 0.5
   }
 ]

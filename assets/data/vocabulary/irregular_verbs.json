@@ -1,11 +1,14 @@
 [
+
   {
     "english": "to be",
     "portuguese": "ser",
     "type": "verb",
     "weight": 1.0,
-    "englishHint": "permanent, identity",
-    "portugueseHint": "permanente, identidade",
+    "hints": {
+      "english": "permanent",
+      "portuguese": "permanente"
+    },
     "tenses": {
       "present": [
         {
@@ -18,16 +21,12 @@
           "person": "tu",
           "english": "you are",
           "portuguese": "tu és",
-          "englishHint": "singular, informal",
-          "portugueseHint": "singular, informal",
           "weight": 0.25
         },
         {
           "person": "você",
           "english": "you are",
           "portuguese": "você é",
-          "englishHint": "singular, formal",
-          "portugueseHint": "singular, formal",
           "weight": 0.25
         },
         {
@@ -64,20 +63,21 @@
           "person": "vocês",
           "english": "you are",
           "portuguese": "vocês são",
-          "englishHint": "plural",
-          "portugueseHint": "plural",
           "weight": 0.33
         }
       ]
     }
   },
+
   {
     "english": "to be",
     "portuguese": "estar",
     "type": "verb",
     "weight": 1.0,
-    "englishHint": "temporary",
-    "portugueseHint": "temporário",
+    "hints": {
+      "english": "temporary",
+      "portuguese": "temporário"
+    },
     "tenses": {
       "present": [
         {
@@ -90,69 +90,54 @@
           "person": "tu",
           "english": "you are",
           "portuguese": "tu estás",
-          "englishHint": "temporary, informal",
-          "portugueseHint": "temporário, informal",
           "weight": 0.25
         },
         {
           "person": "você",
           "english": "you are",
           "portuguese": "você está",
-          "englishHint": "temporary, formal",
-          "portugueseHint": "temporário, formal",
           "weight": 0.25
         },
         {
           "person": "ele",
           "english": "he is",
           "portuguese": "ele está",
-          "englishHint": "temporary",
-          "portugueseHint": "temporário",
           "weight": 0.25
         },
         {
           "person": "ela",
           "english": "she is",
           "portuguese": "ela está",
-          "englishHint": "temporary",
-          "portugueseHint": "temporário",
           "weight": 0.25
         },
         {
           "person": "nós",
           "english": "we are",
           "portuguese": "nós estamos",
-          "englishHint": "temporary",
-          "portugueseHint": "temporário",
           "weight": 1.0
         },
         {
           "person": "eles",
           "english": "they are",
           "portuguese": "eles estão",
-          "englishHint": "temporary",
-          "portugueseHint": "temporário",
           "weight": 0.33
         },
         {
           "person": "elas",
           "english": "they are",
           "portuguese": "elas estão",
-          "englishHint": "temporary",
-          "portugueseHint": "temporário",
           "weight": 0.33
         },
         {
           "person": "vocês",
           "english": "you are",
           "portuguese": "vocês estão",
-          "englishHint": "temporary, plural",
-          "portugueseHint": "temporário, plural",
           "weight": 0.33
         }
       ]
     }
   },
+
   {
     "english": "to have",
     "portuguese": "ter",
@@ -170,16 +155,12 @@
           "person": "tu",
           "english": "you have",
           "portuguese": "tu tens",
-          "englishHint": "singular, informal",
-          "portugueseHint": "singular, informal",
           "weight": 0.25
         },
         {
           "person": "você",
           "english": "you have",
           "portuguese": "você tem",
-          "englishHint": "singular, formal",
-          "portugueseHint": "singular, formal",
           "weight": 0.25
         },
         {
@@ -216,13 +197,12 @@
           "person": "vocês",
           "english": "you have",
           "portuguese": "vocês têm",
-          "englishHint": "plural",
-          "portugueseHint": "plural",
           "weight": 0.33
         }
       ]
     }
   },
+
   {
     "english": "to go",
     "portuguese": "ir",
@@ -240,16 +220,12 @@
           "person": "tu",
           "english": "you go",
           "portuguese": "tu vais",
-          "englishHint": "singular, informal",
-          "portugueseHint": "singular, informal",
           "weight": 0.25
         },
         {
           "person": "você",
           "english": "you go",
           "portuguese": "você vai",
-          "englishHint": "singular, formal",
-          "portugueseHint": "singular, formal",
           "weight": 0.25
         },
         {
@@ -286,13 +262,12 @@
           "person": "vocês",
           "english": "you go",
           "portuguese": "vocês vão",
-          "englishHint": "plural",
-          "portugueseHint": "plural",
           "weight": 0.33
         }
       ]
     }
   },
+
   {
     "english": "to do",
     "portuguese": "fazer",
@@ -310,16 +285,12 @@
           "person": "tu",
           "english": "you do",
           "portuguese": "tu fazes",
-          "englishHint": "singular, informal",
-          "portugueseHint": "singular, informal",
           "weight": 0.25
         },
         {
           "person": "você",
           "english": "you do",
           "portuguese": "você faz",
-          "englishHint": "singular, formal",
-          "portugueseHint": "singular, formal",
           "weight": 0.25
         },
         {
@@ -356,13 +327,12 @@
           "person": "vocês",
           "english": "you do",
           "portuguese": "vocês fazem",
-          "englishHint": "plural",
-          "portugueseHint": "plural",
           "weight": 0.33
         }
       ]
     }
   },
+
   {
     "english": "to say",
     "portuguese": "dizer",
@@ -380,16 +350,12 @@
           "person": "tu",
           "english": "you say",
           "portuguese": "tu dizes",
-          "englishHint": "singular, informal",
-          "portugueseHint": "singular, informal",
           "weight": 0.25
         },
         {
           "person": "você",
           "english": "you say",
           "portuguese": "você diz",
-          "englishHint": "singular, formal",
-          "portugueseHint": "singular, formal",
           "weight": 0.25
         },
         {
@@ -426,13 +392,12 @@
           "person": "vocês",
           "english": "you say",
           "portuguese": "vocês dizem",
-          "englishHint": "plural",
-          "portugueseHint": "plural",
           "weight": 0.33
         }
       ]
     }
   },
+
   {
     "english": "to come",
     "portuguese": "vir",
@@ -450,16 +415,12 @@
           "person": "tu",
           "english": "you come",
           "portuguese": "tu vens",
-          "englishHint": "singular, informal",
-          "portugueseHint": "singular, informal",
           "weight": 1.0
         },
         {
           "person": "você",
           "english": "you come",
           "portuguese": "você vem",
-          "englishHint": "singular, formal",
-          "portugueseHint": "singular, formal",
           "weight": 0.33
         },
         {
@@ -496,13 +457,12 @@
           "person": "vocês",
           "english": "you come",
           "portuguese": "vocês vêm",
-          "englishHint": "plural",
-          "portugueseHint": "plural",
           "weight": 0.33
         }
       ]
     }
   },
+
   {
     "english": "can",
     "portuguese": "poder",
@@ -520,16 +480,12 @@
           "person": "tu",
           "english": "you can",
           "portuguese": "tu podes",
-          "englishHint": "singular, informal",
-          "portugueseHint": "singular, informal",
           "weight": 1.0
         },
         {
           "person": "você",
           "english": "you can",
           "portuguese": "você pode",
-          "englishHint": "singular, formal",
-          "portugueseHint": "singular, formal",
           "weight": 0.33
         },
         {
@@ -566,13 +522,12 @@
           "person": "vocês",
           "english": "you can",
           "portuguese": "vocês podem",
-          "englishHint": "plural",
-          "portugueseHint": "plural",
           "weight": 0.33
         }
       ]
     }
   },
+
   {
     "english": "to want",
     "portuguese": "querer",
@@ -590,16 +545,12 @@
           "person": "tu",
           "english": "you want",
           "portuguese": "tu queres",
-          "englishHint": "singular, informal",
-          "portugueseHint": "singular, informal",
           "weight": 1.0
         },
         {
           "person": "você",
           "english": "you want",
           "portuguese": "você quer",
-          "englishHint": "singular, formal",
-          "portugueseHint": "singular, formal",
           "weight": 0.33
         },
         {
@@ -636,13 +587,12 @@
           "person": "vocês",
           "english": "you want",
           "portuguese": "vocês querem",
-          "englishHint": "plural",
-          "portugueseHint": "plural",
           "weight": 0.33
         }
       ]
     }
   },
+
   {
     "english": "to know",
     "portuguese": "saber",
@@ -660,16 +610,12 @@
           "person": "tu",
           "english": "you know",
           "portuguese": "tu sabes",
-          "englishHint": "singular, informal",
-          "portugueseHint": "singular, informal",
           "weight": 1.0
         },
         {
           "person": "você",
           "english": "you know",
           "portuguese": "você sabe",
-          "englishHint": "singular, formal",
-          "portugueseHint": "singular, formal",
           "weight": 0.33
         },
         {
@@ -706,11 +652,10 @@
           "person": "vocês",
           "english": "you know",
           "portuguese": "vocês sabem",
-          "englishHint": "plural",
-          "portugueseHint": "plural",
           "weight": 0.33
         }
       ]
     }
   }
+
 ]

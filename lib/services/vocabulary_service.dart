@@ -8,7 +8,11 @@ import '../models/word_category.dart';
 import '../models/word_entry.dart';
 
 class VocabularyService {
+  Map<String, Map<String, String>> _personHints = {};
+
   Future<List<WordCategory>> loadCategories() async {
+    await _loadPersonHints();
+
     final jsonString = await rootBundle.loadString(
       'assets/data/categories.json',
     );
@@ -18,6 +22,21 @@ class VocabularyService {
     return Future.wait(
       jsonList.map(
             (item) => _parseCategory(item as Map<String, dynamic>),
+      ),
+    );
+  }
+
+  Future<void> _loadPersonHints() async {
+    final jsonString = await rootBundle.loadString(
+      'assets/data/person_hints.json',
+    );
+
+    final Map<String, dynamic> jsonMap = jsonDecode(jsonString);
+
+    _personHints = jsonMap.map(
+          (person, hints) => MapEntry(
+        person,
+        Map<String, String>.from(hints as Map),
       ),
     );
   }
@@ -58,7 +77,11 @@ class VocabularyService {
         .map(
           (item) => WordEntry.fromJson(item as Map<String, dynamic>),
     )
-        .expand((word) => word.toStudyEntries())
+        .expand(
+          (word) => word.toStudyEntries(
+        personHints: _personHints,
+      ),
+    )
         .toList();
   }
 }
