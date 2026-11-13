@@ -2,10 +2,10 @@
 
 import 'package:material_ui/material_ui.dart';
 
-import '../models/word_entry.dart';
 import '../models/word_category.dart';
 
 import '../utils/study_session.dart';
+import '../utils/word_pool_builder.dart';
 
 import '../widgets/session_statistics.dart';
 
@@ -38,24 +38,15 @@ class _StudyScreenState extends State<StudyScreen> {
 
   bool get isInputEmpty => controller.text.trim().isEmpty;
 
-  List<WordEntry> _getAllWords(WordCategory category) {
-    return [
-      ...category.words,
-      ...category.subcategories.expand(_getAllWords),
-    ];
-  }
-
   @override
   void initState() {
     super.initState();
 
-    final List<WordEntry> pool;
+    final builder = WordPoolBuilder();
 
-    if (widget.isAll) {
-      pool = widget.allCategories.expand(_getAllWords).toList();
-    } else {
-      pool = _getAllWords(widget.category!);
-    }
+    final pool = widget.isAll
+        ? builder.fromCategories(widget.allCategories)
+        : builder.fromCategory(widget.category!);
 
     session = StudySession(
       pool: pool,
