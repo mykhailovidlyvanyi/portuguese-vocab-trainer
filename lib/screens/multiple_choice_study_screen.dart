@@ -232,32 +232,26 @@ class _MultipleChoiceStudyScreenState extends State<MultipleChoiceStudyScreen> {
           ),
           const SizedBox(height: 24),
           ..._options.map((option) {
-            Color? backgroundColor;
+            Color backgroundColor = Colors.grey.shade200;
 
             final normalizedOption = option.trim().toLowerCase();
 
             if (normalizedSelectedAnswer != null) {
               if (normalizedOption == normalizedExpectedAnswer) {
-                backgroundColor = normalizedOption == normalizedSelectedAnswer
-                    ? Colors.green.shade700
-                    : Colors.green.shade300;
+                backgroundColor = Colors.green.shade300;
               } else if (normalizedOption == normalizedSelectedAnswer) {
                 backgroundColor = Colors.red.shade300;
-              } else {
-                backgroundColor = Colors.grey.shade200;
               }
             }
 
             return Padding(
               padding: const EdgeInsets.only(bottom: 12),
               child: ElevatedButton(
-                style: backgroundColor == null
-                    ? null
-                    : ElevatedButton.styleFrom(
-                        backgroundColor: backgroundColor,
-                        disabledBackgroundColor: backgroundColor,
-                        disabledForegroundColor: Colors.black87,
-                      ),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: backgroundColor,
+                  disabledBackgroundColor: backgroundColor,
+                  disabledForegroundColor: Colors.black87,
+                ),
                 onPressed: _selectedAnswer == null
                     ? () => _selectAnswer(option)
                     : null,
