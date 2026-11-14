@@ -1,13 +1,16 @@
 // lib/screens/multiple_choice_study_screen.dart
 
 import 'package:material_ui/material_ui.dart';
+import 'dart:math';
 
 import '../models/word_category.dart';
 import '../models/word_entry.dart';
 
+import '../utils/conjugation_question_builder.dart';
 import '../utils/multiple_choice_options_builder.dart';
 import '../utils/study_session.dart';
 import '../utils/word_pool_builder.dart';
+import '../utils/session_stats.dart';
 
 import '../widgets/session_statistics.dart';
 
@@ -18,6 +21,7 @@ class MultipleChoiceStudyScreen extends StatefulWidget {
   final bool isAll;
   final String mode;
   final List<WordCategory> allCategories;
+  final String exerciseMode;
 
   const MultipleChoiceStudyScreen({
     super.key,
@@ -25,6 +29,7 @@ class MultipleChoiceStudyScreen extends StatefulWidget {
     this.isAll = false,
     required this.mode,
     required this.allCategories,
+    this.exerciseMode = 'translation',
   });
 
   @override
@@ -38,17 +43,26 @@ class _MultipleChoiceStudyScreenState extends State<MultipleChoiceStudyScreen> {
   StudySession? _session;
   List<String> _options = [];
 
-  String? _selectedAnswer;
+  List<ConjugationQuestion> _conjugationQuestions = [];
+  ConjugationQuestion? _currentConjugationQuestion;
+  bool _showEnglishConjugationPrompt = true;
 
+  final Random _random = Random();
+
+  final SessionStats _conjugationStats = SessionStats();
+
+  String? _selectedAnswer;
   String? _errorMessage;
 
   final MultipleChoiceOptionsBuilder _optionsBuilder =
       MultipleChoiceOptionsBuilder();
 
+  final ConjugationQuestionBuilder _conjugationBuilder =
+      ConjugationQuestionBuilder();
+
   @override
   void initState() {
     super.initState();
-
     _initializeSession();
   }
 
@@ -59,6 +73,15 @@ class _MultipleChoiceStudyScreenState extends State<MultipleChoiceStudyScreen> {
         ? poolBuilder.fromCategoriesInfinitives(widget.allCategories)
         : poolBuilder.fromCategoryInfinitives(widget.category!);
 
+    if (widget.exerciseMode == 'conjugation') {
+      _initializeConjugationSession();
+      return;
+    }
+
+    _initializeTranslationSession();
+  }
+
+  void _initializeTranslationSession() {
     final hasEnoughAnswers = switch (widget.mode) {
       'enToPt' => _hasEnoughUniqueAnswers(true),
       'ptToEn' => _hasEnoughUniqueAnswers(false),
@@ -77,6 +100,24 @@ class _MultipleChoiceStudyScreenState extends State<MultipleChoiceStudyScreen> {
     );
 
     _buildOptions();
+  }
+
+  void _initializeConjugationSession() {
+    if (!['enToPt', 'ptToPt', 'mixed'].contains(widget.mode)) {
+      _errorMessage = 'Недоступний напрямок для режиму відмінювання.';
+      return;
+    }
+    _conjugationQuestions = _conjugationBuilder.buildQuestions(
+      pool: _pool,
+    );
+
+    if (_conjugationQuestions.isEmpty) {
+      _errorMessage =
+          'Недостатньо дієслів для тесту. Потрібні дієслова щонайменше з чотирма різними формами.';
+      return;
+    }
+
+    _nextConjugationQuestion();
   }
 
   bool _hasEnoughUniqueAnswers(bool showEnglish) {
@@ -102,6 +143,20 @@ class _MultipleChoiceStudyScreenState extends State<MultipleChoiceStudyScreen> {
     );
   }
 
+  void _nextConjugationQuestion() {
+    _currentConjugationQuestion =
+        _conjugationBuilder.nextQuestion(_conjugationQuestions);
+
+    _showEnglishConjugationPrompt = switch (widget.mode) {
+      'enToPt' => true,
+      'ptToPt' => false,
+      'mixed' => _random.nextBool(),
+      _ => true,
+    };
+
+    _options = _currentConjugationQuestion!.options;
+  }
+
   String get _question {
     final session = _session!;
 
@@ -115,15 +170,28 @@ class _MultipleChoiceStudyScreenState extends State<MultipleChoiceStudyScreen> {
 
     setState(() {
       _selectedAnswer = answer;
-      _session!.checkAnswer(answer);
+
+      if (widget.exerciseMode == 'conjugation') {
+        final isCorrect = answer.trim().toLowerCase() ==
+            _currentConjugationQuestion!.correctAnswer.trim().toLowerCase();
+
+        _conjugationStats.answerSubmitted(isCorrect: isCorrect);
+      } else {
+        _session!.checkAnswer(answer);
+      }
     });
   }
 
   void _nextQuestion() {
     setState(() {
-      _session!.nextWord();
+      if (widget.exerciseMode == 'conjugation') {
+        _nextConjugationQuestion();
+      } else {
+        _session!.nextWord();
+        _buildOptions();
+      }
+
       _selectedAnswer = null;
-      _buildOptions();
     });
   }
 
@@ -143,8 +211,6 @@ class _MultipleChoiceStudyScreenState extends State<MultipleChoiceStudyScreen> {
   Widget build(BuildContext context) {
     final categoryName = widget.isAll ? 'Усе' : widget.category!.name;
 
-    final session = _session;
-
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -162,7 +228,9 @@ class _MultipleChoiceStudyScreenState extends State<MultipleChoiceStudyScreen> {
       ),
       body: _errorMessage != null
           ? _buildErrorContent()
-          : _buildStudyContent(session!),
+          : widget.exerciseMode == 'conjugation'
+              ? _buildConjugationContent()
+              : _buildStudyContent(_session!),
     );
   }
 
@@ -190,11 +258,45 @@ class _MultipleChoiceStudyScreenState extends State<MultipleChoiceStudyScreen> {
     );
   }
 
-  Widget _buildStudyContent(StudySession session) {
-    final normalizedSelectedAnswer = _selectedAnswer?.trim().toLowerCase();
+  Widget _buildConjugationContent() {
+    final question = _currentConjugationQuestion!;
 
-    final normalizedExpectedAnswer =
-        session.expectedAnswer.trim().toLowerCase();
+    return _buildQuestionContent(
+      questionText: _showEnglishConjugationPrompt
+          ? question.englishInfinitive
+          : question.infinitive,
+      subtitle: _showEnglishConjugationPrompt
+          ? question.englishPerson
+          : question.person,
+      stats: _conjugationStats,
+      expectedAnswer: question.correctAnswer,
+    );
+  }
+
+  Widget _buildStudyContent(StudySession session) {
+    return _buildQuestionContent(
+      questionText: _question,
+      stats: session.stats,
+      expectedAnswer: session.expectedAnswer,
+      hint: session.showEnglish
+          ? session.current.englishHint == null
+              ? null
+              : 'Hint: ${session.current.englishHint}'
+          : session.current.portugueseHint == null
+              ? null
+              : 'Dica: ${session.current.portugueseHint}',
+    );
+  }
+
+  Widget _buildQuestionContent({
+    required String questionText,
+    required SessionStats stats,
+    required String expectedAnswer,
+    String? hint,
+    String? subtitle,
+  }) {
+    final normalizedSelectedAnswer = _selectedAnswer?.trim().toLowerCase();
+    final normalizedExpectedAnswer = expectedAnswer.trim().toLowerCase();
 
     return Padding(
       padding: const EdgeInsets.all(16),
@@ -202,9 +304,9 @@ class _MultipleChoiceStudyScreenState extends State<MultipleChoiceStudyScreen> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           SessionStatistics(
-            correct: session.stats.correct,
-            total: session.stats.total,
-            incorrect: session.stats.incorrect,
+            correct: stats.correct,
+            total: stats.total,
+            incorrect: stats.incorrect,
           ),
           const SizedBox(height: 24),
           Card(
@@ -214,18 +316,24 @@ class _MultipleChoiceStudyScreenState extends State<MultipleChoiceStudyScreen> {
               child: Column(
                 children: [
                   Text(
-                    _question,
+                    questionText,
+                    textAlign: TextAlign.center,
                     style: const TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  if (session.showEnglish &&
-                      session.current.englishHint != null)
-                    Text('Hint: ${session.current.englishHint}'),
-                  if (!session.showEnglish &&
-                      session.current.portugueseHint != null)
-                    Text('Dica: ${session.current.portugueseHint}'),
+                  if (subtitle != null) ...[
+                    const SizedBox(height: 8),
+                    Text(
+                      subtitle,
+                      style: const TextStyle(
+                        fontSize: 20,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ],
+                  if (hint != null) Text(hint),
                 ],
               ),
             ),

@@ -96,6 +96,26 @@ class WordEntry {
     double infinitiveWeight = 1.0,
     Map<String, double> personWeights = const {},
   }) {
+    final weightedTenses = tenses.map(
+      (tense, forms) => MapEntry(
+        tense,
+        forms
+            .map(
+              (form) => WordForm(
+                person: form.person,
+                english: form.english,
+                portuguese: form.portuguese,
+                englishHint: form.englishHint,
+                portugueseHint: form.portugueseHint,
+                englishPersonHint: personHints[form.person]?['english'],
+                portuguesePersonHint: personHints[form.person]?['portuguese'],
+                weight:
+                    type == 'verb' ? (personWeights[form.person] ?? 1.0) : 1.0,
+              ),
+            )
+            .toList(),
+      ),
+    );
     final entries = <WordEntry>[
       WordEntry(
         english: english,
@@ -106,10 +126,11 @@ class WordEntry {
         englishHint: englishHint,
         portugueseHint: portugueseHint,
         numericValue: numericValue,
+        tenses: weightedTenses,
       ),
     ];
 
-    for (final forms in tenses.values) {
+    for (final forms in weightedTenses.values) {
       for (final form in forms) {
         final personHint = personHints[form.person];
 
@@ -145,6 +166,9 @@ class WordForm {
   final String portuguese;
   final String? englishHint;
   final String? portugueseHint;
+  final double weight;
+  final String? englishPersonHint;
+  final String? portuguesePersonHint;
 
   WordForm({
     required this.person,
@@ -152,6 +176,9 @@ class WordForm {
     required this.portuguese,
     this.englishHint,
     this.portugueseHint,
+    this.weight = 1.0,
+    this.englishPersonHint,
+    this.portuguesePersonHint,
   });
 
   factory WordForm.fromJson(Map<String, dynamic> json) {

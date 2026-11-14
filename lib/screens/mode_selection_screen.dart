@@ -12,6 +12,7 @@ class ModeSelectionScreen extends StatelessWidget {
   final bool isAll;
   final List<WordCategory> allCategories;
   final String studyMethod;
+  final String exerciseMode;
 
   const ModeSelectionScreen({
     super.key,
@@ -19,6 +20,7 @@ class ModeSelectionScreen extends StatelessWidget {
     this.isAll = false,
     required this.allCategories,
     this.studyMethod = 'typing',
+    this.exerciseMode = 'translation',
   });
 
   @override
@@ -34,8 +36,13 @@ class ModeSelectionScreen extends StatelessWidget {
             onTap: () => _openStudyScreen(context, 'enToPt'),
           ),
           ListTile(
-            title: const Text('PT → EN'),
-            onTap: () => _openStudyScreen(context, 'ptToEn'),
+            title: Text(
+              exerciseMode == 'conjugation' ? 'PT → PT' : 'PT → EN',
+            ),
+            onTap: () => _openStudyScreen(
+              context,
+              exerciseMode == 'conjugation' ? 'ptToPt' : 'ptToEn',
+            ),
           ),
           ListTile(
             title: const Text('Змішано'),
@@ -59,6 +66,7 @@ class ModeSelectionScreen extends StatelessWidget {
             isAll: isAll,
             allCategories: allCategories,
             mode: mode,
+            exerciseMode: exerciseMode,
           );
 
     Navigator.push(

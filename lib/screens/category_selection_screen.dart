@@ -6,6 +6,7 @@ import '../models/word_category.dart';
 
 import 'mode_selection_screen.dart';
 import 'subcategory_selection_screen.dart';
+import 'multiple_choice_mode_selection_screen.dart';
 
 import '../utils/word_pool_builder.dart';
 
@@ -63,6 +64,20 @@ class CategorySelectionScreen extends StatelessWidget {
               final selectedCategory = availableCategories.firstWhere(
                 (c) => c.name == categoryName,
               );
+
+              if (studyMethod == 'multipleChoice' &&
+                  selectedCategory.name == 'Неправильні Дієслова') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => MultipleChoiceModeSelectionScreen(
+                      category: selectedCategory,
+                      allCategories: categories,
+                    ),
+                  ),
+                );
+                return;
+              }
 
               if (selectedCategory.subcategories.isNotEmpty) {
                 Navigator.push(
