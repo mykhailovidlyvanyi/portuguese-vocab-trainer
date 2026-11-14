@@ -127,125 +127,152 @@ class _MultipleChoiceStudyScreenState extends State<MultipleChoiceStudyScreen> {
     });
   }
 
+  void _exitExercise() {
+    Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(
+        builder: (_) => ExerciseTypeSelectionScreen(
+          categories: widget.allCategories,
+        ),
+      ),
+      (route) => false,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final categoryName = widget.isAll ? 'Усе' : widget.category!.name;
 
-    if (_errorMessage != null) {
-      return Scaffold(
-        appBar: AppBar(
-          title: const Text('Multiple Choice'),
+    final session = _session;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          _errorMessage != null
+              ? 'Multiple Choice'
+              : '$categoryName — Навчання',
         ),
-        body: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(24),
-            child: Text(
+        actions: [
+          if (_errorMessage == null)
+            IconButton(
+              icon: const Icon(Icons.stop),
+              onPressed: _exitExercise,
+            ),
+        ],
+      ),
+      body: _errorMessage != null
+          ? _buildErrorContent()
+          : _buildStudyContent(session!),
+    );
+  }
+
+  Widget _buildErrorContent() {
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(24),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
               _errorMessage!,
               textAlign: TextAlign.center,
               style: const TextStyle(fontSize: 18),
             ),
-          ),
-        ),
-      );
-    }
-
-    final session = _session!;
-
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('$categoryName — Навчання'),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.stop),
-            onPressed: () => Navigator.pushAndRemoveUntil(
-              context,
-              MaterialPageRoute(
-                builder: (_) => ExerciseTypeSelectionScreen(
-                  categories: widget.allCategories,
-                ),
-              ),
-              (route) => false,
-            ),
-          ),
-        ],
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            SessionStatistics(
-              correct: session.stats.correct,
-              total: session.stats.total,
-              incorrect: session.stats.incorrect,
-            ),
             const SizedBox(height: 24),
-            Card(
-              elevation: 4,
-              child: Padding(
-                padding: const EdgeInsets.all(16),
-                child: Column(
-                  children: [
-                    Text(
-                      _question,
-                      style: const TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    if (session.showEnglish &&
-                        session.current.englishHint != null)
-                      Text('Hint: ${session.current.englishHint}'),
-                    if (!session.showEnglish &&
-                        session.current.portugueseHint != null)
-                      Text('Dica: ${session.current.portugueseHint}'),
-                  ],
-                ),
-              ),
+            ElevatedButton.icon(
+              onPressed: _exitExercise,
+              icon: const Icon(Icons.arrow_back),
+              label: const Text('До вибору вправ'),
             ),
-            const SizedBox(height: 24),
-            ..._options.map((option) {
-              Color? backgroundColor;
-
-              if (_selectedAnswer != null) {
-                if (option.trim().toLowerCase() ==
-                    session.expectedAnswer.trim().toLowerCase()) {
-                  backgroundColor = option == _selectedAnswer
-                      ? Colors.green.shade700
-                      : Colors.green.shade300;
-                } else if (option == _selectedAnswer) {
-                  backgroundColor = Colors.red.shade300;
-                } else {
-                  backgroundColor = Colors.grey.shade200;
-                }
-              }
-
-              return Padding(
-                padding: const EdgeInsets.only(bottom: 12),
-                child: ElevatedButton(
-                  style: backgroundColor == null
-                      ? null
-                      : ElevatedButton.styleFrom(
-                          backgroundColor: backgroundColor,
-                          disabledBackgroundColor: backgroundColor,
-                          disabledForegroundColor: Colors.black87,
-                        ),
-                  onPressed: _selectedAnswer == null
-                      ? () => _selectAnswer(option)
-                      : null,
-                  child: Text(option),
-                ),
-              );
-            }),
-            if (_selectedAnswer != null) ...[
-              const SizedBox(height: 12),
-              ElevatedButton(
-                onPressed: _nextQuestion,
-                child: const Text('Продовжити'),
-              ),
-            ],
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildStudyContent(StudySession session) {
+    final normalizedSelectedAnswer = _selectedAnswer?.trim().toLowerCase();
+
+    final normalizedExpectedAnswer =
+        session.expectedAnswer.trim().toLowerCase();
+
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          SessionStatistics(
+            correct: session.stats.correct,
+            total: session.stats.total,
+            incorrect: session.stats.incorrect,
+          ),
+          const SizedBox(height: 24),
+          Card(
+            elevation: 4,
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                children: [
+                  Text(
+                    _question,
+                    style: const TextStyle(
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  if (session.showEnglish &&
+                      session.current.englishHint != null)
+                    Text('Hint: ${session.current.englishHint}'),
+                  if (!session.showEnglish &&
+                      session.current.portugueseHint != null)
+                    Text('Dica: ${session.current.portugueseHint}'),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(height: 24),
+          ..._options.map((option) {
+            Color? backgroundColor;
+
+            final normalizedOption = option.trim().toLowerCase();
+
+            if (normalizedSelectedAnswer != null) {
+              if (normalizedOption == normalizedExpectedAnswer) {
+                backgroundColor = normalizedOption == normalizedSelectedAnswer
+                    ? Colors.green.shade700
+                    : Colors.green.shade300;
+              } else if (normalizedOption == normalizedSelectedAnswer) {
+                backgroundColor = Colors.red.shade300;
+              } else {
+                backgroundColor = Colors.grey.shade200;
+              }
+            }
+
+            return Padding(
+              padding: const EdgeInsets.only(bottom: 12),
+              child: ElevatedButton(
+                style: backgroundColor == null
+                    ? null
+                    : ElevatedButton.styleFrom(
+                        backgroundColor: backgroundColor,
+                        disabledBackgroundColor: backgroundColor,
+                        disabledForegroundColor: Colors.black87,
+                      ),
+                onPressed: _selectedAnswer == null
+                    ? () => _selectAnswer(option)
+                    : null,
+                child: Text(option),
+              ),
+            );
+          }),
+          if (_selectedAnswer != null) ...[
+            const SizedBox(height: 12),
+            ElevatedButton(
+              onPressed: _nextQuestion,
+              child: const Text('Продовжити'),
+            ),
+          ],
+        ],
       ),
     );
   }
