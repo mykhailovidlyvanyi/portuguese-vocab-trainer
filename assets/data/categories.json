@@ -1,8 +1,11 @@
-
 [
   {
     "name": "Неправильні Дієслова",
     "wordsFile": "vocabulary/verbs/irregular_verbs.json"
+  },
+  {
+    "name": "Правильні Дієслова",
+    "wordsFile": "vocabulary/verbs/regular_verbs.json"
   },
   {
     "name": "Числівники",
