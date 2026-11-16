@@ -4,6 +4,8 @@ import 'package:material_ui/material_ui.dart';
 
 import '../models/word_category.dart';
 
+import '../config/app_environment.dart';
+
 import '../utils/study_session.dart';
 import '../utils/word_pool_builder.dart';
 
@@ -100,7 +102,9 @@ class _TypingStudyScreenState extends State<TypingStudyScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('$categoryName — Навчання'),
+        title: Text(
+          AppEnvironment.screenTitle('$categoryName — Навчання'),
+        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.stop),

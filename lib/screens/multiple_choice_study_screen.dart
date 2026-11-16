@@ -6,6 +6,8 @@ import 'dart:math';
 import '../models/word_category.dart';
 import '../models/word_entry.dart';
 
+import '../config/app_environment.dart';
+
 import '../utils/conjugation_question_builder.dart';
 import '../utils/multiple_choice_options_builder.dart';
 import '../utils/study_session.dart';
@@ -214,9 +216,11 @@ class _MultipleChoiceStudyScreenState extends State<MultipleChoiceStudyScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          _errorMessage != null
-              ? 'Multiple Choice'
-              : '$categoryName — Навчання',
+          AppEnvironment.screenTitle(
+            _errorMessage != null
+                ? 'Multiple Choice'
+                : '$categoryName — Навчання',
+          ),
         ),
         actions: [
           if (_errorMessage == null)

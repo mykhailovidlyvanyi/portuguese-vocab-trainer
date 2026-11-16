@@ -2,6 +2,8 @@
 
 import 'package:material_ui/material_ui.dart';
 
+import '../config/app_environment.dart';
+
 import '../models/word_category.dart';
 import 'category_selection_screen.dart';
 
@@ -17,7 +19,7 @@ class ExerciseTypeSelectionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Вибір вправи'),
+        title: Text(AppEnvironment.screenTitle('Вибір вправи')),
       ),
       body: ListView(
         children: [

@@ -5,6 +5,8 @@ import 'package:material_ui/material_ui.dart';
 import '../models/word_category.dart';
 import '../models/word_entry.dart';
 
+import '../config/app_environment.dart';
+
 import 'mode_selection_screen.dart';
 
 import '../utils/word_pool_builder.dart';
@@ -43,7 +45,7 @@ class SubcategorySelectionScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(category.name),
+        title: Text(AppEnvironment.screenTitle(category.name)),
       ),
       body: ListView(
         children: [
