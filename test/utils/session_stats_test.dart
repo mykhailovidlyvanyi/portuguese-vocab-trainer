@@ -1,4 +1,4 @@
-//test/utils/session_stats_test.dart
+// test/utils/session_stats_test.dart
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:portuguese_vocab_trainer/utils/session_stats.dart';

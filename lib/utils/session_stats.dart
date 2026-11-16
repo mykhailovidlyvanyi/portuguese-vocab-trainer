@@ -1,4 +1,4 @@
-// utils/session_stats.dart
+// lib/utils/session_stats.dart
 
 class SessionStats {
   int correct = 0;

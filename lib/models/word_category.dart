@@ -1,4 +1,4 @@
-// models/word_category.dart
+// lib/models/word_category.dart
 
 import 'word_entry.dart';
 

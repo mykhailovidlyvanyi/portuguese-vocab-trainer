@@ -1,4 +1,4 @@
-// models/word_subcategory.dart
+// lib/models/word_subcategory.dart
 
 class WordSubcategory {
   final String name;

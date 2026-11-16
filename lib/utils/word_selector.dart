@@ -1,4 +1,4 @@
-// utils/word_selector.dart
+// lib/utils/word_selector.dart
 
 import '../models/word_entry.dart';
 import 'dart:math';
