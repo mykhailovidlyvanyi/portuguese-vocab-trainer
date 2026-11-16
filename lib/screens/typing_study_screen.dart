@@ -1,5 +1,3 @@
-// lib/screens/typing_study_screen.dart
-
 import 'package:material_ui/material_ui.dart';
 
 import '../models/word_category.dart';
@@ -42,6 +40,13 @@ class _TypingStudyScreenState extends State<TypingStudyScreen> {
 
   bool get isInputEmpty => controller.text.trim().isEmpty;
 
+  String get expectedAnswerWithPronoun {
+    final pronoun = session.currentPronoun;
+    final answer = session.expectedAnswer;
+
+    return pronoun == null ? answer : '$pronoun $answer';
+  }
+
   @override
   void initState() {
     super.initState();
@@ -70,11 +75,13 @@ class _TypingStudyScreenState extends State<TypingStudyScreen> {
       didNotKnow = answer.isEmpty;
 
       if (didNotKnow) {
-        feedback = '❌ Правильна відповідь: ${session.expectedAnswer}';
+        feedback = '❌ Правильна відповідь: $expectedAnswerWithPronoun';
       } else if (isCorrect) {
-        feedback = '✅ Правильно!';
+        feedback =
+            '✅ Правильно! Правильна відповідь: $expectedAnswerWithPronoun';
       } else {
-        feedback = '❌ Неправильно!';
+        feedback =
+            '❌ Неправильно! Правильна відповідь: $expectedAnswerWithPronoun';
       }
     });
   }
@@ -220,11 +227,7 @@ class _TypingStudyScreenState extends State<TypingStudyScreen> {
                 ),
               const SizedBox(height: 8),
               Text(
-                didNotKnow
-                    ? feedback!
-                    : feedback == '❌ Неправильно!'
-                        ? '❌ Неправильно! Правильна відповідь: ${session.expectedAnswer}'
-                        : feedback!,
+                feedback!,
                 style: const TextStyle(fontSize: 20),
               ),
               const SizedBox(height: 12),

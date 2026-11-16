@@ -60,48 +60,9 @@ class StudySession {
     return englishPronouns[current.person];
   }
 
-  String get portugueseAnswer {
-    final answer = current.portuguese.trim();
-    final person = current.person;
+  String get portugueseAnswer => current.portuguese.trim();
 
-    if (person == null) return answer;
-
-    final prefix = '$person ';
-
-    if (answer.toLowerCase().startsWith(prefix.toLowerCase())) {
-      return answer.substring(prefix.length).trim();
-    }
-
-    return answer;
-  }
-
-  String get englishAnswer {
-    final answer = current.english.trim();
-
-    const englishPronouns = {
-      'eu': 'I',
-      'tu': 'you',
-      'você': 'you',
-      'ele': 'he',
-      'ela': 'she',
-      'nós': 'we',
-      'vocês': 'you',
-      'eles': 'they',
-      'elas': 'they',
-    };
-
-    final pronoun = englishPronouns[current.person];
-
-    if (pronoun == null) return answer;
-
-    final prefix = '$pronoun ';
-
-    if (answer.toLowerCase().startsWith(prefix.toLowerCase())) {
-      return answer.substring(prefix.length).trim();
-    }
-
-    return answer;
-  }
+  String get englishAnswer => current.english.trim();
 
   void nextWord() {
     current = selector.nextWord(pool);

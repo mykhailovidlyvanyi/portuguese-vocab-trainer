@@ -19,8 +19,8 @@ void main() {
   group('Verb weights', () {
     test('infinitive has weight 1.0', () {
       final ser = words.firstWhere(
-            (word) =>
-        word.type == 'verb' &&
+        (word) =>
+            word.type == 'verb' &&
             word.portuguese == 'ser' &&
             word.english == 'to be',
       );
@@ -30,20 +30,23 @@ void main() {
 
     test('verb forms have weights according to grammatical person', () {
       const expectedWeights = {
-        'eu sou': 1.0,
-        'tu és': 1.0,
-        'você é': 0.33,
-        'ele é': 0.33,
-        'ela é': 0.33,
-        'nós somos': 1.0,
-        'eles são': 0.33,
-        'elas são': 0.33,
-        'vocês são': 0.33,
+        'eu': 1.0,
+        'tu': 1.0,
+        'você': 0.33,
+        'ele': 0.33,
+        'ela': 0.33,
+        'nós': 1.0,
+        'eles': 0.33,
+        'elas': 0.33,
+        'vocês': 0.33,
       };
 
       for (final entry in expectedWeights.entries) {
         final word = words.firstWhere(
-              (word) => word.portuguese == entry.key,
+          (word) =>
+              word.type == 'verb' &&
+              word.portuguese == _serFormFor(entry.key) &&
+              word.person == entry.key,
         );
 
         expect(
@@ -57,11 +60,11 @@ void main() {
 
   group('Number weights', () {
     test('masculine and feminine forms have weight 0.5', () {
-      final oneVariants = words.where(
-            (word) =>
-        word.numericValue == 1 &&
-            word.english == 'one',
-      ).toList();
+      final oneVariants = words
+          .where(
+            (word) => word.numericValue == 1 && word.english == 'one',
+          )
+          .toList();
 
       expect(oneVariants, hasLength(2));
 
@@ -75,11 +78,11 @@ void main() {
     });
 
     test('ordinal gender variants have weight 0.5', () {
-      final firstVariants = words.where(
-            (word) =>
-        word.numericValue == 1 &&
-            word.english == 'first',
-      ).toList();
+      final firstVariants = words
+          .where(
+            (word) => word.numericValue == 1 && word.english == 'first',
+          )
+          .toList();
 
       expect(firstVariants, hasLength(2));
 
@@ -90,9 +93,7 @@ void main() {
 
     test('number without gender variants has weight 1.0', () {
       final zero = words.firstWhere(
-            (word) =>
-        word.numericValue == 0 &&
-            word.english == 'zero',
+        (word) => word.numericValue == 0 && word.english == 'zero',
       );
 
       expect(zero.weight, 1.0);
@@ -109,4 +110,20 @@ List<WordEntry> _collectWords(List<WordCategory> categories) {
   }
 
   return result;
+}
+
+String _serFormFor(String person) {
+  const forms = {
+    'eu': 'sou',
+    'tu': 'és',
+    'você': 'é',
+    'ele': 'é',
+    'ela': 'é',
+    'nós': 'somos',
+    'eles': 'são',
+    'elas': 'são',
+    'vocês': 'são',
+  };
+
+  return forms[person]!;
 }

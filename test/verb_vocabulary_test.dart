@@ -5,11 +5,9 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-const _regularVerbsPath =
-    'assets/data/vocabulary/verbs/regular_verbs.json';
+const _regularVerbsPath = 'assets/data/vocabulary/verbs/regular_verbs.json';
 
-const _irregularVerbsPath =
-    'assets/data/vocabulary/verbs/irregular_verbs.json';
+const _irregularVerbsPath = 'assets/data/vocabulary/verbs/irregular_verbs.json';
 
 const _expectedPersons = {
   'eu',
@@ -50,11 +48,9 @@ void main() {
         expect(name, isA<String>());
         expect(name.toString().trim(), isNotEmpty);
 
-        expect(verb['type'], 'verb',
-            reason: '$name: type must be verb');
+        expect(verb['type'], 'verb', reason: '$name: type must be verb');
 
-        expect(verb['tenses'], isA<Map>(),
-            reason: '$name: tenses are missing');
+        expect(verb['tenses'], isA<Map>(), reason: '$name: tenses are missing');
 
         final tenses = verb['tenses'] as Map;
         expect(tenses['present'], isA<List>(),
@@ -62,9 +58,7 @@ void main() {
 
         final forms = tenses['present'] as List;
 
-        final actualPersons = forms
-            .map((form) => form['person'])
-            .toSet();
+        final actualPersons = forms.map((form) => form['person']).toSet();
 
         expect(
           actualPersons,
@@ -83,8 +77,8 @@ void main() {
 
           expect(
             form['portuguese'].toString().trim(),
-            startsWith('${form['person']} '),
-            reason: '$name: Portuguese form must start with '
+            isNot(startsWith('${form['person']} ')),
+            reason: '$name: Portuguese form must not contain '
                 'the pronoun ${form['person']}',
           );
         }
@@ -94,13 +88,11 @@ void main() {
 
   group('Duplicate verbs', () {
     test('no verb appears in both regular and irregular files', () {
-      final regularNames = regularVerbs
-          .map((verb) => verb['portuguese'])
-          .toSet();
+      final regularNames =
+          regularVerbs.map((verb) => verb['portuguese']).toSet();
 
-      final irregularNames = irregularVerbs
-          .map((verb) => verb['portuguese'])
-          .toSet();
+      final irregularNames =
+          irregularVerbs.map((verb) => verb['portuguese']).toSet();
 
       final duplicates = regularNames.intersection(irregularNames);
 
@@ -114,23 +106,21 @@ void main() {
 
   group('Irregular verb conjugations', () {
     test('ver has correct forms', () {
-      _expectPortugueseForm(irregularVerbs, 'ver', 'eu', 'eu vejo');
-      _expectPortugueseForm(irregularVerbs, 'ver', 'tu', 'tu vês');
+      _expectPortugueseForm(irregularVerbs, 'ver', 'eu', 'vejo');
+      _expectPortugueseForm(irregularVerbs, 'ver', 'tu', 'vês');
     });
 
     test('dar has correct forms', () {
-      _expectPortugueseForm(irregularVerbs, 'dar', 'eu', 'eu dou');
-      _expectPortugueseForm(irregularVerbs, 'dar', 'eles', 'eles dão');
+      _expectPortugueseForm(irregularVerbs, 'dar', 'eu', 'dou');
+      _expectPortugueseForm(irregularVerbs, 'dar', 'eles', 'dão');
     });
 
     test('dormir has correct form', () {
-      _expectPortugueseForm(
-          irregularVerbs, 'dormir', 'eu', 'eu durmo');
+      _expectPortugueseForm(irregularVerbs, 'dormir', 'eu', 'durmo');
     });
 
     test('nascer has correct form', () {
-      _expectPortugueseForm(
-          irregularVerbs, 'nascer', 'eu', 'eu nasço');
+      _expectPortugueseForm(irregularVerbs, 'nascer', 'eu', 'nasço');
     });
   });
 }
@@ -145,20 +135,20 @@ Future<List<Map<String, dynamic>>> _loadVerbs(String path) async {
 }
 
 void _expectPortugueseForm(
-    List<Map<String, dynamic>> verbs,
-    String infinitive,
-    String person,
-    String expectedForm,
-    ) {
+  List<Map<String, dynamic>> verbs,
+  String infinitive,
+  String person,
+  String expectedForm,
+) {
   final verb = verbs.firstWhere(
-        (entry) => entry['portuguese'] == infinitive,
+    (entry) => entry['portuguese'] == infinitive,
     orElse: () => throw StateError('Verb $infinitive not found'),
   );
 
   final forms = verb['tenses']['present'] as List;
 
   final form = forms.firstWhere(
-        (entry) => entry['person'] == person,
+    (entry) => entry['person'] == person,
     orElse: () => throw StateError(
       'Person $person not found for $infinitive',
     ),
