@@ -1,10 +1,10 @@
-
 name: Deploy Flutter Web
 
 on:
   push:
     branches:
       - main
+      - dev
   workflow_dispatch:
 
 permissions:
@@ -21,24 +21,53 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      # Checkout Production
+      - name: Checkout main
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
           channel: stable
 
-      - name: Install dependencies
+      - name: Install production dependencies
         run: flutter pub get
 
-      - name: Build web
+      - name: Build production
         run: flutter build web --release --base-href /portuguese-vocab-trainer/
 
+      - name: Prepare production
+        run: |
+          mkdir -p dist
+          cp -R build/web/. dist/
+
+      # Checkout Development
+      - name: Checkout dev
+        uses: actions/checkout@v4
+        with:
+          ref: dev
+          path: dev-source
+
+      - name: Install development dependencies
+        working-directory: dev-source
+        run: flutter pub get
+
+      - name: Build development
+        working-directory: dev-source
+        run: flutter build web --release --base-href /portuguese-vocab-trainer/dev/
+
+      - name: Prepare development
+        run: |
+          mkdir -p dist/dev
+          cp -R dev-source/build/web/. dist/dev/
+
+      # Upload both versions
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build/web
+          path: dist
 
   deploy:
     environment:
