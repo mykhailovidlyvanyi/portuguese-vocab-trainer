@@ -36,7 +36,7 @@ jobs:
         run: flutter pub get
 
       - name: Build production
-        run: flutter build web --release --base-href /portuguese-vocab-trainer/
+        run: flutter build web --release --base-href /portuguese-vocab-trainer/ --dart-define=APP_ENV=prod
 
       - name: Prepare production
         run: |
@@ -56,7 +56,7 @@ jobs:
 
       - name: Build development
         working-directory: dev-source
-        run: flutter build web --release --base-href /portuguese-vocab-trainer/dev/
+        run: flutter build web --release --base-href /portuguese-vocab-trainer/dev/ --dart-define=APP_ENV=dev
 
       - name: Prepare development
         run: |
