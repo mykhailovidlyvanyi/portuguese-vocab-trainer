@@ -4,6 +4,8 @@ import 'package:material_ui/material_ui.dart';
 
 import '../models/word_category.dart';
 
+import '../config/app_environment.dart';
+
 import 'typing_study_screen.dart';
 import 'multiple_choice_study_screen.dart';
 
@@ -28,7 +30,9 @@ class ModeSelectionScreen extends StatelessWidget {
     final categoryName = isAll ? 'Усе' : category!.name;
 
     return Scaffold(
-      appBar: AppBar(title: Text('Режим ($categoryName)')),
+      appBar: AppBar(
+        title: Text(AppEnvironment.screenTitle('Режим ($categoryName)')),
+      ),
       body: Column(
         children: [
           ListTile(

@@ -4,6 +4,8 @@ import 'package:material_ui/material_ui.dart';
 
 import '../models/word_category.dart';
 
+import '../config/app_environment.dart';
+
 import 'mode_selection_screen.dart';
 
 class MultipleChoiceModeSelectionScreen extends StatelessWidget {
@@ -20,7 +22,7 @@ class MultipleChoiceModeSelectionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('1 з 4'),
+        title: Text(AppEnvironment.screenTitle('1 з 4')),
       ),
       body: ListView(
         children: [

@@ -4,6 +4,8 @@ import 'package:material_ui/material_ui.dart';
 
 import '../models/word_category.dart';
 
+import '../config/app_environment.dart';
+
 import 'mode_selection_screen.dart';
 import 'subcategory_selection_screen.dart';
 import 'multiple_choice_mode_selection_screen.dart';
@@ -38,7 +40,9 @@ class CategorySelectionScreen extends StatelessWidget {
     ];
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Вибір категорії')),
+      appBar: AppBar(
+        title: Text(AppEnvironment.screenTitle('Вибір категорії')),
+      ),
       body: ListView.builder(
         itemCount: categoriesList.length,
         itemBuilder: (context, index) {

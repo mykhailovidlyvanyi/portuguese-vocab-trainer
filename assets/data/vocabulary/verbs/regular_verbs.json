@@ -1,3 +1,4 @@
+
 [
   {
     "english": "to wake up",
@@ -5,51 +6,15 @@
     "type": "verb",
     "tenses": {
       "present": [
-        {
-          "person": "eu",
-          "english": "I wake up",
-          "portuguese": "eu acordo"
-        },
-        {
-          "person": "tu",
-          "english": "you wake up",
-          "portuguese": "tu acordas"
-        },
-        {
-          "person": "você",
-          "english": "you wake up",
-          "portuguese": "você acorda"
-        },
-        {
-          "person": "ele",
-          "english": "he wakes up",
-          "portuguese": "ele acorda"
-        },
-        {
-          "person": "ela",
-          "english": "she wakes up",
-          "portuguese": "ela acorda"
-        },
-        {
-          "person": "nós",
-          "english": "we wake up",
-          "portuguese": "nós acordamos"
-        },
-        {
-          "person": "eles",
-          "english": "they wake up",
-          "portuguese": "eles acordam"
-        },
-        {
-          "person": "elas",
-          "english": "they wake up",
-          "portuguese": "elas acordam"
-        },
-        {
-          "person": "vocês",
-          "english": "you wake up",
-          "portuguese": "vocês acordam"
-        }
+        {"person": "eu", "english": "wake up", "portuguese": "acordo"},
+        {"person": "tu", "english": "wake up", "portuguese": "acordas"},
+        {"person": "você", "english": "wake up", "portuguese": "acorda"},
+        {"person": "ele", "english": "wakes up", "portuguese": "acorda"},
+        {"person": "ela", "english": "wakes up", "portuguese": "acorda"},
+        {"person": "nós", "english": "wake up", "portuguese": "acordamos"},
+        {"person": "eles", "english": "wake up", "portuguese": "acordam"},
+        {"person": "elas", "english": "wake up", "portuguese": "acordam"},
+        {"person": "vocês", "english": "wake up", "portuguese": "acordam"}
       ]
     }
   },
@@ -59,51 +24,15 @@
     "type": "verb",
     "tenses": {
       "present": [
-        {
-          "person": "eu",
-          "english": "I work",
-          "portuguese": "eu trabalho"
-        },
-        {
-          "person": "tu",
-          "english": "you work",
-          "portuguese": "tu trabalhas"
-        },
-        {
-          "person": "você",
-          "english": "you work",
-          "portuguese": "você trabalha"
-        },
-        {
-          "person": "ele",
-          "english": "he works",
-          "portuguese": "ele trabalha"
-        },
-        {
-          "person": "ela",
-          "english": "she works",
-          "portuguese": "ela trabalha"
-        },
-        {
-          "person": "nós",
-          "english": "we work",
-          "portuguese": "nós trabalhamos"
-        },
-        {
-          "person": "eles",
-          "english": "they work",
-          "portuguese": "eles trabalham"
-        },
-        {
-          "person": "elas",
-          "english": "they work",
-          "portuguese": "elas trabalham"
-        },
-        {
-          "person": "vocês",
-          "english": "you work",
-          "portuguese": "vocês trabalham"
-        }
+        {"person": "eu", "english": "work", "portuguese": "trabalho"},
+        {"person": "tu", "english": "work", "portuguese": "trabalhas"},
+        {"person": "você", "english": "work", "portuguese": "trabalha"},
+        {"person": "ele", "english": "works", "portuguese": "trabalha"},
+        {"person": "ela", "english": "works", "portuguese": "trabalha"},
+        {"person": "nós", "english": "work", "portuguese": "trabalhamos"},
+        {"person": "eles", "english": "work", "portuguese": "trabalham"},
+        {"person": "elas", "english": "work", "portuguese": "trabalham"},
+        {"person": "vocês", "english": "work", "portuguese": "trabalham"}
       ]
     }
   },
@@ -113,51 +42,15 @@
     "type": "verb",
     "tenses": {
       "present": [
-        {
-          "person": "eu",
-          "english": "I study",
-          "portuguese": "eu estudo"
-        },
-        {
-          "person": "tu",
-          "english": "you study",
-          "portuguese": "tu estudas"
-        },
-        {
-          "person": "você",
-          "english": "you study",
-          "portuguese": "você estuda"
-        },
-        {
-          "person": "ele",
-          "english": "he studies",
-          "portuguese": "ele estuda"
-        },
-        {
-          "person": "ela",
-          "english": "she studies",
-          "portuguese": "ela estuda"
-        },
-        {
-          "person": "nós",
-          "english": "we study",
-          "portuguese": "nós estudamos"
-        },
-        {
-          "person": "eles",
-          "english": "they study",
-          "portuguese": "eles estudam"
-        },
-        {
-          "person": "elas",
-          "english": "they study",
-          "portuguese": "elas estudam"
-        },
-        {
-          "person": "vocês",
-          "english": "you study",
-          "portuguese": "vocês estudam"
-        }
+        {"person": "eu", "english": "study", "portuguese": "estudo"},
+        {"person": "tu", "english": "study", "portuguese": "estudas"},
+        {"person": "você", "english": "study", "portuguese": "estuda"},
+        {"person": "ele", "english": "studies", "portuguese": "estuda"},
+        {"person": "ela", "english": "studies", "portuguese": "estuda"},
+        {"person": "nós", "english": "study", "portuguese": "estudamos"},
+        {"person": "eles", "english": "study", "portuguese": "estudam"},
+        {"person": "elas", "english": "study", "portuguese": "estudam"},
+        {"person": "vocês", "english": "study", "portuguese": "estudam"}
       ]
     }
   },
@@ -167,51 +60,15 @@
     "type": "verb",
     "tenses": {
       "present": [
-        {
-          "person": "eu",
-          "english": "I speak",
-          "portuguese": "eu falo"
-        },
-        {
-          "person": "tu",
-          "english": "you speak",
-          "portuguese": "tu falas"
-        },
-        {
-          "person": "você",
-          "english": "you speak",
-          "portuguese": "você fala"
-        },
-        {
-          "person": "ele",
-          "english": "he speaks",
-          "portuguese": "ele fala"
-        },
-        {
-          "person": "ela",
-          "english": "she speaks",
-          "portuguese": "ela fala"
-        },
-        {
-          "person": "nós",
-          "english": "we speak",
-          "portuguese": "nós falamos"
-        },
-        {
-          "person": "eles",
-          "english": "they speak",
-          "portuguese": "eles falam"
-        },
-        {
-          "person": "elas",
-          "english": "they speak",
-          "portuguese": "elas falam"
-        },
-        {
-          "person": "vocês",
-          "english": "you speak",
-          "portuguese": "vocês falam"
-        }
+        {"person": "eu", "english": "speak", "portuguese": "falo"},
+        {"person": "tu", "english": "speak", "portuguese": "falas"},
+        {"person": "você", "english": "speak", "portuguese": "fala"},
+        {"person": "ele", "english": "speaks", "portuguese": "fala"},
+        {"person": "ela", "english": "speaks", "portuguese": "fala"},
+        {"person": "nós", "english": "speak", "portuguese": "falamos"},
+        {"person": "eles", "english": "speak", "portuguese": "falam"},
+        {"person": "elas", "english": "speak", "portuguese": "falam"},
+        {"person": "vocês", "english": "speak", "portuguese": "falam"}
       ]
     }
   },
@@ -224,51 +81,15 @@
     },
     "tenses": {
       "present": [
-        {
-          "person": "eu",
-          "english": "I like",
-          "portuguese": "eu gosto"
-        },
-        {
-          "person": "tu",
-          "english": "you like",
-          "portuguese": "tu gostas"
-        },
-        {
-          "person": "você",
-          "english": "you like",
-          "portuguese": "você gosta"
-        },
-        {
-          "person": "ele",
-          "english": "he likes",
-          "portuguese": "ele gosta"
-        },
-        {
-          "person": "ela",
-          "english": "she likes",
-          "portuguese": "ela gosta"
-        },
-        {
-          "person": "nós",
-          "english": "we like",
-          "portuguese": "nós gostamos"
-        },
-        {
-          "person": "eles",
-          "english": "they like",
-          "portuguese": "eles gostam"
-        },
-        {
-          "person": "elas",
-          "english": "they like",
-          "portuguese": "elas gostam"
-        },
-        {
-          "person": "vocês",
-          "english": "you like",
-          "portuguese": "vocês gostam"
-        }
+        {"person": "eu", "english": "like", "portuguese": "gosto"},
+        {"person": "tu", "english": "like", "portuguese": "gostas"},
+        {"person": "você", "english": "like", "portuguese": "gosta"},
+        {"person": "ele", "english": "likes", "portuguese": "gosta"},
+        {"person": "ela", "english": "likes", "portuguese": "gosta"},
+        {"person": "nós", "english": "like", "portuguese": "gostamos"},
+        {"person": "eles", "english": "like", "portuguese": "gostam"},
+        {"person": "elas", "english": "like", "portuguese": "gostam"},
+        {"person": "vocês", "english": "like", "portuguese": "gostam"}
       ]
     }
   },
@@ -278,51 +99,15 @@
     "type": "verb",
     "tenses": {
       "present": [
-        {
-          "person": "eu",
-          "english": "I take",
-          "portuguese": "eu levo"
-        },
-        {
-          "person": "tu",
-          "english": "you take",
-          "portuguese": "tu levas"
-        },
-        {
-          "person": "você",
-          "english": "you take",
-          "portuguese": "você leva"
-        },
-        {
-          "person": "ele",
-          "english": "he takes",
-          "portuguese": "ele leva"
-        },
-        {
-          "person": "ela",
-          "english": "she takes",
-          "portuguese": "ela leva"
-        },
-        {
-          "person": "nós",
-          "english": "we take",
-          "portuguese": "nós levamos"
-        },
-        {
-          "person": "eles",
-          "english": "they take",
-          "portuguese": "eles levam"
-        },
-        {
-          "person": "elas",
-          "english": "they take",
-          "portuguese": "elas levam"
-        },
-        {
-          "person": "vocês",
-          "english": "you take",
-          "portuguese": "vocês levam"
-        }
+        {"person": "eu", "english": "take", "portuguese": "levo"},
+        {"person": "tu", "english": "take", "portuguese": "levas"},
+        {"person": "você", "english": "take", "portuguese": "leva"},
+        {"person": "ele", "english": "takes", "portuguese": "leva"},
+        {"person": "ela", "english": "takes", "portuguese": "leva"},
+        {"person": "nós", "english": "take", "portuguese": "levamos"},
+        {"person": "eles", "english": "take", "portuguese": "levam"},
+        {"person": "elas", "english": "take", "portuguese": "levam"},
+        {"person": "vocês", "english": "take", "portuguese": "levam"}
       ]
     }
   },
@@ -332,51 +117,15 @@
     "type": "verb",
     "tenses": {
       "present": [
-        {
-          "person": "eu",
-          "english": "I love",
-          "portuguese": "eu amo"
-        },
-        {
-          "person": "tu",
-          "english": "you love",
-          "portuguese": "tu amas"
-        },
-        {
-          "person": "você",
-          "english": "you love",
-          "portuguese": "você ama"
-        },
-        {
-          "person": "ele",
-          "english": "he loves",
-          "portuguese": "ele ama"
-        },
-        {
-          "person": "ela",
-          "english": "she loves",
-          "portuguese": "ela ama"
-        },
-        {
-          "person": "nós",
-          "english": "we love",
-          "portuguese": "nós amamos"
-        },
-        {
-          "person": "eles",
-          "english": "they love",
-          "portuguese": "eles amam"
-        },
-        {
-          "person": "elas",
-          "english": "they love",
-          "portuguese": "elas amam"
-        },
-        {
-          "person": "vocês",
-          "english": "you love",
-          "portuguese": "vocês amam"
-        }
+        {"person": "eu", "english": "love", "portuguese": "amo"},
+        {"person": "tu", "english": "love", "portuguese": "amas"},
+        {"person": "você", "english": "love", "portuguese": "ama"},
+        {"person": "ele", "english": "loves", "portuguese": "ama"},
+        {"person": "ela", "english": "loves", "portuguese": "ama"},
+        {"person": "nós", "english": "love", "portuguese": "amamos"},
+        {"person": "eles", "english": "love", "portuguese": "amam"},
+        {"person": "elas", "english": "love", "portuguese": "amam"},
+        {"person": "vocês", "english": "love", "portuguese": "amam"}
       ]
     }
   },
@@ -386,51 +135,15 @@
     "type": "verb",
     "tenses": {
       "present": [
-        {
-          "person": "eu",
-          "english": "I think",
-          "portuguese": "eu penso"
-        },
-        {
-          "person": "tu",
-          "english": "you think",
-          "portuguese": "tu pensas"
-        },
-        {
-          "person": "você",
-          "english": "you think",
-          "portuguese": "você pensa"
-        },
-        {
-          "person": "ele",
-          "english": "he thinks",
-          "portuguese": "ele pensa"
-        },
-        {
-          "person": "ela",
-          "english": "she thinks",
-          "portuguese": "ela pensa"
-        },
-        {
-          "person": "nós",
-          "english": "we think",
-          "portuguese": "nós pensamos"
-        },
-        {
-          "person": "eles",
-          "english": "they think",
-          "portuguese": "eles pensam"
-        },
-        {
-          "person": "elas",
-          "english": "they think",
-          "portuguese": "elas pensam"
-        },
-        {
-          "person": "vocês",
-          "english": "you think",
-          "portuguese": "vocês pensam"
-        }
+        {"person": "eu", "english": "think", "portuguese": "penso"},
+        {"person": "tu", "english": "think", "portuguese": "pensas"},
+        {"person": "você", "english": "think", "portuguese": "pensa"},
+        {"person": "ele", "english": "thinks", "portuguese": "pensa"},
+        {"person": "ela", "english": "thinks", "portuguese": "pensa"},
+        {"person": "nós", "english": "think", "portuguese": "pensamos"},
+        {"person": "eles", "english": "think", "portuguese": "pensam"},
+        {"person": "elas", "english": "think", "portuguese": "pensam"},
+        {"person": "vocês", "english": "think", "portuguese": "pensam"}
       ]
     }
   },
@@ -440,51 +153,15 @@
     "type": "verb",
     "tenses": {
       "present": [
-        {
-          "person": "eu",
-          "english": "I live",
-          "portuguese": "eu moro"
-        },
-        {
-          "person": "tu",
-          "english": "you live",
-          "portuguese": "tu moras"
-        },
-        {
-          "person": "você",
-          "english": "you live",
-          "portuguese": "você mora"
-        },
-        {
-          "person": "ele",
-          "english": "he lives",
-          "portuguese": "ele mora"
-        },
-        {
-          "person": "ela",
-          "english": "she lives",
-          "portuguese": "ela mora"
-        },
-        {
-          "person": "nós",
-          "english": "we live",
-          "portuguese": "nós moramos"
-        },
-        {
-          "person": "eles",
-          "english": "they live",
-          "portuguese": "eles moram"
-        },
-        {
-          "person": "elas",
-          "english": "they live",
-          "portuguese": "elas moram"
-        },
-        {
-          "person": "vocês",
-          "english": "you live",
-          "portuguese": "vocês moram"
-        }
+        {"person": "eu", "english": "live", "portuguese": "moro"},
+        {"person": "tu", "english": "live", "portuguese": "moras"},
+        {"person": "você", "english": "live", "portuguese": "mora"},
+        {"person": "ele", "english": "lives", "portuguese": "mora"},
+        {"person": "ela", "english": "lives", "portuguese": "mora"},
+        {"person": "nós", "english": "live", "portuguese": "moramos"},
+        {"person": "eles", "english": "live", "portuguese": "moram"},
+        {"person": "elas", "english": "live", "portuguese": "moram"},
+        {"person": "vocês", "english": "live", "portuguese": "moram"}
       ]
     }
   },
@@ -494,51 +171,15 @@
     "type": "verb",
     "tenses": {
       "present": [
-        {
-          "person": "eu",
-          "english": "I buy",
-          "portuguese": "eu compro"
-        },
-        {
-          "person": "tu",
-          "english": "you buy",
-          "portuguese": "tu compras"
-        },
-        {
-          "person": "você",
-          "english": "you buy",
-          "portuguese": "você compra"
-        },
-        {
-          "person": "ele",
-          "english": "he buys",
-          "portuguese": "ele compra"
-        },
-        {
-          "person": "ela",
-          "english": "she buys",
-          "portuguese": "ela compra"
-        },
-        {
-          "person": "nós",
-          "english": "we buy",
-          "portuguese": "nós compramos"
-        },
-        {
-          "person": "eles",
-          "english": "they buy",
-          "portuguese": "eles compram"
-        },
-        {
-          "person": "elas",
-          "english": "they buy",
-          "portuguese": "elas compram"
-        },
-        {
-          "person": "vocês",
-          "english": "you buy",
-          "portuguese": "vocês compram"
-        }
+        {"person": "eu", "english": "buy", "portuguese": "compro"},
+        {"person": "tu", "english": "buy", "portuguese": "compras"},
+        {"person": "você", "english": "buy", "portuguese": "compra"},
+        {"person": "ele", "english": "buys", "portuguese": "compra"},
+        {"person": "ela", "english": "buys", "portuguese": "compra"},
+        {"person": "nós", "english": "buy", "portuguese": "compramos"},
+        {"person": "eles", "english": "buy", "portuguese": "compram"},
+        {"person": "elas", "english": "buy", "portuguese": "compram"},
+        {"person": "vocês", "english": "buy", "portuguese": "compram"}
       ]
     }
   },
@@ -548,51 +189,15 @@
     "type": "verb",
     "tenses": {
       "present": [
-        {
-          "person": "eu",
-          "english": "I cook",
-          "portuguese": "eu cozinho"
-        },
-        {
-          "person": "tu",
-          "english": "you cook",
-          "portuguese": "tu cozinhas"
-        },
-        {
-          "person": "você",
-          "english": "you cook",
-          "portuguese": "você cozinha"
-        },
-        {
-          "person": "ele",
-          "english": "he cooks",
-          "portuguese": "ele cozinha"
-        },
-        {
-          "person": "ela",
-          "english": "she cooks",
-          "portuguese": "ela cozinha"
-        },
-        {
-          "person": "nós",
-          "english": "we cook",
-          "portuguese": "nós cozinhamos"
-        },
-        {
-          "person": "eles",
-          "english": "they cook",
-          "portuguese": "eles cozinham"
-        },
-        {
-          "person": "elas",
-          "english": "they cook",
-          "portuguese": "elas cozinham"
-        },
-        {
-          "person": "vocês",
-          "english": "you cook",
-          "portuguese": "vocês cozinham"
-        }
+        {"person": "eu", "english": "cook", "portuguese": "cozinho"},
+        {"person": "tu", "english": "cook", "portuguese": "cozinhas"},
+        {"person": "você", "english": "cook", "portuguese": "cozinha"},
+        {"person": "ele", "english": "cooks", "portuguese": "cozinha"},
+        {"person": "ela", "english": "cooks", "portuguese": "cozinha"},
+        {"person": "nós", "english": "cook", "portuguese": "cozinhamos"},
+        {"person": "eles", "english": "cook", "portuguese": "cozinham"},
+        {"person": "elas", "english": "cook", "portuguese": "cozinham"},
+        {"person": "vocês", "english": "cook", "portuguese": "cozinham"}
       ]
     }
   },
@@ -602,51 +207,15 @@
     "type": "verb",
     "tenses": {
       "present": [
-        {
-          "person": "eu",
-          "english": "I need",
-          "portuguese": "eu preciso"
-        },
-        {
-          "person": "tu",
-          "english": "you need",
-          "portuguese": "tu precisas"
-        },
-        {
-          "person": "você",
-          "english": "you need",
-          "portuguese": "você precisa"
-        },
-        {
-          "person": "ele",
-          "english": "he needs",
-          "portuguese": "ele precisa"
-        },
-        {
-          "person": "ela",
-          "english": "she needs",
-          "portuguese": "ela precisa"
-        },
-        {
-          "person": "nós",
-          "english": "we need",
-          "portuguese": "nós precisamos"
-        },
-        {
-          "person": "eles",
-          "english": "they need",
-          "portuguese": "eles precisam"
-        },
-        {
-          "person": "elas",
-          "english": "they need",
-          "portuguese": "elas precisam"
-        },
-        {
-          "person": "vocês",
-          "english": "you need",
-          "portuguese": "vocês precisam"
-        }
+        {"person": "eu", "english": "need", "portuguese": "preciso"},
+        {"person": "tu", "english": "need", "portuguese": "precisas"},
+        {"person": "você", "english": "need", "portuguese": "precisa"},
+        {"person": "ele", "english": "needs", "portuguese": "precisa"},
+        {"person": "ela", "english": "needs", "portuguese": "precisa"},
+        {"person": "nós", "english": "need", "portuguese": "precisamos"},
+        {"person": "eles", "english": "need", "portuguese": "precisam"},
+        {"person": "elas", "english": "need", "portuguese": "precisam"},
+        {"person": "vocês", "english": "need", "portuguese": "precisam"}
       ]
     }
   },
@@ -656,51 +225,15 @@
     "type": "verb",
     "tenses": {
       "present": [
-        {
-          "person": "eu",
-          "english": "I eat",
-          "portuguese": "eu como"
-        },
-        {
-          "person": "tu",
-          "english": "you eat",
-          "portuguese": "tu comes"
-        },
-        {
-          "person": "você",
-          "english": "you eat",
-          "portuguese": "você come"
-        },
-        {
-          "person": "ele",
-          "english": "he eats",
-          "portuguese": "ele come"
-        },
-        {
-          "person": "ela",
-          "english": "she eats",
-          "portuguese": "ela come"
-        },
-        {
-          "person": "nós",
-          "english": "we eat",
-          "portuguese": "nós comemos"
-        },
-        {
-          "person": "eles",
-          "english": "they eat",
-          "portuguese": "eles comem"
-        },
-        {
-          "person": "elas",
-          "english": "they eat",
-          "portuguese": "elas comem"
-        },
-        {
-          "person": "vocês",
-          "english": "you eat",
-          "portuguese": "vocês comem"
-        }
+        {"person": "eu", "english": "eat", "portuguese": "como"},
+        {"person": "tu", "english": "eat", "portuguese": "comes"},
+        {"person": "você", "english": "eat", "portuguese": "come"},
+        {"person": "ele", "english": "eats", "portuguese": "come"},
+        {"person": "ela", "english": "eats", "portuguese": "come"},
+        {"person": "nós", "english": "eat", "portuguese": "comemos"},
+        {"person": "eles", "english": "eat", "portuguese": "comem"},
+        {"person": "elas", "english": "eat", "portuguese": "comem"},
+        {"person": "vocês", "english": "eat", "portuguese": "comem"}
       ]
     }
   },
@@ -710,51 +243,15 @@
     "type": "verb",
     "tenses": {
       "present": [
-        {
-          "person": "eu",
-          "english": "I drink",
-          "portuguese": "eu bebo"
-        },
-        {
-          "person": "tu",
-          "english": "you drink",
-          "portuguese": "tu bebes"
-        },
-        {
-          "person": "você",
-          "english": "you drink",
-          "portuguese": "você bebe"
-        },
-        {
-          "person": "ele",
-          "english": "he drinks",
-          "portuguese": "ele bebe"
-        },
-        {
-          "person": "ela",
-          "english": "she drinks",
-          "portuguese": "ela bebe"
-        },
-        {
-          "person": "nós",
-          "english": "we drink",
-          "portuguese": "nós bebemos"
-        },
-        {
-          "person": "eles",
-          "english": "they drink",
-          "portuguese": "eles bebem"
-        },
-        {
-          "person": "elas",
-          "english": "they drink",
-          "portuguese": "elas bebem"
-        },
-        {
-          "person": "vocês",
-          "english": "you drink",
-          "portuguese": "vocês bebem"
-        }
+        {"person": "eu", "english": "drink", "portuguese": "bebo"},
+        {"person": "tu", "english": "drink", "portuguese": "bebes"},
+        {"person": "você", "english": "drink", "portuguese": "bebe"},
+        {"person": "ele", "english": "drinks", "portuguese": "bebe"},
+        {"person": "ela", "english": "drinks", "portuguese": "bebe"},
+        {"person": "nós", "english": "drink", "portuguese": "bebemos"},
+        {"person": "eles", "english": "drink", "portuguese": "bebem"},
+        {"person": "elas", "english": "drink", "portuguese": "bebem"},
+        {"person": "vocês", "english": "drink", "portuguese": "bebem"}
       ]
     }
   },
@@ -764,51 +261,15 @@
     "type": "verb",
     "tenses": {
       "present": [
-        {
-          "person": "eu",
-          "english": "I understand",
-          "portuguese": "eu percebo"
-        },
-        {
-          "person": "tu",
-          "english": "you understand",
-          "portuguese": "tu percebes"
-        },
-        {
-          "person": "você",
-          "english": "you understand",
-          "portuguese": "você percebe"
-        },
-        {
-          "person": "ele",
-          "english": "he understands",
-          "portuguese": "ele percebe"
-        },
-        {
-          "person": "ela",
-          "english": "she understands",
-          "portuguese": "ela percebe"
-        },
-        {
-          "person": "nós",
-          "english": "we understand",
-          "portuguese": "nós percebemos"
-        },
-        {
-          "person": "eles",
-          "english": "they understand",
-          "portuguese": "eles percebem"
-        },
-        {
-          "person": "elas",
-          "english": "they understand",
-          "portuguese": "elas percebem"
-        },
-        {
-          "person": "vocês",
-          "english": "you understand",
-          "portuguese": "vocês percebem"
-        }
+        {"person": "eu", "english": "understand", "portuguese": "percebo"},
+        {"person": "tu", "english": "understand", "portuguese": "percebes"},
+        {"person": "você", "english": "understand", "portuguese": "percebe"},
+        {"person": "ele", "english": "understands", "portuguese": "percebe"},
+        {"person": "ela", "english": "understands", "portuguese": "percebe"},
+        {"person": "nós", "english": "understand", "portuguese": "percebemos"},
+        {"person": "eles", "english": "understand", "portuguese": "percebem"},
+        {"person": "elas", "english": "understand", "portuguese": "percebem"},
+        {"person": "vocês", "english": "understand", "portuguese": "percebem"}
       ]
     }
   },
@@ -818,51 +279,15 @@
     "type": "verb",
     "tenses": {
       "present": [
-        {
-          "person": "eu",
-          "english": "I understand",
-          "portuguese": "eu compreendo"
-        },
-        {
-          "person": "tu",
-          "english": "you understand",
-          "portuguese": "tu compreendes"
-        },
-        {
-          "person": "você",
-          "english": "you understand",
-          "portuguese": "você compreende"
-        },
-        {
-          "person": "ele",
-          "english": "he understands",
-          "portuguese": "ele compreende"
-        },
-        {
-          "person": "ela",
-          "english": "she understands",
-          "portuguese": "ela compreende"
-        },
-        {
-          "person": "nós",
-          "english": "we understand",
-          "portuguese": "nós compreendemos"
-        },
-        {
-          "person": "eles",
-          "english": "they understand",
-          "portuguese": "eles compreendem"
-        },
-        {
-          "person": "elas",
-          "english": "they understand",
-          "portuguese": "elas compreendem"
-        },
-        {
-          "person": "vocês",
-          "english": "you understand",
-          "portuguese": "vocês compreendem"
-        }
+        {"person": "eu", "english": "understand", "portuguese": "compreendo"},
+        {"person": "tu", "english": "understand", "portuguese": "compreendes"},
+        {"person": "você", "english": "understand", "portuguese": "compreende"},
+        {"person": "ele", "english": "understands", "portuguese": "compreende"},
+        {"person": "ela", "english": "understands", "portuguese": "compreende"},
+        {"person": "nós", "english": "understand", "portuguese": "compreendemos"},
+        {"person": "eles", "english": "understand", "portuguese": "compreendem"},
+        {"person": "elas", "english": "understand", "portuguese": "compreendem"},
+        {"person": "vocês", "english": "understand", "portuguese": "compreendem"}
       ]
     }
   },
@@ -872,51 +297,15 @@
     "type": "verb",
     "tenses": {
       "present": [
-        {
-          "person": "eu",
-          "english": "I sell",
-          "portuguese": "eu vendo"
-        },
-        {
-          "person": "tu",
-          "english": "you sell",
-          "portuguese": "tu vendes"
-        },
-        {
-          "person": "você",
-          "english": "you sell",
-          "portuguese": "você vende"
-        },
-        {
-          "person": "ele",
-          "english": "he sells",
-          "portuguese": "ele vende"
-        },
-        {
-          "person": "ela",
-          "english": "she sells",
-          "portuguese": "ela vende"
-        },
-        {
-          "person": "nós",
-          "english": "we sell",
-          "portuguese": "nós vendemos"
-        },
-        {
-          "person": "eles",
-          "english": "they sell",
-          "portuguese": "eles vendem"
-        },
-        {
-          "person": "elas",
-          "english": "they sell",
-          "portuguese": "elas vendem"
-        },
-        {
-          "person": "vocês",
-          "english": "you sell",
-          "portuguese": "vocês vendem"
-        }
+        {"person": "eu", "english": "sell", "portuguese": "vendo"},
+        {"person": "tu", "english": "sell", "portuguese": "vendes"},
+        {"person": "você", "english": "sell", "portuguese": "vende"},
+        {"person": "ele", "english": "sells", "portuguese": "vende"},
+        {"person": "ela", "english": "sells", "portuguese": "vende"},
+        {"person": "nós", "english": "sell", "portuguese": "vendemos"},
+        {"person": "eles", "english": "sell", "portuguese": "vendem"},
+        {"person": "elas", "english": "sell", "portuguese": "vendem"},
+        {"person": "vocês", "english": "sell", "portuguese": "vendem"}
       ]
     }
   },
@@ -926,51 +315,15 @@
     "type": "verb",
     "tenses": {
       "present": [
-        {
-          "person": "eu",
-          "english": "I learn",
-          "portuguese": "eu aprendo"
-        },
-        {
-          "person": "tu",
-          "english": "you learn",
-          "portuguese": "tu aprendes"
-        },
-        {
-          "person": "você",
-          "english": "you learn",
-          "portuguese": "você aprende"
-        },
-        {
-          "person": "ele",
-          "english": "he learns",
-          "portuguese": "ele aprende"
-        },
-        {
-          "person": "ela",
-          "english": "she learns",
-          "portuguese": "ela aprende"
-        },
-        {
-          "person": "nós",
-          "english": "we learn",
-          "portuguese": "nós aprendemos"
-        },
-        {
-          "person": "eles",
-          "english": "they learn",
-          "portuguese": "eles aprendem"
-        },
-        {
-          "person": "elas",
-          "english": "they learn",
-          "portuguese": "elas aprendem"
-        },
-        {
-          "person": "vocês",
-          "english": "you learn",
-          "portuguese": "vocês aprendem"
-        }
+        {"person": "eu", "english": "learn", "portuguese": "aprendo"},
+        {"person": "tu", "english": "learn", "portuguese": "aprendes"},
+        {"person": "você", "english": "learn", "portuguese": "aprende"},
+        {"person": "ele", "english": "learns", "portuguese": "aprende"},
+        {"person": "ela", "english": "learns", "portuguese": "aprende"},
+        {"person": "nós", "english": "learn", "portuguese": "aprendemos"},
+        {"person": "eles", "english": "learn", "portuguese": "aprendem"},
+        {"person": "elas", "english": "learn", "portuguese": "aprendem"},
+        {"person": "vocês", "english": "learn", "portuguese": "aprendem"}
       ]
     }
   },
@@ -983,51 +336,15 @@
     },
     "tenses": {
       "present": [
-        {
-          "person": "eu",
-          "english": "I watch",
-          "portuguese": "eu assisto"
-        },
-        {
-          "person": "tu",
-          "english": "you watch",
-          "portuguese": "tu assistes"
-        },
-        {
-          "person": "você",
-          "english": "you watch",
-          "portuguese": "você assiste"
-        },
-        {
-          "person": "ele",
-          "english": "he watches",
-          "portuguese": "ele assiste"
-        },
-        {
-          "person": "ela",
-          "english": "she watches",
-          "portuguese": "ela assiste"
-        },
-        {
-          "person": "nós",
-          "english": "we watch",
-          "portuguese": "nós assistimos"
-        },
-        {
-          "person": "eles",
-          "english": "they watch",
-          "portuguese": "eles assistem"
-        },
-        {
-          "person": "elas",
-          "english": "they watch",
-          "portuguese": "elas assistem"
-        },
-        {
-          "person": "vocês",
-          "english": "you watch",
-          "portuguese": "vocês assistem"
-        }
+        {"person": "eu", "english": "watch", "portuguese": "assisto"},
+        {"person": "tu", "english": "watch", "portuguese": "assistes"},
+        {"person": "você", "english": "watch", "portuguese": "assiste"},
+        {"person": "ele", "english": "watches", "portuguese": "assiste"},
+        {"person": "ela", "english": "watches", "portuguese": "assiste"},
+        {"person": "nós", "english": "watch", "portuguese": "assistimos"},
+        {"person": "eles", "english": "watch", "portuguese": "assistem"},
+        {"person": "elas", "english": "watch", "portuguese": "assistem"},
+        {"person": "vocês", "english": "watch", "portuguese": "assistem"}
       ]
     }
   },
@@ -1037,51 +354,15 @@
     "type": "verb",
     "tenses": {
       "present": [
-        {
-          "person": "eu",
-          "english": "I open",
-          "portuguese": "eu abro"
-        },
-        {
-          "person": "tu",
-          "english": "you open",
-          "portuguese": "tu abres"
-        },
-        {
-          "person": "você",
-          "english": "you open",
-          "portuguese": "você abre"
-        },
-        {
-          "person": "ele",
-          "english": "he opens",
-          "portuguese": "ele abre"
-        },
-        {
-          "person": "ela",
-          "english": "she opens",
-          "portuguese": "ela abre"
-        },
-        {
-          "person": "nós",
-          "english": "we open",
-          "portuguese": "nós abrimos"
-        },
-        {
-          "person": "eles",
-          "english": "they open",
-          "portuguese": "eles abrem"
-        },
-        {
-          "person": "elas",
-          "english": "they open",
-          "portuguese": "elas abrem"
-        },
-        {
-          "person": "vocês",
-          "english": "you open",
-          "portuguese": "vocês abrem"
-        }
+        {"person": "eu", "english": "open", "portuguese": "abro"},
+        {"person": "tu", "english": "open", "portuguese": "abres"},
+        {"person": "você", "english": "open", "portuguese": "abre"},
+        {"person": "ele", "english": "opens", "portuguese": "abre"},
+        {"person": "ela", "english": "opens", "portuguese": "abre"},
+        {"person": "nós", "english": "open", "portuguese": "abrimos"},
+        {"person": "eles", "english": "open", "portuguese": "abrem"},
+        {"person": "elas", "english": "open", "portuguese": "abrem"},
+        {"person": "vocês", "english": "open", "portuguese": "abrem"}
       ]
     }
   },
@@ -1091,51 +372,15 @@
     "type": "verb",
     "tenses": {
       "present": [
-        {
-          "person": "eu",
-          "english": "I leave",
-          "portuguese": "eu parto"
-        },
-        {
-          "person": "tu",
-          "english": "you leave",
-          "portuguese": "tu partes"
-        },
-        {
-          "person": "você",
-          "english": "you leave",
-          "portuguese": "você parte"
-        },
-        {
-          "person": "ele",
-          "english": "he leaves",
-          "portuguese": "ele parte"
-        },
-        {
-          "person": "ela",
-          "english": "she leaves",
-          "portuguese": "ela parte"
-        },
-        {
-          "person": "nós",
-          "english": "we leave",
-          "portuguese": "nós partimos"
-        },
-        {
-          "person": "eles",
-          "english": "they leave",
-          "portuguese": "eles partem"
-        },
-        {
-          "person": "elas",
-          "english": "they leave",
-          "portuguese": "elas partem"
-        },
-        {
-          "person": "vocês",
-          "english": "you leave",
-          "portuguese": "vocês partem"
-        }
+        {"person": "eu", "english": "leave", "portuguese": "parto"},
+        {"person": "tu", "english": "leave", "portuguese": "partes"},
+        {"person": "você", "english": "leave", "portuguese": "parte"},
+        {"person": "ele", "english": "leaves", "portuguese": "parte"},
+        {"person": "ela", "english": "leaves", "portuguese": "parte"},
+        {"person": "nós", "english": "leave", "portuguese": "partimos"},
+        {"person": "eles", "english": "leave", "portuguese": "partem"},
+        {"person": "elas", "english": "leave", "portuguese": "partem"},
+        {"person": "vocês", "english": "leave", "portuguese": "partem"}
       ]
     }
   },
@@ -1145,51 +390,15 @@
     "type": "verb",
     "tenses": {
       "present": [
-        {
-          "person": "eu",
-          "english": "I divide",
-          "portuguese": "eu divido"
-        },
-        {
-          "person": "tu",
-          "english": "you divide",
-          "portuguese": "tu divides"
-        },
-        {
-          "person": "você",
-          "english": "you divide",
-          "portuguese": "você divide"
-        },
-        {
-          "person": "ele",
-          "english": "he divides",
-          "portuguese": "ele divide"
-        },
-        {
-          "person": "ela",
-          "english": "she divides",
-          "portuguese": "ela divide"
-        },
-        {
-          "person": "nós",
-          "english": "we divide",
-          "portuguese": "nós dividimos"
-        },
-        {
-          "person": "eles",
-          "english": "they divide",
-          "portuguese": "eles dividem"
-        },
-        {
-          "person": "elas",
-          "english": "they divide",
-          "portuguese": "elas dividem"
-        },
-        {
-          "person": "vocês",
-          "english": "you divide",
-          "portuguese": "vocês dividem"
-        }
+        {"person": "eu", "english": "divide", "portuguese": "divido"},
+        {"person": "tu", "english": "divide", "portuguese": "divides"},
+        {"person": "você", "english": "divide", "portuguese": "divide"},
+        {"person": "ele", "english": "divides", "portuguese": "divide"},
+        {"person": "ela", "english": "divides", "portuguese": "divide"},
+        {"person": "nós", "english": "divide", "portuguese": "dividimos"},
+        {"person": "eles", "english": "divide", "portuguese": "dividem"},
+        {"person": "elas", "english": "divide", "portuguese": "dividem"},
+        {"person": "vocês", "english": "divide", "portuguese": "dividem"}
       ]
     }
   }
