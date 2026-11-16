@@ -31,6 +31,8 @@ class TypingStudyScreen extends StatefulWidget {
 
 class _TypingStudyScreenState extends State<TypingStudyScreen> {
   late StudySession session;
+  String? userAnswer;
+  bool didNotKnow = false;
 
   String? feedback;
 
@@ -62,11 +64,15 @@ class _TypingStudyScreenState extends State<TypingStudyScreen> {
     final isCorrect = session.checkAnswer(answer);
 
     setState(() {
-      if (isCorrect) {
+      userAnswer = answer.trim();
+      didNotKnow = answer.isEmpty;
+
+      if (didNotKnow) {
+        feedback = '❌ Правильна відповідь: ${session.expectedAnswer}';
+      } else if (isCorrect) {
         feedback = '✅ Правильно!';
       } else {
-        feedback =
-            '❌ Неправильно. Правильна відповідь: ${session.expectedAnswer}';
+        feedback = '❌ Неправильно!';
       }
     });
   }
@@ -74,6 +80,8 @@ class _TypingStudyScreenState extends State<TypingStudyScreen> {
   void nextWord() {
     setState(() {
       feedback = null;
+      userAnswer = null;
+      didNotKnow = false;
       session.nextWord();
       controller.clear();
     });
@@ -201,7 +209,20 @@ class _TypingStudyScreenState extends State<TypingStudyScreen> {
                 child: const Text('Я не знаю'),
               ),
             ] else ...[
-              Text(feedback!, style: const TextStyle(fontSize: 20)),
+              if (!didNotKnow)
+                Text(
+                  'Твоя відповідь: $userAnswer',
+                  style: const TextStyle(fontSize: 18),
+                ),
+              const SizedBox(height: 8),
+              Text(
+                didNotKnow
+                    ? feedback!
+                    : feedback == '❌ Неправильно!'
+                        ? '❌ Неправильно! Правильна відповідь: ${session.expectedAnswer}'
+                        : feedback!,
+                style: const TextStyle(fontSize: 20),
+              ),
               const SizedBox(height: 12),
               ElevatedButton(
                 onPressed: nextWord,
