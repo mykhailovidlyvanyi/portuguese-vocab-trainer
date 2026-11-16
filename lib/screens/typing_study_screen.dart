@@ -88,6 +88,7 @@ class _TypingStudyScreenState extends State<TypingStudyScreen> {
   @override
   Widget build(BuildContext context) {
     final categoryName = widget.isAll ? 'Усе' : widget.category!.name;
+    final pronoun = session.currentPronoun;
 
     return Scaffold(
       appBar: AppBar(
@@ -145,13 +146,50 @@ class _TypingStudyScreenState extends State<TypingStudyScreen> {
             ),
             const SizedBox(height: 24),
             if (feedback == null) ...[
-              TextField(
-                controller: controller,
-                decoration: const InputDecoration(
-                  labelText: 'Введіть переклад',
+              if (pronoun != null)
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 16,
+                        vertical: 16,
+                      ),
+                      decoration: BoxDecoration(
+                        color: Theme.of(context)
+                            .colorScheme
+                            .surfaceContainerHighest,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Text(
+                        pronoun,
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: TextField(
+                        controller: controller,
+                        decoration: const InputDecoration(
+                          labelText: 'Введіть форму дієслова',
+                          border: OutlineInputBorder(),
+                        ),
+                        onSubmitted: isInputEmpty ? null : checkAnswer,
+                      ),
+                    ),
+                  ],
+                )
+              else
+                TextField(
+                  controller: controller,
+                  decoration: const InputDecoration(
+                    labelText: 'Введіть переклад',
+                  ),
+                  onSubmitted: isInputEmpty ? null : checkAnswer,
                 ),
-                onSubmitted: isInputEmpty ? null : checkAnswer,
-              ),
               const SizedBox(height: 12),
               ElevatedButton(
                 onPressed:

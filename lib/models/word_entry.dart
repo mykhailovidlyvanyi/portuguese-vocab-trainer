@@ -9,6 +9,7 @@ class WordEntry {
   final String? englishHint;
   final String? portugueseHint;
   final int? numericValue;
+  final String? person;
 
   final Map<String, List<WordForm>> tenses;
 
@@ -22,6 +23,7 @@ class WordEntry {
     this.portugueseHint,
     this.numericValue,
     this.tenses = const {},
+    this.person,
   });
 
   factory WordEntry.fromJson(Map<String, dynamic> json) {
@@ -37,6 +39,7 @@ class WordEntry {
       englishHint: hints['english'] as String?,
       portugueseHint: hints['portuguese'] as String?,
       numericValue: (json['numericValue'] as num?)?.toInt(),
+      person: json['person'] as String?,
       tenses: rawTenses.map(
         (tense, forms) => MapEntry(
           tense,
@@ -64,6 +67,7 @@ class WordEntry {
       englishHint: englishHint,
       portugueseHint: portugueseHint,
       numericValue: numericValue,
+      person: person,
       tenses: tenses,
     );
   }
@@ -140,6 +144,7 @@ class WordEntry {
             portuguese: form.portuguese,
             type: type,
             isConjugatedForm: true,
+            person: form.person,
             weight: type == 'verb' ? (personWeights[form.person] ?? 1.0) : 1.0,
             englishHint: _combineHints([
               englishHint,

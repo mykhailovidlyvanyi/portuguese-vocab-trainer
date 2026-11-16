@@ -32,6 +32,77 @@ class StudySession {
     return _random.nextBool();
   }
 
+  String? get currentPronoun {
+    if (current.type != 'verb' ||
+        !current.isConjugatedForm ||
+        current.person == null) {
+      return null;
+    }
+
+    if (showEnglish) {
+      // English → Portuguese
+      return current.person;
+    }
+
+    // Portuguese → English
+    const englishPronouns = {
+      'eu': 'I',
+      'tu': 'you',
+      'você': 'you',
+      'ele': 'he',
+      'ela': 'she',
+      'nós': 'we',
+      'vocês': 'you',
+      'eles': 'they',
+      'elas': 'they',
+    };
+
+    return englishPronouns[current.person];
+  }
+
+  String get portugueseAnswer {
+    final answer = current.portuguese.trim();
+    final person = current.person;
+
+    if (person == null) return answer;
+
+    final prefix = '$person ';
+
+    if (answer.toLowerCase().startsWith(prefix.toLowerCase())) {
+      return answer.substring(prefix.length).trim();
+    }
+
+    return answer;
+  }
+
+  String get englishAnswer {
+    final answer = current.english.trim();
+
+    const englishPronouns = {
+      'eu': 'I',
+      'tu': 'you',
+      'você': 'you',
+      'ele': 'he',
+      'ela': 'she',
+      'nós': 'we',
+      'vocês': 'you',
+      'eles': 'they',
+      'elas': 'they',
+    };
+
+    final pronoun = englishPronouns[current.person];
+
+    if (pronoun == null) return answer;
+
+    final prefix = '$pronoun ';
+
+    if (answer.toLowerCase().startsWith(prefix.toLowerCase())) {
+      return answer.substring(prefix.length).trim();
+    }
+
+    return answer;
+  }
+
   void nextWord() {
     current = selector.nextWord(pool);
     showEnglish = _getNextDirection();
@@ -39,8 +110,8 @@ class StudySession {
 
   bool checkAnswer(String answer) {
     final expected = showEnglish
-        ? current.portuguese.toLowerCase()
-        : current.english.toLowerCase();
+        ? portugueseAnswer.toLowerCase()
+        : englishAnswer.toLowerCase();
 
     final normalized = answer.trim().toLowerCase();
     final isCorrect = normalized == expected;
@@ -51,6 +122,6 @@ class StudySession {
   }
 
   String get expectedAnswer {
-    return showEnglish ? current.portuguese : current.english;
+    return showEnglish ? portugueseAnswer : englishAnswer;
   }
 }
