@@ -2,12 +2,15 @@
   {
     "english": "zero",
     "portuguese": "zero",
+    "type": "number",
     "numericValue": 0
   },
   {
     "english": "one",
     "portuguese": "um",
+    "type": "number",
     "numericValue": 1,
+    "gender": "masculine",
     "hints": {
       "english": "masculine",
       "portuguese": "masculino"
@@ -16,7 +19,9 @@
   {
     "english": "one",
     "portuguese": "uma",
+    "type": "number",
     "numericValue": 1,
+    "gender": "feminine",
     "hints": {
       "english": "feminine",
       "portuguese": "feminino"
@@ -25,7 +30,9 @@
   {
     "english": "two",
     "portuguese": "dois",
+    "type": "number",
     "numericValue": 2,
+    "gender": "masculine",
     "hints": {
       "english": "masculine",
       "portuguese": "masculino"
@@ -34,7 +41,9 @@
   {
     "english": "two",
     "portuguese": "duas",
+    "type": "number",
     "numericValue": 2,
+    "gender": "feminine",
     "hints": {
       "english": "feminine",
       "portuguese": "feminino"
@@ -43,41 +52,49 @@
   {
     "english": "three",
     "portuguese": "três",
+    "type": "number",
     "numericValue": 3
   },
   {
     "english": "four",
     "portuguese": "quatro",
+    "type": "number",
     "numericValue": 4
   },
   {
     "english": "five",
     "portuguese": "cinco",
+    "type": "number",
     "numericValue": 5
   },
   {
     "english": "six",
     "portuguese": "seis",
+    "type": "number",
     "numericValue": 6
   },
   {
     "english": "seven",
     "portuguese": "sete",
+    "type": "number",
     "numericValue": 7
   },
   {
     "english": "eight",
     "portuguese": "oito",
+    "type": "number",
     "numericValue": 8
   },
   {
     "english": "nine",
     "portuguese": "nove",
+    "type": "number",
     "numericValue": 9
   },
   {
     "english": "ten",
     "portuguese": "dez",
+    "type": "number",
     "numericValue": 10
   }
 ]

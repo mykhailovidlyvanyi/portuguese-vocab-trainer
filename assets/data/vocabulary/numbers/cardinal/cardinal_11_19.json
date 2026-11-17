@@ -1,11 +1,11 @@
 [
-  {"english": "eleven", "portuguese": "onze", "numericValue": 11},
-  {"english": "twelve", "portuguese": "doze", "numericValue": 12},
-  {"english": "thirteen", "portuguese": "treze", "numericValue": 13},
-  {"english": "fourteen", "portuguese": "catorze", "numericValue": 14},
-  {"english": "fifteen", "portuguese": "quinze", "numericValue": 15},
-  {"english": "sixteen", "portuguese": "dezasseis", "numericValue": 16},
-  {"english": "seventeen", "portuguese": "dezassete", "numericValue": 17},
-  {"english": "eighteen", "portuguese": "dezoito", "numericValue": 18},
-  {"english": "nineteen", "portuguese": "dezanove", "numericValue": 19}
+  {"english": "eleven", "portuguese": "onze", "type": "number", "numericValue": 11},
+  {"english": "twelve", "portuguese": "doze", "type": "number", "numericValue": 12},
+  {"english": "thirteen", "portuguese": "treze", "type": "number", "numericValue": 13},
+  {"english": "fourteen", "portuguese": "catorze", "type": "number", "numericValue": 14},
+  {"english": "fifteen", "portuguese": "quinze", "type": "number", "numericValue": 15},
+  {"english": "sixteen", "portuguese": "dezasseis", "type": "number", "numericValue": 16},
+  {"english": "seventeen", "portuguese": "dezassete", "type": "number", "numericValue": 17},
+  {"english": "eighteen", "portuguese": "dezoito", "type": "number", "numericValue": 18},
+  {"english": "nineteen", "portuguese": "dezanove", "type": "number", "numericValue": 19}
 ]

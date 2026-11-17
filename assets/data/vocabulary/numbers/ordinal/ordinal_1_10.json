@@ -2,7 +2,9 @@
   {
     "english": "first",
     "portuguese": "primeiro",
+    "type": "number",
     "numericValue": 1,
+    "gender": "masculine",
     "hints": {
       "english": "masculine",
       "portuguese": "masculino"
@@ -11,7 +13,9 @@
   {
     "english": "first",
     "portuguese": "primeira",
+    "type": "number",
     "numericValue": 1,
+    "gender": "feminine",
     "hints": {
       "english": "feminine",
       "portuguese": "feminino"
@@ -20,7 +24,9 @@
   {
     "english": "second",
     "portuguese": "segundo",
+    "type": "number",
     "numericValue": 2,
+    "gender": "masculine",
     "hints": {
       "english": "masculine",
       "portuguese": "masculino"
@@ -29,7 +35,9 @@
   {
     "english": "second",
     "portuguese": "segunda",
+    "type": "number",
     "numericValue": 2,
+    "gender": "feminine",
     "hints": {
       "english": "feminine",
       "portuguese": "feminino"
@@ -38,7 +46,9 @@
   {
     "english": "third",
     "portuguese": "terceiro",
+    "type": "number",
     "numericValue": 3,
+    "gender": "masculine",
     "hints": {
       "english": "masculine",
       "portuguese": "masculino"
@@ -47,7 +57,9 @@
   {
     "english": "third",
     "portuguese": "terceira",
+    "type": "number",
     "numericValue": 3,
+    "gender": "feminine",
     "hints": {
       "english": "feminine",
       "portuguese": "feminino"
@@ -56,7 +68,9 @@
   {
     "english": "fourth",
     "portuguese": "quarto",
+    "type": "number",
     "numericValue": 4,
+    "gender": "masculine",
     "hints": {
       "english": "masculine",
       "portuguese": "masculino"
@@ -65,7 +79,9 @@
   {
     "english": "fourth",
     "portuguese": "quarta",
+    "type": "number",
     "numericValue": 4,
+    "gender": "feminine",
     "hints": {
       "english": "feminine",
       "portuguese": "feminino"
@@ -74,7 +90,9 @@
   {
     "english": "fifth",
     "portuguese": "quinto",
+    "type": "number",
     "numericValue": 5,
+    "gender": "masculine",
     "hints": {
       "english": "masculine",
       "portuguese": "masculino"
@@ -83,7 +101,9 @@
   {
     "english": "fifth",
     "portuguese": "quinta",
+    "type": "number",
     "numericValue": 5,
+    "gender": "feminine",
     "hints": {
       "english": "feminine",
       "portuguese": "feminino"
@@ -92,7 +112,9 @@
   {
     "english": "sixth",
     "portuguese": "sexto",
+    "type": "number",
     "numericValue": 6,
+    "gender": "masculine",
     "hints": {
       "english": "masculine",
       "portuguese": "masculino"
@@ -101,7 +123,9 @@
   {
     "english": "sixth",
     "portuguese": "sexta",
+    "type": "number",
     "numericValue": 6,
+    "gender": "feminine",
     "hints": {
       "english": "feminine",
       "portuguese": "feminino"
@@ -110,7 +134,9 @@
   {
     "english": "seventh",
     "portuguese": "sétimo",
+    "type": "number",
     "numericValue": 7,
+    "gender": "masculine",
     "hints": {
       "english": "masculine",
       "portuguese": "masculino"
@@ -119,7 +145,9 @@
   {
     "english": "seventh",
     "portuguese": "sétima",
+    "type": "number",
     "numericValue": 7,
+    "gender": "feminine",
     "hints": {
       "english": "feminine",
       "portuguese": "feminino"
@@ -128,7 +156,9 @@
   {
     "english": "eighth",
     "portuguese": "oitavo",
+    "type": "number",
     "numericValue": 8,
+    "gender": "masculine",
     "hints": {
       "english": "masculine",
       "portuguese": "masculino"
@@ -137,7 +167,9 @@
   {
     "english": "eighth",
     "portuguese": "oitava",
+    "type": "number",
     "numericValue": 8,
+    "gender": "feminine",
     "hints": {
       "english": "feminine",
       "portuguese": "feminino"
@@ -146,7 +178,9 @@
   {
     "english": "ninth",
     "portuguese": "nono",
+    "type": "number",
     "numericValue": 9,
+    "gender": "masculine",
     "hints": {
       "english": "masculine",
       "portuguese": "masculino"
@@ -155,7 +189,9 @@
   {
     "english": "ninth",
     "portuguese": "nona",
+    "type": "number",
     "numericValue": 9,
+    "gender": "feminine",
     "hints": {
       "english": "feminine",
       "portuguese": "feminino"
@@ -164,7 +200,9 @@
   {
     "english": "tenth",
     "portuguese": "décimo",
+    "type": "number",
     "numericValue": 10,
+    "gender": "masculine",
     "hints": {
       "english": "masculine",
       "portuguese": "masculino"
@@ -173,7 +211,9 @@
   {
     "english": "tenth",
     "portuguese": "décima",
+    "type": "number",
     "numericValue": 10,
+    "gender": "feminine",
     "hints": {
       "english": "feminine",
       "portuguese": "feminino"
