@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 
 import '../models/word_category.dart';
 import '../models/word_entry.dart';
+import '../models/study_weight.dart';
 
 class VocabularyService {
   Map<String, Map<String, String>> _personHints = {};
@@ -14,8 +15,8 @@ class VocabularyService {
   double _verbInfinitiveWeight = 1.0;
   Map<String, double> _verbPersonWeights = {};
 
-  double _numberDefaultWeight = 1.0;
-  double _numberGenderVariantWeight = 0.5;
+  late double _numberDefaultWeight;
+  late double _numberGenderVariantWeight;
 
   Future<List<WordCategory>> loadCategories() async {
     await _loadPersonHints();
@@ -155,8 +156,12 @@ class VocabularyService {
           genders.contains('masculine') && genders.contains('feminine');
 
       return word.copyWith(
-        weight:
-            hasBothGenders ? _numberGenderVariantWeight : _numberDefaultWeight,
+        studyWeight: StudyWeight(
+          baseWeight: hasBothGenders
+              ? _numberGenderVariantWeight
+              : _numberDefaultWeight,
+          learningMultiplier: word.studyWeight.learningMultiplier,
+        ),
       );
     }).toList();
   }
