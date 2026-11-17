@@ -125,9 +125,11 @@ class VocabularyService {
     final genderByGroup = <String, Set<String>>{};
 
     for (final word in words) {
-      if (word.numericValue == null) continue;
+      if (word.type != 'number' || word.numericValue == null) {
+        continue;
+      }
 
-      final gender = word.englishHint?.toLowerCase().trim();
+      final gender = word.gender?.toLowerCase().trim();
 
       if (gender != 'masculine' && gender != 'feminine') {
         continue;
@@ -140,7 +142,7 @@ class VocabularyService {
     }
 
     return words.map((word) {
-      if (word.numericValue == null) {
+      if (word.type != 'number' || word.numericValue == null) {
         return word;
       }
 

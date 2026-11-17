@@ -58,15 +58,37 @@ void main() {
     });
   });
 
-  group('Number weights', () {
-    test('masculine and feminine forms have weight 0.5', () {
+  group('Number data', () {
+    test('all entries with numericValue have type number', () {
+      final numericWords =
+          words.where((word) => word.numericValue != null).toList();
+
+      expect(numericWords, isNotEmpty);
+
+      for (final word in numericWords) {
+        expect(
+          word.type,
+          'number',
+          reason: 'Incorrect type for ${word.portuguese}',
+        );
+      }
+    });
+
+    test('cardinal gender variants have correct gender and weight', () {
       final oneVariants = words
           .where(
-            (word) => word.numericValue == 1 && word.english == 'one',
+            (word) =>
+                word.type == 'number' &&
+                word.numericValue == 1 &&
+                word.english == 'one',
           )
           .toList();
 
       expect(oneVariants, hasLength(2));
+
+      final genders = oneVariants.map((word) => word.gender).toSet();
+
+      expect(genders, {'masculine', 'feminine'});
 
       for (final word in oneVariants) {
         expect(
@@ -77,14 +99,21 @@ void main() {
       }
     });
 
-    test('ordinal gender variants have weight 0.5', () {
+    test('ordinal gender variants have correct gender and weight', () {
       final firstVariants = words
           .where(
-            (word) => word.numericValue == 1 && word.english == 'first',
+            (word) =>
+                word.type == 'number' &&
+                word.numericValue == 1 &&
+                word.english == 'first',
           )
           .toList();
 
       expect(firstVariants, hasLength(2));
+
+      final genders = firstVariants.map((word) => word.gender).toSet();
+
+      expect(genders, {'masculine', 'feminine'});
 
       for (final word in firstVariants) {
         expect(word.weight, 0.5);
@@ -93,10 +122,44 @@ void main() {
 
     test('number without gender variants has weight 1.0', () {
       final zero = words.firstWhere(
-        (word) => word.numericValue == 0 && word.english == 'zero',
+        (word) =>
+            word.type == 'number' &&
+            word.numericValue == 0 &&
+            word.english == 'zero',
       );
 
       expect(zero.weight, 1.0);
+    });
+
+    test('all gender variants have weight 0.5', () {
+      final genderGroups = <String, List<WordEntry>>{};
+
+      for (final word in words.where(
+        (word) =>
+            word.type == 'number' &&
+            (word.gender == 'masculine' || word.gender == 'feminine'),
+      )) {
+        final key = '${word.numericValue}_${word.english}';
+        genderGroups.putIfAbsent(key, () => []).add(word);
+      }
+
+      for (final entry in genderGroups.entries) {
+        final variants = entry.value;
+
+        expect(
+          variants.map((word) => word.gender).toSet(),
+          {'masculine', 'feminine'},
+          reason: 'Missing gender variant in group ${entry.key}',
+        );
+
+        for (final word in variants) {
+          expect(
+            word.weight,
+            0.5,
+            reason: 'Incorrect weight for ${word.portuguese}',
+          );
+        }
+      }
     });
   });
 }

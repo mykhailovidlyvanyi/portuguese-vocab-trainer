@@ -2,7 +2,9 @@
   {
     "english": "eleventh",
     "portuguese": "décimo primeiro",
+    "type": "number",
     "numericValue": 11,
+    "gender": "masculine",
     "hints": {
       "english": "masculine",
       "portuguese": "masculino"
@@ -11,7 +13,9 @@
   {
     "english": "eleventh",
     "portuguese": "décima primeira",
+    "type": "number",
     "numericValue": 11,
+    "gender": "feminine",
     "hints": {
       "english": "feminine",
       "portuguese": "feminino"
@@ -20,7 +24,9 @@
   {
     "english": "twelfth",
     "portuguese": "décimo segundo",
+    "type": "number",
     "numericValue": 12,
+    "gender": "masculine",
     "hints": {
       "english": "masculine",
       "portuguese": "masculino"
@@ -29,7 +35,9 @@
   {
     "english": "twelfth",
     "portuguese": "décima segunda",
+    "type": "number",
     "numericValue": 12,
+    "gender": "feminine",
     "hints": {
       "english": "feminine",
       "portuguese": "feminino"
@@ -38,7 +46,9 @@
   {
     "english": "thirteenth",
     "portuguese": "décimo terceiro",
+    "type": "number",
     "numericValue": 13,
+    "gender": "masculine",
     "hints": {
       "english": "masculine",
       "portuguese": "masculino"
@@ -47,7 +57,9 @@
   {
     "english": "thirteenth",
     "portuguese": "décima terceira",
+    "type": "number",
     "numericValue": 13,
+    "gender": "feminine",
     "hints": {
       "english": "feminine",
       "portuguese": "feminino"
@@ -56,7 +68,9 @@
   {
     "english": "fourteenth",
     "portuguese": "décimo quarto",
+    "type": "number",
     "numericValue": 14,
+    "gender": "masculine",
     "hints": {
       "english": "masculine",
       "portuguese": "masculino"
@@ -65,7 +79,9 @@
   {
     "english": "fourteenth",
     "portuguese": "décima quarta",
+    "type": "number",
     "numericValue": 14,
+    "gender": "feminine",
     "hints": {
       "english": "feminine",
       "portuguese": "feminino"
@@ -74,7 +90,9 @@
   {
     "english": "fifteenth",
     "portuguese": "décimo quinto",
+    "type": "number",
     "numericValue": 15,
+    "gender": "masculine",
     "hints": {
       "english": "masculine",
       "portuguese": "masculino"
@@ -83,7 +101,9 @@
   {
     "english": "fifteenth",
     "portuguese": "décima quinta",
+    "type": "number",
     "numericValue": 15,
+    "gender": "feminine",
     "hints": {
       "english": "feminine",
       "portuguese": "feminino"
@@ -92,7 +112,9 @@
   {
     "english": "sixteenth",
     "portuguese": "décimo sexto",
+    "type": "number",
     "numericValue": 16,
+    "gender": "masculine",
     "hints": {
       "english": "masculine",
       "portuguese": "masculino"
@@ -101,7 +123,9 @@
   {
     "english": "sixteenth",
     "portuguese": "décima sexta",
+    "type": "number",
     "numericValue": 16,
+    "gender": "feminine",
     "hints": {
       "english": "feminine",
       "portuguese": "feminino"
@@ -110,7 +134,9 @@
   {
     "english": "seventeenth",
     "portuguese": "décimo sétimo",
+    "type": "number",
     "numericValue": 17,
+    "gender": "masculine",
     "hints": {
       "english": "masculine",
       "portuguese": "masculino"
@@ -119,7 +145,9 @@
   {
     "english": "seventeenth",
     "portuguese": "décima sétima",
+    "type": "number",
     "numericValue": 17,
+    "gender": "feminine",
     "hints": {
       "english": "feminine",
       "portuguese": "feminino"
@@ -128,7 +156,9 @@
   {
     "english": "eighteenth",
     "portuguese": "décimo oitavo",
+    "type": "number",
     "numericValue": 18,
+    "gender": "masculine",
     "hints": {
       "english": "masculine",
       "portuguese": "masculino"
@@ -137,7 +167,9 @@
   {
     "english": "eighteenth",
     "portuguese": "décima oitava",
+    "type": "number",
     "numericValue": 18,
+    "gender": "feminine",
     "hints": {
       "english": "feminine",
       "portuguese": "feminino"
@@ -146,7 +178,9 @@
   {
     "english": "nineteenth",
     "portuguese": "décimo nono",
+    "type": "number",
     "numericValue": 19,
+    "gender": "masculine",
     "hints": {
       "english": "masculine",
       "portuguese": "masculino"
@@ -155,7 +189,9 @@
   {
     "english": "nineteenth",
     "portuguese": "décima nona",
+    "type": "number",
     "numericValue": 19,
+    "gender": "feminine",
     "hints": {
       "english": "feminine",
       "portuguese": "feminino"

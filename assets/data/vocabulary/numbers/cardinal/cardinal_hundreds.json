@@ -1,11 +1,11 @@
 [
-  {"english": "one hundred", "portuguese": "cem", "numericValue": 100},
-  {"english": "two hundred", "portuguese": "duzentos", "numericValue": 200},
-  {"english": "three hundred", "portuguese": "trezentos", "numericValue": 300},
-  {"english": "four hundred", "portuguese": "quatrocentos", "numericValue": 400},
-  {"english": "five hundred", "portuguese": "quinhentos", "numericValue": 500},
-  {"english": "six hundred", "portuguese": "seiscentos", "numericValue": 600},
-  {"english": "seven hundred", "portuguese": "setecentos", "numericValue": 700},
-  {"english": "eight hundred", "portuguese": "oitocentos", "numericValue": 800},
-  {"english": "nine hundred", "portuguese": "novecentos", "numericValue": 900}
+  {"english": "one hundred", "portuguese": "cem", "type": "number", "numericValue": 100},
+  {"english": "two hundred", "portuguese": "duzentos", "type": "number", "numericValue": 200},
+  {"english": "three hundred", "portuguese": "trezentos", "type": "number", "numericValue": 300},
+  {"english": "four hundred", "portuguese": "quatrocentos", "type": "number", "numericValue": 400},
+  {"english": "five hundred", "portuguese": "quinhentos", "type": "number", "numericValue": 500},
+  {"english": "six hundred", "portuguese": "seiscentos", "type": "number", "numericValue": 600},
+  {"english": "seven hundred", "portuguese": "setecentos", "type": "number", "numericValue": 700},
+  {"english": "eight hundred", "portuguese": "oitocentos", "type": "number", "numericValue": 800},
+  {"english": "nine hundred", "portuguese": "novecentos", "type": "number", "numericValue": 900}
 ]
