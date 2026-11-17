@@ -17,7 +17,7 @@ void main() {
   });
 
   group('Verb weights', () {
-    test('infinitive has weight 1.0', () {
+    test('infinitive has base weight 1.0', () {
       final ser = words.firstWhere(
         (word) =>
             word.type == 'verb' &&
@@ -25,7 +25,8 @@ void main() {
             word.english == 'to be',
       );
 
-      expect(ser.weight, 1.0);
+      expect(ser.studyWeight.baseWeight, 1.0);
+      expect(ser.studyWeight.learningMultiplier, 1.0);
     });
 
     test('verb forms have weights according to grammatical person', () {
@@ -50,9 +51,15 @@ void main() {
         );
 
         expect(
-          word.weight,
+          word.studyWeight.baseWeight,
           entry.value,
           reason: 'Incorrect weight for ${entry.key}',
+        );
+
+        expect(
+          word.studyWeight.learningMultiplier,
+          1.0,
+          reason: 'Unexpected learning multiplier for ${entry.key}',
         );
       }
     });
@@ -92,10 +99,11 @@ void main() {
 
       for (final word in oneVariants) {
         expect(
-          word.weight,
+          word.studyWeight.baseWeight,
           0.5,
           reason: 'Incorrect weight for ${word.portuguese}',
         );
+        expect(word.studyWeight.learningMultiplier, 1.0);
       }
     });
 
@@ -116,11 +124,12 @@ void main() {
       expect(genders, {'masculine', 'feminine'});
 
       for (final word in firstVariants) {
-        expect(word.weight, 0.5);
+        expect(word.studyWeight.baseWeight, 0.5);
+        expect(word.studyWeight.learningMultiplier, 1.0);
       }
     });
 
-    test('number without gender variants has weight 1.0', () {
+    test('number without gender variants has base weight 1.0', () {
       final zero = words.firstWhere(
         (word) =>
             word.type == 'number' &&
@@ -128,7 +137,8 @@ void main() {
             word.english == 'zero',
       );
 
-      expect(zero.weight, 1.0);
+      expect(zero.studyWeight.baseWeight, 1.0);
+      expect(zero.studyWeight.learningMultiplier, 1.0);
     });
 
     test('all gender variants have weight 0.5', () {
@@ -154,9 +164,15 @@ void main() {
 
         for (final word in variants) {
           expect(
-            word.weight,
+            word.studyWeight.baseWeight,
             0.5,
             reason: 'Incorrect weight for ${word.portuguese}',
+          );
+
+          expect(
+            word.studyWeight.learningMultiplier,
+            1.0,
+            reason: 'Unexpected learning multiplier for ${word.portuguese}',
           );
         }
       }

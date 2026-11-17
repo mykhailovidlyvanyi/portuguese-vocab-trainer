@@ -1,11 +1,13 @@
 // lib/models/word_entry.dart
 
+import 'study_weight.dart';
+
 class WordEntry {
   final String english;
   final String portuguese;
   final String type;
   final bool isConjugatedForm;
-  final double weight;
+  final StudyWeight studyWeight;
   final String? englishHint;
   final String? portugueseHint;
   final int? numericValue;
@@ -20,7 +22,7 @@ class WordEntry {
     required this.portuguese,
     this.type = 'word',
     this.isConjugatedForm = false,
-    this.weight = 1.0,
+    this.studyWeight = const StudyWeight(),
     this.englishHint,
     this.portugueseHint,
     this.numericValue,
@@ -68,14 +70,14 @@ class WordEntry {
   }
 
   WordEntry copyWith({
-    double? weight,
+    StudyWeight? studyWeight,
   }) {
     return WordEntry(
       english: english,
       portuguese: portuguese,
       type: type,
       isConjugatedForm: isConjugatedForm,
-      weight: weight ?? this.weight,
+      studyWeight: studyWeight ?? this.studyWeight,
       englishHint: englishHint,
       portugueseHint: portugueseHint,
       numericValue: numericValue,
@@ -127,20 +129,29 @@ class WordEntry {
                 portugueseHint: form.portugueseHint,
                 englishPersonHint: personHints[form.person]?['english'],
                 portuguesePersonHint: personHints[form.person]?['portuguese'],
-                weight:
-                    type == 'verb' ? (personWeights[form.person] ?? 1.0) : 1.0,
+                studyWeight: StudyWeight(
+                  baseWeight: type == 'verb'
+                      ? (personWeights[form.person] ?? 1.0)
+                      : form.studyWeight.baseWeight,
+                  learningMultiplier: form.studyWeight.learningMultiplier,
+                ),
               ),
             )
             .toList(),
       ),
     );
+
     final entries = <WordEntry>[
       WordEntry(
         english: english,
         portuguese: portuguese,
         type: type,
         isConjugatedForm: false,
-        weight: type == 'verb' ? infinitiveWeight : weight,
+        studyWeight: StudyWeight(
+          baseWeight:
+              type == 'verb' ? infinitiveWeight : studyWeight.baseWeight,
+          learningMultiplier: studyWeight.learningMultiplier,
+        ),
         englishHint: englishHint,
         portugueseHint: portugueseHint,
         numericValue: numericValue,
@@ -163,7 +174,7 @@ class WordEntry {
             person: form.person,
             article: article,
             gender: gender,
-            weight: type == 'verb' ? (personWeights[form.person] ?? 1.0) : 1.0,
+            studyWeight: form.studyWeight,
             englishHint: _combineHints([
               englishHint,
               personHint?['english'],
@@ -189,7 +200,7 @@ class WordForm {
   final String portuguese;
   final String? englishHint;
   final String? portugueseHint;
-  final double weight;
+  final StudyWeight studyWeight;
   final String? englishPersonHint;
   final String? portuguesePersonHint;
 
@@ -199,7 +210,7 @@ class WordForm {
     required this.portuguese,
     this.englishHint,
     this.portugueseHint,
-    this.weight = 1.0,
+    this.studyWeight = const StudyWeight(),
     this.englishPersonHint,
     this.portuguesePersonHint,
   });

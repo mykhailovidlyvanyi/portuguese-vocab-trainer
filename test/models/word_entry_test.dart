@@ -2,6 +2,7 @@
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:portuguese_vocab_trainer/models/word_entry.dart';
+import 'package:portuguese_vocab_trainer/models/study_weight.dart';
 
 const genderData = {
   'masculine': {
@@ -27,7 +28,8 @@ void main() {
       expect(word.english, 'to speak');
       expect(word.portuguese, 'falar');
       expect(word.type, 'word');
-      expect(word.weight, 1.0);
+      expect(word.studyWeight.baseWeight, 1.0);
+      expect(word.studyWeight.learningMultiplier, 1.0);
       expect(word.isConjugatedForm, false);
       expect(word.englishHint, isNull);
       expect(word.portugueseHint, isNull);
@@ -164,17 +166,19 @@ void main() {
   });
 
   group('WordEntry.copyWith', () {
-    test('changes weight', () {
+    test('changes studyWeight', () {
       final word = WordEntry(
         english: 'house',
         portuguese: 'casa',
-        weight: 1.0,
+        studyWeight: const StudyWeight(baseWeight: 1.0),
       );
 
-      final copiedWord = word.copyWith(weight: 2.0);
+      final copiedWord = word.copyWith(
+        studyWeight: const StudyWeight(baseWeight: 2.0),
+      );
 
-      expect(copiedWord.weight, 2.0);
-      expect(word.weight, 1.0);
+      expect(copiedWord.studyWeight.baseWeight, 2.0);
+      expect(word.studyWeight.baseWeight, 1.0);
     });
 
     test('preserves all other fields when copying', () {
@@ -182,7 +186,7 @@ void main() {
         english: 'Saturday',
         portuguese: 'sábado',
         type: 'noun',
-        weight: 1.5,
+        studyWeight: const StudyWeight(baseWeight: 1.5),
         englishHint: 'day of the week',
         portugueseHint: 'dia da semana',
         numericValue: 7,
@@ -191,7 +195,9 @@ void main() {
         gender: 'masculine',
       );
 
-      final copiedWord = word.copyWith(weight: 2.0);
+      final copiedWord = word.copyWith(
+        studyWeight: const StudyWeight(baseWeight: 2.0),
+      );
 
       expect(copiedWord.english, word.english);
       expect(copiedWord.portuguese, word.portuguese);
@@ -206,16 +212,20 @@ void main() {
       expect(copiedWord.tenses, same(word.tenses));
     });
 
-    test('preserves weight when no new weight is provided', () {
+    test('preserves studyWeight when no new value is provided', () {
       final word = WordEntry(
         english: 'house',
         portuguese: 'casa',
-        weight: 1.5,
+        studyWeight: const StudyWeight(
+          baseWeight: 1.5,
+          learningMultiplier: 2.0,
+        ),
       );
 
       final copiedWord = word.copyWith();
 
-      expect(copiedWord.weight, 1.5);
+      expect(copiedWord.studyWeight.baseWeight, 1.5);
+      expect(copiedWord.studyWeight.learningMultiplier, 2.0);
     });
   });
 
@@ -244,7 +254,7 @@ void main() {
 
       final entries = word.toStudyEntries(infinitiveWeight: 2.5);
 
-      expect(entries.first.weight, 2.5);
+      expect(entries.first.studyWeight.baseWeight, 2.5);
     });
 
     test('preserves original weight for non-verbs', () {
@@ -252,12 +262,12 @@ void main() {
         english: 'house',
         portuguese: 'casa',
         type: 'noun',
-        weight: 1.5,
+        studyWeight: const StudyWeight(baseWeight: 1.5),
       );
 
       final entries = word.toStudyEntries(infinitiveWeight: 3.0);
 
-      expect(entries.first.weight, 1.5);
+      expect(entries.first.studyWeight.baseWeight, 1.5);
     });
 
     test('creates entries for all conjugated forms', () {
@@ -325,9 +335,9 @@ void main() {
         },
       );
 
-      expect(entries[0].weight, 2.0);
-      expect(entries[1].weight, 0.5);
-      expect(entries[2].weight, 1.5);
+      expect(entries[0].studyWeight.baseWeight, 2.0);
+      expect(entries[1].studyWeight.baseWeight, 0.5);
+      expect(entries[2].studyWeight.baseWeight, 1.5);
     });
 
     test('uses default weight for persons without configured weight', () {
@@ -350,7 +360,7 @@ void main() {
         personWeights: {'tu': 0.5},
       );
 
-      expect(entries[1].weight, 1.0);
+      expect(entries[1].studyWeight.baseWeight, 1.0);
     });
 
     test('does not apply personWeights to non-verbs', () {
@@ -373,7 +383,37 @@ void main() {
         personWeights: {'eu': 0.5},
       );
 
-      expect(entries[1].weight, 1.0);
+      expect(entries[1].studyWeight.baseWeight, 1.0);
+    });
+
+    test('preserves learningMultiplier when creating study entries', () {
+      final word = WordEntry(
+        english: 'to speak',
+        portuguese: 'falar',
+        type: 'verb',
+        studyWeight: const StudyWeight(
+          baseWeight: 1.0,
+          learningMultiplier: 2.0,
+        ),
+        tenses: {
+          'present': [
+            WordForm(
+              person: 'eu',
+              english: 'I speak',
+              portuguese: 'falo',
+              studyWeight: const StudyWeight(
+                baseWeight: 1.0,
+                learningMultiplier: 3.0,
+              ),
+            ),
+          ],
+        },
+      );
+
+      final entries = word.toStudyEntries();
+
+      expect(entries[0].studyWeight.learningMultiplier, 2.0);
+      expect(entries[1].studyWeight.learningMultiplier, 3.0);
     });
 
     test('adds person hints to WordForms', () {
@@ -476,7 +516,8 @@ void main() {
       expect(form.person, 'eu');
       expect(form.english, 'I speak');
       expect(form.portuguese, 'falo');
-      expect(form.weight, 1.0);
+      expect(form.studyWeight.baseWeight, 1.0);
+      expect(form.studyWeight.learningMultiplier, 1.0);
       expect(form.englishHint, isNull);
       expect(form.portugueseHint, isNull);
       expect(form.englishPersonHint, isNull);
@@ -512,17 +553,21 @@ void main() {
       expect(form.portugueseHint, isNull);
     });
 
-    test('allows person hints and custom weight through constructor', () {
+    test('allows person hints and custom studyWeight through constructor', () {
       final form = WordForm(
         person: 'eu',
         english: 'I speak',
         portuguese: 'falo',
-        weight: 0.5,
+        studyWeight: const StudyWeight(
+          baseWeight: 0.5,
+          learningMultiplier: 2.0,
+        ),
         englishPersonHint: 'first person',
         portuguesePersonHint: 'primeira pessoa',
       );
 
-      expect(form.weight, 0.5);
+      expect(form.studyWeight.baseWeight, 0.5);
+      expect(form.studyWeight.learningMultiplier, 2.0);
       expect(form.englishPersonHint, 'first person');
       expect(form.portuguesePersonHint, 'primeira pessoa');
     });

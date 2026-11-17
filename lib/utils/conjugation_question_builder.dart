@@ -2,7 +2,12 @@
 
 import 'dart:math';
 
+import 'package:flutter/foundation.dart';
+
 import '../models/word_entry.dart';
+import '../models/study_weight.dart';
+
+import 'weighted_random_selector.dart';
 
 class ConjugationQuestion {
   final String infinitive;
@@ -11,7 +16,7 @@ class ConjugationQuestion {
   final String englishPerson;
   final String correctAnswer;
   final List<String> options;
-  final double weight;
+  final StudyWeight studyWeight;
 
   const ConjugationQuestion({
     required this.infinitive,
@@ -20,12 +25,15 @@ class ConjugationQuestion {
     required this.englishPerson,
     required this.correctAnswer,
     required this.options,
-    required this.weight,
+    required this.studyWeight,
   });
 }
 
 class ConjugationQuestionBuilder {
   final Random _random = Random();
+
+  final WeightedRandomSelector<ConjugationQuestion> _selector =
+      WeightedRandomSelector<ConjugationQuestion>();
 
   // Прибираємо займенник із португальської форми.
   // Наприклад: "tu estás" -> "estás".
@@ -132,7 +140,12 @@ class ConjugationQuestionBuilder {
             englishPerson: _getEnglishPerson(form),
             correctAnswer: correctAnswer,
             options: options,
-            weight: verb.weight * form.weight,
+            studyWeight: StudyWeight(
+              baseWeight:
+                  verb.studyWeight.baseWeight * form.studyWeight.baseWeight,
+              learningMultiplier: verb.studyWeight.learningMultiplier *
+                  form.studyWeight.learningMultiplier,
+            ),
           ),
         );
       }
@@ -144,29 +157,21 @@ class ConjugationQuestionBuilder {
   ConjugationQuestion nextQuestion(
     List<ConjugationQuestion> questions,
   ) {
-    if (questions.isEmpty) {
-      throw StateError('No conjugation questions available.');
-    }
-
-    final totalWeight = questions.fold<double>(
-      0,
-      (sum, question) => sum + question.weight.clamp(0.0, double.infinity),
+    final selected = _selector.next(
+      items: questions,
+      getWeight: (question) => question.studyWeight.effectiveWeight,
     );
 
-    if (totalWeight <= 0) {
-      return questions[_random.nextInt(questions.length)];
-    }
+    debugPrint(
+      'Selected conjugation: ${selected.infinitive} '
+      '(${selected.englishInfinitive}) | '
+      'Person: ${selected.person} | '
+      'Answer: ${selected.correctAnswer} | '
+      'Base Weight: ${selected.studyWeight.baseWeight} | '
+      'Learning Multiplier: ${selected.studyWeight.learningMultiplier} | '
+      'Effective Weight: ${selected.studyWeight.effectiveWeight}',
+    );
 
-    var randomWeight = _random.nextDouble() * totalWeight;
-
-    for (final question in questions) {
-      randomWeight -= question.weight.clamp(0.0, double.infinity);
-
-      if (randomWeight < 0) {
-        return question;
-      }
-    }
-
-    return questions.last;
+    return selected;
   }
 }

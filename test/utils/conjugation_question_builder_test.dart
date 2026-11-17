@@ -2,6 +2,7 @@
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:portuguese_vocab_trainer/models/word_entry.dart';
+import 'package:portuguese_vocab_trainer/models/study_weight.dart';
 import 'package:portuguese_vocab_trainer/utils/conjugation_question_builder.dart';
 
 void main() {
@@ -12,14 +13,14 @@ void main() {
   });
 
   WordEntry createVerb({
-    double weight = 1.0,
+    double baseWeight = 1.0,
     List<WordForm>? forms,
   }) {
     return WordEntry(
       english: 'to be',
       portuguese: 'ser',
       type: 'verb',
-      weight: weight,
+      studyWeight: StudyWeight(baseWeight: baseWeight),
       tenses: {
         'present': forms ??
             [
@@ -269,31 +270,31 @@ void main() {
 
     test('question weight is the product of verb and form weights', () {
       final verb = createVerb(
-        weight: 2.0,
+        baseWeight: 2.0,
         forms: [
           WordForm(
             person: 'eu',
             english: 'I am',
             portuguese: 'eu sou',
-            weight: 0.5,
+            studyWeight: const StudyWeight(baseWeight: 0.5),
           ),
           WordForm(
             person: 'tu',
             english: 'you are',
             portuguese: 'tu és',
-            weight: 0.8,
+            studyWeight: const StudyWeight(baseWeight: 0.8),
           ),
           WordForm(
             person: 'você',
             english: 'you are',
             portuguese: 'você é',
-            weight: 1.0,
+            studyWeight: const StudyWeight(baseWeight: 1.0),
           ),
           WordForm(
             person: 'nós',
             english: 'we are',
             portuguese: 'nós somos',
-            weight: 1.0,
+            studyWeight: const StudyWeight(baseWeight: 1.0),
           ),
         ],
       );
@@ -304,7 +305,58 @@ void main() {
         (question) => question.person == 'eu',
       );
 
-      expect(question.weight, 1.0);
+      expect(question.studyWeight.baseWeight, 1.0);
+      expect(question.studyWeight.effectiveWeight, 1.0);
+    });
+
+    test('question weight includes learning multipliers', () {
+      final verb = WordEntry(
+        english: 'to be',
+        portuguese: 'ser',
+        type: 'verb',
+        studyWeight: const StudyWeight(
+          baseWeight: 2.0,
+          learningMultiplier: 3.0,
+        ),
+        tenses: {
+          'present': [
+            WordForm(
+              person: 'eu',
+              english: 'I am',
+              portuguese: 'eu sou',
+              studyWeight: const StudyWeight(
+                baseWeight: 0.5,
+                learningMultiplier: 2.0,
+              ),
+            ),
+            WordForm(
+              person: 'tu',
+              english: 'you are',
+              portuguese: 'tu és',
+            ),
+            WordForm(
+              person: 'você',
+              english: 'you are',
+              portuguese: 'você é',
+            ),
+            WordForm(
+              person: 'nós',
+              english: 'we are',
+              portuguese: 'nós somos',
+            ),
+          ],
+        },
+      );
+
+      final questions = builder.buildQuestions(pool: [verb]);
+
+      final question = questions.firstWhere(
+        (question) => question.person == 'eu',
+      );
+
+      expect(question.studyWeight.baseWeight, 1.0);
+      expect(question.studyWeight.learningMultiplier, 6.0);
+      expect(question.studyWeight.effectiveWeight, 6.0);
     });
 
     test('nextQuestion throws when the question list is empty', () {
