@@ -1,0 +1,74 @@
+[
+  {
+    "english": "January",
+    "portuguese": "janeiro",
+    "type": "noun",
+    "gender": "masculine"
+  },
+  {
+    "english": "February",
+    "portuguese": "fevereiro",
+    "type": "noun",
+    "gender": "masculine"
+  },
+  {
+    "english": "March",
+    "portuguese": "março",
+    "type": "noun",
+    "gender": "masculine"
+  },
+  {
+    "english": "April",
+    "portuguese": "abril",
+    "type": "noun",
+    "gender": "masculine"
+  },
+  {
+    "english": "May",
+    "portuguese": "maio",
+    "type": "noun",
+    "gender": "masculine"
+  },
+  {
+    "english": "June",
+    "portuguese": "junho",
+    "type": "noun",
+    "gender": "masculine"
+  },
+  {
+    "english": "July",
+    "portuguese": "julho",
+    "type": "noun",
+    "gender": "masculine"
+  },
+  {
+    "english": "August",
+    "portuguese": "agosto",
+    "type": "noun",
+    "gender": "masculine"
+  },
+  {
+    "english": "September",
+    "portuguese": "setembro",
+    "type": "noun",
+    "gender": "masculine"
+  },
+  {
+    "english": "October",
+    "portuguese": "outubro",
+    "type": "noun",
+    "gender": "masculine"
+  },
+  {
+    "english": "November",
+    "portuguese": "novembro",
+    "type": "noun",
+    "gender": "masculine"
+  },
+  {
+    "english": "December",
+    "portuguese": "dezembro",
+    "type": "noun",
+    "gender": "masculine"
+  }
+]
