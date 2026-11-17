@@ -45,5 +45,27 @@
         ]
       }
     ]
+  },
+  {
+    "name": "Іменники",
+    "subcategories": [
+      {
+        "name": "Календар",
+        "subcategories": [
+          {
+            "name": "Дні тижня",
+            "wordsFile": "vocabulary/nouns/days_of_week.json"
+          },
+          {
+            "name": "Місяці",
+            "wordsFile": "vocabulary/nouns/months.json"
+          },
+          {
+            "name": "Пори року",
+            "wordsFile": "vocabulary/nouns/seasons.json"
+          }
+        ]
+      }
+    ]
   }
 ]

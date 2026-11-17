@@ -9,6 +9,7 @@ import '../models/word_entry.dart';
 
 class VocabularyService {
   Map<String, Map<String, String>> _personHints = {};
+  Map<String, Map<String, String>> _genderData = {};
 
   double _verbInfinitiveWeight = 1.0;
   Map<String, double> _verbPersonWeights = {};
@@ -18,6 +19,7 @@ class VocabularyService {
 
   Future<List<WordCategory>> loadCategories() async {
     await _loadPersonHints();
+    await _loadGenderData();
     await _loadWeightConfigs();
 
     final jsonString = await rootBundle.loadString(
@@ -28,7 +30,7 @@ class VocabularyService {
 
     return Future.wait(
       jsonList.map(
-            (item) => _parseCategory(item as Map<String, dynamic>),
+        (item) => _parseCategory(item as Map<String, dynamic>),
       ),
     );
   }
@@ -41,9 +43,24 @@ class VocabularyService {
     final Map<String, dynamic> jsonMap = jsonDecode(jsonString);
 
     _personHints = jsonMap.map(
-          (person, hints) => MapEntry(
+      (person, hints) => MapEntry(
         person,
         Map<String, String>.from(hints as Map),
+      ),
+    );
+  }
+
+  Future<void> _loadGenderData() async {
+    final jsonString = await rootBundle.loadString(
+      'assets/data/gender_data.json',
+    );
+
+    final Map<String, dynamic> jsonMap = jsonDecode(jsonString);
+
+    _genderData = jsonMap.map(
+      (gender, data) => MapEntry(
+        gender,
+        Map<String, String>.from(data as Map),
       ),
     );
   }
@@ -55,14 +72,12 @@ class VocabularyService {
       ),
     ) as Map<String, dynamic>;
 
-    _verbInfinitiveWeight =
-        (verbJson['infinitive'] as num).toDouble();
+    _verbInfinitiveWeight = (verbJson['infinitive'] as num).toDouble();
 
-    final persons =
-    verbJson['persons'] as Map<String, dynamic>;
+    final persons = verbJson['persons'] as Map<String, dynamic>;
 
     _verbPersonWeights = persons.map(
-          (person, weight) => MapEntry(
+      (person, weight) => MapEntry(
         person,
         (weight as num).toDouble(),
       ),
@@ -74,31 +89,28 @@ class VocabularyService {
       ),
     ) as Map<String, dynamic>;
 
-    _numberDefaultWeight =
-        (numberJson['default'] as num).toDouble();
+    _numberDefaultWeight = (numberJson['default'] as num).toDouble();
 
-    final genderVariants =
-    numberJson['genderVariants'] as Map<String, dynamic>;
+    final genderVariants = numberJson['genderVariants'] as Map<String, dynamic>;
 
     _numberGenderVariantWeight =
         (genderVariants['defaultWeight'] as num).toDouble();
   }
 
   Future<WordCategory> _parseCategory(
-      Map<String, dynamic> json,
-      ) async {
+    Map<String, dynamic> json,
+  ) async {
     final wordsFile = json['wordsFile'] as String?;
 
-    final List<WordEntry> words = wordsFile == null
-        ? []
-        : await _loadWords(wordsFile);
+    final List<WordEntry> words =
+        wordsFile == null ? [] : await _loadWords(wordsFile);
 
     final List<dynamic> subcategoriesJson =
         json['subcategories'] as List<dynamic>? ?? [];
 
     final subcategories = await Future.wait(
       subcategoriesJson.map(
-            (item) => _parseCategory(item as Map<String, dynamic>),
+        (item) => _parseCategory(item as Map<String, dynamic>),
       ),
     );
 
@@ -138,13 +150,11 @@ class VocabularyService {
       final genders = genderByGroup[groupKey] ?? {};
 
       final hasBothGenders =
-          genders.contains('masculine') &&
-              genders.contains('feminine');
+          genders.contains('masculine') && genders.contains('feminine');
 
       return word.copyWith(
-        weight: hasBothGenders
-            ? _numberGenderVariantWeight
-            : _numberDefaultWeight,
+        weight:
+            hasBothGenders ? _numberGenderVariantWeight : _numberDefaultWeight,
       );
     }).toList();
   }
@@ -159,9 +169,10 @@ class VocabularyService {
     final words = jsonList
         .map(
           (item) => WordEntry.fromJson(
-        item as Map<String, dynamic>,
-      ),
-    )
+            item as Map<String, dynamic>,
+            genderData: _genderData,
+          ),
+        )
         .toList();
 
     final weightedWords = _applyNumberWeights(words);
@@ -169,11 +180,11 @@ class VocabularyService {
     return weightedWords
         .expand(
           (word) => word.toStudyEntries(
-        personHints: _personHints,
-        infinitiveWeight: _verbInfinitiveWeight,
-        personWeights: _verbPersonWeights,
-      ),
-    )
+            personHints: _personHints,
+            infinitiveWeight: _verbInfinitiveWeight,
+            personWeights: _verbPersonWeights,
+          ),
+        )
         .toList();
   }
 }

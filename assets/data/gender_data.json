@@ -1,0 +1,12 @@
+{
+  "masculine": {
+    "english": "masculine",
+    "portuguese": "masculino",
+    "article": "o"
+  },
+  "feminine": {
+    "english": "feminine",
+    "portuguese": "feminino",
+    "article": "a"
+  }
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "english": "Monday",
+    "portuguese": "segunda-feira",
+    "type": "noun",
+    "gender": "feminine"
+  },
+  {
+    "english": "Tuesday",
+    "portuguese": "terça-feira",
+    "type": "noun",
+    "gender": "feminine"
+  },
+  {
+    "english": "Wednesday",
+    "portuguese": "quarta-feira",
+    "type": "noun",
+    "gender": "feminine"
+  },
+  {
+    "english": "Thursday",
+    "portuguese": "quinta-feira",
+    "type": "noun",
+    "gender": "feminine"
+  },
+  {
+    "english": "Friday",
+    "portuguese": "sexta-feira",
+    "type": "noun",
+    "gender": "feminine"
+  },
+  {
+    "english": "Saturday",
+    "portuguese": "sábado",
+    "type": "noun",
+    "gender": "masculine"
+  },
+  {
+    "english": "Sunday",
+    "portuguese": "domingo",
+    "type": "noun",
+    "gender": "masculine"
+  }
+]

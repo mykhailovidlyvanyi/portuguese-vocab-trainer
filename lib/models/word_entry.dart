@@ -10,6 +10,8 @@ class WordEntry {
   final String? portugueseHint;
   final int? numericValue;
   final String? person;
+  final String? article;
+  final String? gender;
 
   final Map<String, List<WordForm>> tenses;
 
@@ -24,13 +26,21 @@ class WordEntry {
     this.numericValue,
     this.tenses = const {},
     this.person,
+    this.article,
+    this.gender,
   });
 
-  factory WordEntry.fromJson(Map<String, dynamic> json) {
+  factory WordEntry.fromJson(
+    Map<String, dynamic> json, {
+    Map<String, Map<String, String>> genderData = const {},
+  }) {
     final Map<String, dynamic> rawTenses =
         (json['tenses'] as Map<String, dynamic>?) ?? {};
 
     final hints = json['hints'] as Map<String, dynamic>? ?? {};
+
+    final gender = json['gender'] as String?;
+    final genderInfo = gender == null ? null : genderData[gender];
 
     return WordEntry(
       english: json['english'] as String,
@@ -40,6 +50,8 @@ class WordEntry {
       portugueseHint: hints['portuguese'] as String?,
       numericValue: (json['numericValue'] as num?)?.toInt(),
       person: json['person'] as String?,
+      article: json['article'] as String? ?? genderInfo?['article'],
+      gender: gender,
       tenses: rawTenses.map(
         (tense, forms) => MapEntry(
           tense,
@@ -68,6 +80,8 @@ class WordEntry {
       portugueseHint: portugueseHint,
       numericValue: numericValue,
       person: person,
+      article: article,
+      gender: gender,
       tenses: tenses,
     );
   }
@@ -130,6 +144,8 @@ class WordEntry {
         englishHint: englishHint,
         portugueseHint: portugueseHint,
         numericValue: numericValue,
+        article: article,
+        gender: gender,
         tenses: weightedTenses,
       ),
     ];
@@ -145,6 +161,8 @@ class WordEntry {
             type: type,
             isConjugatedForm: true,
             person: form.person,
+            article: article,
+            gender: gender,
             weight: type == 'verb' ? (personWeights[form.person] ?? 1.0) : 1.0,
             englishHint: _combineHints([
               englishHint,

@@ -1,0 +1,26 @@
+[
+  {
+    "english": "Spring",
+    "portuguese": "primavera",
+    "type": "noun",
+    "gender": "feminine"
+  },
+  {
+    "english": "Summer",
+    "portuguese": "verão",
+    "type": "noun",
+    "gender": "masculine"
+  },
+  {
+    "english": "Autumn",
+    "portuguese": "outono",
+    "type": "noun",
+    "gender": "masculine"
+  },
+  {
+    "english": "Winter",
+    "portuguese": "inverno",
+    "type": "noun",
+    "gender": "masculine"
+  }
+]
